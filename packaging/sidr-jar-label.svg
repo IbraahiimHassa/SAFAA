@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 900" width="700" height="900">
+  <title>SAFA Sidr Honey — front label, 70×90 mm</title>
+  <!-- paper ground -->
+  <rect width="700" height="900" fill="#FBFAF6"/>
+  <rect x="14" y="14" width="672" height="872" fill="none" stroke="#26201A" stroke-width="3"/>
+  <!-- masthead -->
+  <g transform="translate(318,60)">
+    <path d="M0 64 V30 C0 8 64 8 64 30 V64" stroke="#26201A" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M32 26 C32 26 45 44 45 53 A13 13 0 1 1 19 53 C19 44 32 26 32 26 Z" fill="#B97F24"/>
+  </g>
+  <text x="350" y="180" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="30" letter-spacing="12" fill="#26201A">SAFA</text>
+  <text x="350" y="206" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="700" font-size="12" letter-spacing="8" fill="#8A5A17">NUTRITION</text>
+  <!-- name -->
+  <text x="350" y="304" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="58" fill="#26201A">Sidr Honey</text>
+  <text x="350" y="352" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-style="italic" font-size="26" fill="#8A5A17">Wadi Do&#8217;an — Hadhramaut, Yemen</text>
+  <text x="350" y="396" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="700" font-size="15" letter-spacing="4" fill="#675E53">RAW · UNFILTERED · SINGLE WADI</text>
+  <!-- rule -->
+  <line x1="80" y1="436" x2="620" y2="436" stroke="#26201A" stroke-width="2.5"/>
+  <!-- ledger table -->
+  <g font-family="Archivo, sans-serif" font-size="17" fill="#26201A">
+    <text x="90" y="478">Harvest</text><text x="610" y="478" text-anchor="end" font-weight="700">Autumn 2025</text>
+    <line x1="80" y1="492" x2="620" y2="492" stroke="#26201A" stroke-width="0.8" opacity=".25"/>
+    <text x="90" y="524">Floral source</text><text x="610" y="524" text-anchor="end" font-weight="700">Ziziphus spina-christi</text>
+    <line x1="80" y1="538" x2="620" y2="538" stroke="#26201A" stroke-width="0.8" opacity=".25"/>
+    <text x="90" y="570">Pollen verified</text><text x="610" y="570" text-anchor="end" font-weight="700" fill="#2E6B3F">monofloral — report enclosed</text>
+    <line x1="80" y1="584" x2="620" y2="584" stroke="#26201A" stroke-width="0.8" opacity=".25"/>
+    <text x="90" y="616">Batch</text><text x="610" y="616" text-anchor="end" font-weight="700">SF-25-011</text>
+  </g>
+  <!-- batch QR + arabic -->
+  <g transform="translate(90,668)">
+    <rect width="120" height="120" fill="#FFFFFF" stroke="#26201A" stroke-width="2"/>
+    <g transform="translate(12,12) scale(2.9)" fill="#26201A">
+      <path d="M0 0h9v9H0zM2 2h5v5H2zM24 0h9v9h-9zM26 2h5v5h-5zM0 24h9v9H0zM2 26h5v5H2zM12 0h3v3h-3zM18 3h3v3h-3zM12 6h3v3h-3zM15 9h3v3h-3zM21 12h3v3h-3zM12 12h3v3h-3zM27 12h3v3h-3zM3 12h3v3h-3zM9 15h3v3h-3zM15 15h3v3h-3zM24 18h3v3h-3zM30 18h3v3h-3zM12 21h3v3h-3zM18 21h3v3h-3zM12 27h3v3h-3zM18 27h3v3h-3zM24 24h3v3h-3zM27 27h3v3h-3zM30 30h3v3h-3z"/>
+    </g>
+  </g>
+  <text x="230" y="712" font-family="Archivo, sans-serif" font-size="14.5" fill="#675E53">Scan for this batch&#8217;s full</text>
+  <text x="230" y="732" font-family="Archivo, sans-serif" font-size="14.5" fill="#675E53">laboratory report — published</text>
+  <text x="230" y="752" font-family="Archivo, sans-serif" font-size="14.5" fill="#675E53">before this jar went on sale.</text>
+  <text x="610" y="716" text-anchor="end" font-family="Amiri, serif" font-size="44" fill="#26201A">صفا</text>
+  <text x="610" y="752" text-anchor="end" font-family="Newsreader, serif" font-style="italic" font-size="16" fill="#8A5A17">purity, traced to its source</text>
+  <!-- net weight -->
+  <line x1="80" y1="806" x2="620" y2="806" stroke="#26201A" stroke-width="2.5"/>
+  <text x="90" y="846" font-family="Archivo, sans-serif" font-weight="800" font-size="19" fill="#26201A">NET 250 g</text>
+  <text x="610" y="846" text-anchor="end" font-family="Archivo, sans-serif" font-size="14" fill="#675E53">Raw honey · keep from children under 12 months</text>
+</svg>

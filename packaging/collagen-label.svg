@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="900" height="700">
+  <title>SAFA Marine Collagen — tub front panel, 90×70 mm</title>
+  <!-- ink ground: the collagen house is the dark tub in the family -->
+  <rect width="900" height="700" fill="#26201A"/>
+  <rect x="14" y="14" width="872" height="672" fill="none" stroke="#B97F24" stroke-width="2.5"/>
+  <!-- masthead -->
+  <g transform="translate(418,52)">
+    <path d="M0 56 V26 C0 6 56 6 56 26 V56" stroke="#E8A33D" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M28 22 C28 22 39 38 39 46 A11 11 0 1 1 17 46 C17 38 28 22 28 22 Z" fill="#E8A33D"/>
+  </g>
+  <text x="450" y="156" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="26" letter-spacing="11" fill="#FBFAF6">SAFA</text>
+  <text x="450" y="180" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="700" font-size="11" letter-spacing="7" fill="#E8A33D">NUTRITION</text>
+  <!-- name -->
+  <text x="450" y="268" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="54" fill="#FBFAF6">Marine Collagen</text>
+  <text x="450" y="312" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-style="italic" font-size="24" fill="#E8A33D">Type I peptides — with vitamin C, zinc &amp; biotin</text>
+  <text x="450" y="352" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="700" font-size="14" letter-spacing="4" fill="#B9AFA2">UNFLAVOURED · HYDROLYSED · HALAL</text>
+  <line x1="110" y1="392" x2="790" y2="392" stroke="#B97F24" stroke-width="2"/>
+  <!-- spec table, two columns -->
+  <g font-family="Archivo, sans-serif" font-size="16.5" fill="#FBFAF6">
+    <text x="120" y="434">Protein</text><text x="430" y="434" text-anchor="end" font-weight="700">≥ 90%</text>
+    <text x="120" y="472">Avg. molecular weight</text><text x="430" y="472" text-anchor="end" font-weight="700">~2 kDa</text>
+    <text x="120" y="510">Source</text><text x="430" y="510" text-anchor="end" font-weight="700">wild-caught fish</text>
+    <text x="470" y="434">Vitamin C</text><text x="780" y="434" text-anchor="end" font-weight="700">80 mg / dose</text>
+    <text x="470" y="472">Zinc · Biotin</text><text x="780" y="472" text-anchor="end" font-weight="700">10 mg · 50 µg</text>
+    <text x="470" y="510">Batch</text><text x="780" y="510" text-anchor="end" font-weight="700">SF-25-021</text>
+  </g>
+  <line x1="110" y1="540" x2="790" y2="540" stroke="#B97F24" stroke-width="1" opacity=".4"/>
+  <!-- EFSA-authorised line, allergen, QR -->
+  <text x="120" y="578" font-family="Newsreader, serif" font-style="italic" font-size="17" fill="#B9AFA2">&#8220;Vitamin C contributes to normal collagen formation for the normal function of skin.&#8221;</text>
+  <text x="120" y="628" font-family="Archivo, sans-serif" font-weight="800" font-size="15" fill="#E8A33D">ALLERGEN: CONTAINS FISH</text>
+  <text x="120" y="656" font-family="Archivo, sans-serif" font-weight="800" font-size="17" fill="#FBFAF6">NET 300 g · 30 doses</text>
+  <g transform="translate(696,568)">
+    <rect width="84" height="84" fill="#FBFAF6"/>
+    <g transform="translate(8,8) scale(2.06)" fill="#26201A">
+      <path d="M0 0h9v9H0zM2 2h5v5H2zM24 0h9v9h-9zM26 2h5v5h-5zM0 24h9v9H0zM2 26h5v5H2zM12 0h3v3h-3zM18 3h3v3h-3zM12 6h3v3h-3zM15 9h3v3h-3zM21 12h3v3h-3zM12 12h3v3h-3zM27 12h3v3h-3zM3 12h3v3h-3zM9 15h3v3h-3zM15 15h3v3h-3zM24 18h3v3h-3zM30 18h3v3h-3zM12 21h3v3h-3zM18 21h3v3h-3zM12 27h3v3h-3zM18 27h3v3h-3zM24 24h3v3h-3zM27 27h3v3h-3zM30 30h3v3h-3z"/>
+    </g>
+  </g>
+  <text x="655" y="612" text-anchor="end" font-family="Archivo, sans-serif" font-size="13" fill="#B9AFA2">batch report</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" width="420" height="120">
+  <title>SAFA Nutrition — horizontal lockup</title>
+  <path d="M26 96 V56 C26 26 86 26 86 56 V96" stroke="#26201A" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M56 47 C56 47 69 65 69 74 A13 13 0 1 1 43 74 C43 65 56 47 56 47 Z" fill="#B97F24"/>
+  <text x="118" y="76" font-family="Archivo, sans-serif" font-weight="900" font-size="52" letter-spacing="10" fill="#26201A">SAFA</text>
+  <text x="121" y="100" font-family="Archivo, sans-serif" font-weight="700" font-size="14" letter-spacing="11" fill="#8A5A17">NUTRITION</text>
+</svg>
