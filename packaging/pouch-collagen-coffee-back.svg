@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 780" width="520" height="780">
+  <title>SAFA Collagen Coffee — pouch back</title>
+  <defs><clipPath id="pouch"><path d="M60 24 h400 q14 0 15 14 l9 96 v600 q0 22 -22 22 h-404 q-22 0 -22 -22 v-600 l9 -96 q1 -14 15 -14 z"/></clipPath></defs>
+  <g clip-path="url(#pouch)">
+    <rect width="520" height="780" fill="#FBFAF6"/>
+    <rect x="0" y="0" width="520" height="120" fill="#26201A"/>
+    <text x="48" y="72" font-family="Newsreader, Georgia, serif" font-size="26" fill="#FBFAF6">Collagen Coffee</text>
+    <text x="472" y="72" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13" fill="#FBFAF6" opacity=".85">HOW WE PROVE IT — OVERLEAF</text>
+    <text x="48" y="168" font-family="Archivo, sans-serif" font-weight="800" font-size="14" letter-spacing="2.5" fill="#8A5A17">HOW TO USE</text>
+    <circle cx="58" cy="192" r="11" fill="none" stroke="#26201A" stroke-width="1.5"/><text x="58" y="197" text-anchor="middle" font-family="Newsreader, serif" font-style="italic" font-size="13" fill="#26201A">1</text><text x="82" y="197" font-family="Archivo, sans-serif" font-size="14.5" fill="#26201A">Two scoops (16.5 g) per cup</text>
+<circle cx="58" cy="224" r="11" fill="none" stroke="#26201A" stroke-width="1.5"/><text x="58" y="229" text-anchor="middle" font-family="Newsreader, serif" font-style="italic" font-size="13" fill="#26201A">2</text><text x="82" y="229" font-family="Archivo, sans-serif" font-size="14.5" fill="#26201A">Hot water, stir 10 seconds</text>
+<circle cx="58" cy="256" r="11" fill="none" stroke="#26201A" stroke-width="1.5"/><text x="58" y="261" text-anchor="middle" font-family="Newsreader, serif" font-style="italic" font-size="13" fill="#26201A">3</text><text x="82" y="261" font-family="Archivo, sans-serif" font-size="14.5" fill="#26201A">Your coffee, as always</text>
+    <line x1="48" y1="290" x2="472" y2="290" stroke="#26201A" stroke-width="2"/>
+    <text x="48" y="322" font-family="Archivo, sans-serif" font-weight="800" font-size="14" letter-spacing="2.5" fill="#8A5A17">NUTRITION — PER SERVING</text>
+    <text x="48" y="352" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Energy</text><text x="472" y="352" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">347 kJ / 83 kcal</text><line x1="48" y1="360" x2="472" y2="360" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+<text x="48" y="382" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Protein</text><text x="472" y="382" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">15 g</text><line x1="48" y1="390" x2="472" y2="390" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+<text x="48" y="412" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Carbohydrate</text><text x="472" y="412" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">0.1 g</text><line x1="48" y1="420" x2="472" y2="420" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+<text x="48" y="442" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Fat</text><text x="472" y="442" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">1.2 g</text><line x1="48" y1="450" x2="472" y2="450" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+<text x="48" y="472" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Caffeine</text><text x="472" y="472" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">78 mg / serving</text><line x1="48" y1="480" x2="472" y2="480" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+<text x="48" y="502" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Vitamin C</text><text x="472" y="502" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">80 mg (100% RI)</text><line x1="48" y1="510" x2="472" y2="510" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+    <line x1="48" y1="536" x2="472" y2="536" stroke="#26201A" stroke-width="2"/>
+    <text x="48" y="566" font-family="Archivo, sans-serif" font-weight="800" font-size="13" letter-spacing="2.5" fill="#8A5A17">INGREDIENTS</text>
+    <text x="48" y="584" font-family="Archivo, sans-serif" font-size="12.5" fill="#26201A">Arabica coffee (single origin), hydrolysed marine collagen</text>
+<text x="48" y="603" font-family="Archivo, sans-serif" font-size="12.5" fill="#26201A">peptides (fish), MCT powder, ascorbic acid.</text>
+    <text x="48" y="638" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="#26201A">Contains FISH.</text>
+    <g transform="translate(48,672)"><rect width="60" height="60" fill="#FFFFFF" stroke="#26201A" stroke-width="1.5"/><g transform="translate(5,5) scale(1.52)" fill="#26201A"><path d="M0 0h9v9H0zM2 2h5v5H2zM24 0h9v9h-9zM26 2h5v5h-5zM0 24h9v9H0zM2 26h5v5H2zM12 0h3v3h-3zM18 3h3v3h-3zM12 6h3v3h-3zM15 9h3v3h-3zM21 12h3v3h-3zM12 12h3v3h-3zM27 12h3v3h-3zM3 12h3v3h-3zM9 15h3v3h-3zM15 15h3v3h-3zM24 18h3v3h-3zM30 18h3v3h-3zM12 21h3v3h-3zM18 21h3v3h-3zM12 27h3v3h-3zM18 27h3v3h-3zM24 24h3v3h-3zM27 27h3v3h-3zM30 30h3v3h-3z"/></g></g>
+    <text x="128" y="698" font-family="Archivo, sans-serif" font-size="11.5" fill="#675E53">Batch SF-25-0XX · report published</text>
+    <text x="128" y="716" font-family="Archivo, sans-serif" font-size="11.5" fill="#675E53">before sale — scan to read it.</text>
+    <text x="472" y="698" text-anchor="end" font-family="Archivo, sans-serif" font-size="10.5" fill="#675E53">SAFA Nutrition B.V. · NL</text>
+    <text x="472" y="716" text-anchor="end" font-family="Archivo, sans-serif" font-size="10.5" fill="#675E53">safanutrition.eu</text>
+    <rect x="0" y="0" width="14" height="780" fill="#26201A" opacity=".06"/>
+    <rect x="506" y="0" width="14" height="780" fill="#26201A" opacity=".06"/>
+  </g>
+  <path d="M60 24 h400 q14 0 15 14 l9 96 v600 q0 22 -22 22 h-404 q-22 0 -22 -22 v-600 l9 -96 q1 -14 15 -14 z" fill="none" stroke="#26201A" stroke-width="2"/>
+</svg>

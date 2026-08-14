@@ -340,3 +340,10 @@ footer{background:var(--ink);color:var(--paper);padding:72px 0 40px}
 .gal .main img{max-width:100%;height:auto;box-shadow:0 24px 48px rgba(38,32,26,.14)}
 .gal .strip>div{padding:0;overflow:hidden}
 .gal .strip img{width:100%;height:100%;object-fit:cover}
+
+/* gallery thumbs */
+.gal .strip.strip4{grid-template-columns:repeat(4,1fr)}
+.galthumb{padding:0;border:1px solid var(--line);background:var(--card);cursor:pointer;overflow:hidden;aspect-ratio:1/1}
+.galthumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.galthumb:hover img{transform:scale(1.04)}
+.galthumb.sel{border-color:var(--ink);border-width:1.5px}

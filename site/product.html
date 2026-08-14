@@ -49,12 +49,13 @@
 <div class="pdp">
   <div class="gal">
     <div class="main">
-      <img src="assets/img/05-jar-sidr.jpg" alt="SAFA Sidr honey 250 gram jar, harvest 2025, batch SF-25-011" width="900" height="1117">
+      <img id="galmain" src="assets/img/products/sidr-honey/front.jpg" alt="SAFA Sidr honey 250 gram jar, harvest 2025, batch SF-25-011" width="900" height="1117">
     </div>
-    <div class="strip">
-      <div><img src="assets/img/10-life-honey.jpg" alt="Sidr honey drizzled over labneh" loading="lazy"></div>
-      <div><img src="assets/img/07-sticks-box.jpg" alt="Sidr Sticks companion box" loading="lazy"></div>
-      <div><img src="assets/img/09-life-qahwa.jpg" alt="Morning qahwa ritual with SAFA pouch" loading="lazy"></div>
+    <div class="strip strip4">
+      <button type="button" class="galthumb sel" data-img="assets/img/products/sidr-honey/front.jpg"><img src="assets/img/products/sidr-honey/front.jpg" alt="Front of the jar" loading="lazy"></button>
+      <button type="button" class="galthumb" data-img="assets/img/products/sidr-honey/back.jpg"><img src="assets/img/products/sidr-honey/back.jpg" alt="Back of the jar — nutrition and the record" loading="lazy"></button>
+      <button type="button" class="galthumb" data-img="assets/img/10-life-honey.jpg"><img src="assets/img/10-life-honey.jpg" alt="Sidr honey drizzled over labneh" loading="lazy"></button>
+      <button type="button" class="galthumb" data-img="assets/img/07-sticks-box.jpg"><img src="assets/img/07-sticks-box.jpg" alt="Sidr Sticks companion box" loading="lazy"></button>
     </div>
   </div>
 
@@ -240,6 +241,11 @@ function refresh(){
 }
 opts.forEach(o=>o.querySelector('input').addEventListener('change',refresh));
 sub.addEventListener('change',refresh);
+const main=document.getElementById('galmain');
+document.querySelectorAll('.galthumb').forEach(t=>t.addEventListener('click',()=>{
+  main.src=t.dataset.img;
+  document.querySelectorAll('.galthumb').forEach(x=>x.classList.toggle('sel',x===t));
+}));
 const toast=document.querySelector('.toast');let tt;
 buyBtn.addEventListener('click',()=>{
   toast.textContent='Wild Yemeni Sidr Honey — added to cart (demo)';

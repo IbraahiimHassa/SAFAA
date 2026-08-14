@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 780" width="520" height="780">
+  <title>SAFA Marine Collagen — pouch back</title>
+  <defs><clipPath id="pouch"><path d="M60 24 h400 q14 0 15 14 l9 96 v600 q0 22 -22 22 h-404 q-22 0 -22 -22 v-600 l9 -96 q1 -14 15 -14 z"/></clipPath></defs>
+  <g clip-path="url(#pouch)">
+    <rect width="520" height="780" fill="#FBFAF6"/>
+    <rect x="0" y="0" width="520" height="120" fill="#675E53"/>
+    <text x="48" y="72" font-family="Newsreader, Georgia, serif" font-size="26" fill="#FBFAF6">Marine Collagen</text>
+    <text x="472" y="72" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13" fill="#FBFAF6" opacity=".85">HOW WE PROVE IT — OVERLEAF</text>
+    <text x="48" y="168" font-family="Archivo, sans-serif" font-weight="800" font-size="14" letter-spacing="2.5" fill="#8A5A17">HOW TO USE</text>
+    <circle cx="58" cy="192" r="11" fill="none" stroke="#26201A" stroke-width="1.5"/><text x="58" y="197" text-anchor="middle" font-family="Newsreader, serif" font-style="italic" font-size="13" fill="#26201A">1</text><text x="82" y="197" font-family="Archivo, sans-serif" font-size="14.5" fill="#26201A">Add one 10 g scoop to any drink</text>
+<circle cx="58" cy="224" r="11" fill="none" stroke="#26201A" stroke-width="1.5"/><text x="58" y="229" text-anchor="middle" font-family="Newsreader, serif" font-style="italic" font-size="13" fill="#26201A">2</text><text x="82" y="229" font-family="Archivo, sans-serif" font-size="14.5" fill="#26201A">Stir or shake — dissolves clear</text>
+<circle cx="58" cy="256" r="11" fill="none" stroke="#26201A" stroke-width="1.5"/><text x="58" y="261" text-anchor="middle" font-family="Newsreader, serif" font-style="italic" font-size="13" fill="#26201A">3</text><text x="82" y="261" font-family="Archivo, sans-serif" font-size="14.5" fill="#26201A">Daily, with or without food</text>
+    <line x1="48" y1="290" x2="472" y2="290" stroke="#26201A" stroke-width="2"/>
+    <text x="48" y="322" font-family="Archivo, sans-serif" font-weight="800" font-size="14" letter-spacing="2.5" fill="#8A5A17">NUTRITION — PER SERVING</text>
+    <text x="48" y="352" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Energy</text><text x="472" y="352" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">152 kJ / 36 kcal</text><line x1="48" y1="360" x2="472" y2="360" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+<text x="48" y="382" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Protein</text><text x="472" y="382" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">9.0 g</text><line x1="48" y1="390" x2="472" y2="390" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+<text x="48" y="412" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Carbohydrate</text><text x="472" y="412" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">0 g</text><line x1="48" y1="420" x2="472" y2="420" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+<text x="48" y="442" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Fat</text><text x="472" y="442" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">0 g</text><line x1="48" y1="450" x2="472" y2="450" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+<text x="48" y="472" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Vitamin C</text><text x="472" y="472" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">80 mg (100% RI)</text><line x1="48" y1="480" x2="472" y2="480" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+<text x="48" y="502" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Zinc</text><text x="472" y="502" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">10 mg (100% RI)</text><line x1="48" y1="510" x2="472" y2="510" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+<text x="48" y="532" font-family="Archivo, sans-serif" font-size="13.5" fill="#26201A">Biotin</text><text x="472" y="532" text-anchor="end" font-family="Archivo, sans-serif" font-weight="700" font-size="13.5" fill="#26201A">50 µg (100% RI)</text><line x1="48" y1="540" x2="472" y2="540" stroke="#26201A" stroke-width="0.7" opacity="0.2"/>
+    <line x1="48" y1="566" x2="472" y2="566" stroke="#26201A" stroke-width="2"/>
+    <text x="48" y="596" font-family="Archivo, sans-serif" font-weight="800" font-size="13" letter-spacing="2.5" fill="#8A5A17">INGREDIENTS</text>
+    <text x="48" y="614" font-family="Archivo, sans-serif" font-size="12.5" fill="#26201A">Hydrolysed marine collagen peptides (fish), ascorbic acid,</text>
+<text x="48" y="633" font-family="Archivo, sans-serif" font-size="12.5" fill="#26201A">zinc citrate, D-biotin.</text>
+    <text x="48" y="668" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="#26201A">Contains FISH. Made in a facility that handles no gluten, milk, soy or nuts.</text>
+    <g transform="translate(48,672)"><rect width="60" height="60" fill="#FFFFFF" stroke="#26201A" stroke-width="1.5"/><g transform="translate(5,5) scale(1.52)" fill="#26201A"><path d="M0 0h9v9H0zM2 2h5v5H2zM24 0h9v9h-9zM26 2h5v5h-5zM0 24h9v9H0zM2 26h5v5H2zM12 0h3v3h-3zM18 3h3v3h-3zM12 6h3v3h-3zM15 9h3v3h-3zM21 12h3v3h-3zM12 12h3v3h-3zM27 12h3v3h-3zM3 12h3v3h-3zM9 15h3v3h-3zM15 15h3v3h-3zM24 18h3v3h-3zM30 18h3v3h-3zM12 21h3v3h-3zM18 21h3v3h-3zM12 27h3v3h-3zM18 27h3v3h-3zM24 24h3v3h-3zM27 27h3v3h-3zM30 30h3v3h-3z"/></g></g>
+    <text x="128" y="698" font-family="Archivo, sans-serif" font-size="11.5" fill="#675E53">Batch SF-25-0XX · report published</text>
+    <text x="128" y="716" font-family="Archivo, sans-serif" font-size="11.5" fill="#675E53">before sale — scan to read it.</text>
+    <text x="472" y="698" text-anchor="end" font-family="Archivo, sans-serif" font-size="10.5" fill="#675E53">SAFA Nutrition B.V. · NL</text>
+    <text x="472" y="716" text-anchor="end" font-family="Archivo, sans-serif" font-size="10.5" fill="#675E53">safanutrition.eu</text>
+    <rect x="0" y="0" width="14" height="780" fill="#26201A" opacity=".06"/>
+    <rect x="506" y="0" width="14" height="780" fill="#26201A" opacity=".06"/>
+  </g>
+  <path d="M60 24 h400 q14 0 15 14 l9 96 v600 q0 22 -22 22 h-404 q-22 0 -22 -22 v-600 l9 -96 q1 -14 15 -14 z" fill="none" stroke="#26201A" stroke-width="2"/>
+</svg>

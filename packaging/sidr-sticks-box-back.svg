@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560">
+  <title>SAFA Sidr Sticks — box back</title>
+  <rect width="800" height="560" fill="#26201A"/>
+  <rect x="12" y="12" width="776" height="536" fill="none" stroke="#B97F24" stroke-width="2"/>
+  <text x="64" y="88" font-family="Newsreader, Georgia, serif" font-size="34" fill="#FBFAF6">Sidr Sticks — the record</text>
+  <line x1="64" y1="116" x2="500" y2="116" stroke="#B97F24" stroke-width="1.6"/>
+  <text x="64" y="156" font-family="Archivo, sans-serif" font-weight="800" font-size="14" letter-spacing="2.5" fill="#E8A33D">HOW TO USE</text>
+  <text x="64" y="186" font-family="Archivo, sans-serif" font-size="15" fill="#FBFAF6">Tear the corner. Pour it straight, or into warm water or tea.</text>
+  <text x="64" y="210" font-family="Archivo, sans-serif" font-size="15" fill="#FBFAF6">One stick is one 10 g spoonful of the jar — nothing added.</text>
+  <text x="64" y="258" font-family="Archivo, sans-serif" font-weight="800" font-size="14" letter-spacing="2.5" fill="#E8A33D">PER STICK (10 G)</text>
+  <g fill="#FBFAF6">
+  <text x="64" y="290" font-family="Archivo, sans-serif" font-size="14">Energy 140 kJ / 33 kcal · Carbohydrate 8.2 g · of which sugars 8.1 g</text>
+  <text x="64" y="314" font-family="Archivo, sans-serif" font-size="14">Ingredients: raw Yemeni Sidr honey — batch SF-25-011. Nothing else.</text>
+  </g>
+  <text x="64" y="362" font-family="Archivo, sans-serif" font-weight="700" font-size="14" fill="#FBFAF6">Not suitable for infants under 12 months.</text>
+  <g transform="translate(64,400)"><rect width="64" height="64" fill="#FFFFFF" stroke="#26201A" stroke-width="1.5"/><g transform="translate(6,6) scale(1.58)" fill="#26201A"><path d="M0 0h9v9H0zM2 2h5v5H2zM24 0h9v9h-9zM26 2h5v5h-5zM0 24h9v9H0zM2 26h5v5H2zM12 0h3v3h-3zM18 3h3v3h-3zM12 6h3v3h-3zM15 9h3v3h-3zM21 12h3v3h-3zM12 12h3v3h-3zM27 12h3v3h-3zM3 12h3v3h-3zM9 15h3v3h-3zM15 15h3v3h-3zM24 18h3v3h-3zM30 18h3v3h-3zM12 21h3v3h-3zM18 21h3v3h-3zM12 27h3v3h-3zM18 27h3v3h-3zM24 24h3v3h-3zM27 27h3v3h-3zM30 30h3v3h-3z"/></g></g>
+  <text x="148" y="428" font-family="Archivo, sans-serif" font-size="12.5" fill="#B9AFA2">Same batch, same pollen report as the 250 g jar — scan.</text>
+  <text x="736" y="428" text-anchor="end" font-family="Archivo, sans-serif" font-size="12" fill="#B9AFA2">SAFA Nutrition B.V. · Amsterdam, NL</text>
+  <text x="736" y="448" text-anchor="end" font-family="Archivo, sans-serif" font-size="12" fill="#B9AFA2">safanutrition.eu</text>
+  <text x="736" y="510" text-anchor="end" font-family="Amiri, serif" font-size="34" fill="#E8A33D">صفا</text>
+</svg>
