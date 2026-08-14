@@ -23,12 +23,15 @@
 
 ## Someday
 
-- [ ] **Delegate to Claude:** collagen + black seed PDPs, NL/AR site versions (RTL), Shopify theme port per `docs/04`, batch-page template + real QR generation, per-product OG images
+- [ ] **Delegate to Claude:** NL/AR site versions (RTL), Shopify theme port per `docs/04`, batch-page template + real QR generation, per-product OG images
 - [ ] **Reserve tier** - numbered-jar Sidr Reserve once a single-apiary lot is secured
 - [ ] **Ramadan Suhoor/Iftar box** - pre-order flow ~6 weeks before Ramadan (Sunna's sold-out SKU proved demand)
 - [ ] **Wave 2 SKUs** - Black Seed Honey, Qahwa+Collagen, TQ 3.0+ tier, softgels
 
 ## Done
+
+- [x] ~~All 7 product pages built (front/back galleries, assay cards, price ladders)~~ (2026-08-14)
+- [x] ~~Front + back visuals per product; Reformed-matrix strategy; Vercel config~~ (2026-08-14)
 
 - [x] ~~Competitor research (Reformed, Balqees, Sunna) + reformatting strategy~~ (2026-08-11)
 - [x] ~~Supplier QC specs per ingredient~~ (2026-08-11)
