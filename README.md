@@ -14,7 +14,7 @@ lab reports, halal certification shown with body + number or not claimed at all.
 | `docs/04-shopify-build-plan.md` | Mapping the design onto Shopify (theme, sections, metaobjects, apps) |
 | `brand/` | Brand guidelines (original concept HTML) + production logo SVGs |
 | `packaging/` | Label/box SVGs per SKU + packaging system spec |
-| `site/` | The shipped design: static homepage + Sidr honey PDP ("Apothecary Ledger" direction) |
+| `site/` | The shipped design: static homepage + Sidr honey PDP ("Apothecary Ledger" direction), with AI-generated product photography + promo film. **Vercel-ready:** import the repo, keep root directory as-is — `vercel.json` serves `site/` |
 
 Open `site/index.html` in a browser to view the design. Verified: axe-core 0 violations
 (WCAG 2.0 A/AA), no horizontal overflow at 375/768/1024/1440, no console errors, no-JS
@@ -45,6 +45,7 @@ values and must be replaced with genuine records:
 | QR codes in SVGs | site + packaging | Decorative pattern — generate real QRs per batch page |
 | Wadi Do'an sourcing, harvest year, "300 numbered jars" | site, packaging | Matches strategy intent — confirm against actual supplier contract |
 | Reviews/testimonials | none shown anywhere | Deliberate: no fake social proof, collect real reviews from day one |
+| Product photography & film (`site/assets/img`, `site/assets/video`) | site, docs | **AI-generated concept visuals** (Higgsfield: nano-banana-pro images, Seedance clips) from our real label designs — replace with studio photography of actual production packs before launch; some generated pack text carries small AI typos |
 
 No testimonial, award, review count or certification is invented anywhere on the site —
 the trust architecture is built to be filled with real documents, not to fake them.

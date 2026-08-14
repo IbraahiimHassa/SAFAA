@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 780" width="520" height="780">
+  <title>SAFA Collagen Matcha — stand-up pouch front, 130x195 mm</title>
+  <defs>
+    <clipPath id="pouch"><path d="M60 24 h400 q14 0 15 14 l9 96 v600 q0 22 -22 22 h-404 q-22 0 -22 -22 v-600 l9 -96 q1 -14 15 -14 z"/></clipPath>
+  </defs>
+  <g clip-path="url(#pouch)">
+    <rect width="520" height="780" fill="#FBFAF6"/>
+    <rect x="0" y="0" width="520" height="212" fill="#2E6B3F"/>
+    <!-- top seal notch line -->
+    <line x1="36" y1="52" x2="484" y2="52" stroke="#FBFAF6" stroke-width="1" opacity=".35" stroke-dasharray="3 4"/>
+    <!-- lockup top-left -->
+    <g transform="translate(48,84)">
+      <path d="M0 40 V19 C0 3 42 3 42 19 V40" stroke="#FBFAF6" stroke-width="4.6" stroke-linecap="round" fill="none"/>
+      <path d="M21 16 C21 16 29 27.5 29 33 A8 8 0 1 1 13 33 C13 27.5 21 16 21 16 Z" fill="#E8A33D"/>
+      <text x="58" y="24" font-family="Archivo, sans-serif" font-weight="800" font-size="21" letter-spacing="8" fill="#FBFAF6">SAFA</text>
+      <text x="59" y="42" font-family="Archivo, sans-serif" font-weight="700" font-size="9" letter-spacing="5.4" fill="#E8A33D">NUTRITION</text>
+    </g>
+    <!-- icon row right: servings / net -->
+    <g font-family="Archivo, sans-serif" font-size="12" fill="#FBFAF6" text-anchor="end">
+      <text x="472" y="106" font-weight="700">25 servings</text>
+      <text x="472" y="124" opacity=".7">Net 286 g</text>
+    </g>
+    <!-- product name block -->
+    <text x="48" y="292" font-family="Newsreader, Georgia, serif" font-size="44" fill="#26201A">Collagen Matcha</text>
+    <text x="48" y="326" font-family="Newsreader, Georgia, serif" font-style="italic" font-size="19" fill="#8A5A17">ceremonial grade · with marine collagen</text>
+    <line x1="48" y1="356" x2="472" y2="356" stroke="#26201A" stroke-width="2.2"/>
+    <!-- spec table -->
+    <g font-family="Archivo, sans-serif" font-size="15.5" fill="#26201A">
+      <text x="48" y="396">Caffeine</text><text x="472" y="396" text-anchor="end" font-weight="700">45 mg / cup</text>
+      <line x1="48" y1="410" x2="472" y2="410" stroke="#26201A" stroke-width="0.8" opacity="0.22"/>
+      <text x="48" y="440">Collagen</text><text x="472" y="440" text-anchor="end" font-weight="700">10 g · marine, Type I</text>
+      <line x1="48" y1="454" x2="472" y2="454" stroke="#26201A" stroke-width="0.8" opacity="0.22"/>
+      <text x="48" y="484">Protein</text><text x="472" y="484" text-anchor="end" font-weight="700">10 g / serving</text>
+      <line x1="48" y1="498" x2="472" y2="498" stroke="#26201A" stroke-width="0.8" opacity="0.22"/>
+      <text x="48" y="528">Vitamin C</text><text x="472" y="528" text-anchor="end" font-weight="700">80 mg · 100% RI</text>
+      <line x1="48" y1="542" x2="472" y2="542" stroke="#26201A" stroke-width="0.8" opacity="0.22"/>
+      <text x="48" y="572">Allergen</text><text x="472" y="572" text-anchor="end" font-weight="700">contains fish</text>
+      <line x1="48" y1="586" x2="472" y2="586" stroke="#26201A" stroke-width="0.8" opacity="0.22"/>
+    </g>
+    <!-- ledger footer -->
+    <line x1="48" y1="628" x2="472" y2="628" stroke="#26201A" stroke-width="2.2"/>
+    <g transform="translate(48,652)">
+      <rect width="64" height="64" fill="#FFFFFF" stroke="#26201A" stroke-width="1.5"/>
+      <g transform="translate(6,6) scale(1.57)" fill="#26201A">
+        <path d="M0 0h9v9H0zM2 2h5v5H2zM24 0h9v9h-9zM26 2h5v5h-5zM0 24h9v9H0zM2 26h5v5H2zM12 0h3v3h-3zM18 3h3v3h-3zM12 6h3v3h-3zM15 9h3v3h-3zM21 12h3v3h-3zM12 12h3v3h-3zM27 12h3v3h-3zM3 12h3v3h-3zM9 15h3v3h-3zM15 15h3v3h-3zM24 18h3v3h-3zM30 18h3v3h-3zM12 21h3v3h-3zM18 21h3v3h-3zM12 27h3v3h-3zM18 27h3v3h-3zM24 24h3v3h-3zM27 27h3v3h-3zM30 30h3v3h-3z"/>
+      </g>
+    </g>
+    <text x="126" y="676" font-family="Archivo, sans-serif" font-size="12.5" fill="#675E53">Batch SF-25-0XX · lab report</text>
+    <text x="126" y="694" font-family="Archivo, sans-serif" font-size="12.5" fill="#675E53">published before sale — scan</text>
+    <text x="472" y="682" text-anchor="end" font-family="Amiri, serif" font-size="34" fill="#26201A">صفا</text>
+    <text x="472" y="708" text-anchor="end" font-family="Newsreader, serif" font-style="italic" font-size="13" fill="#8A5A17">purity, traced to its source</text>
+    <!-- pouch edge shading -->
+    <rect x="0" y="0" width="14" height="780" fill="#26201A" opacity=".06"/>
+    <rect x="506" y="0" width="14" height="780" fill="#26201A" opacity=".06"/>
+  </g>
+  <path d="M60 24 h400 q14 0 15 14 l9 96 v600 q0 22 -22 22 h-404 q-22 0 -22 -22 v-600 l9 -96 q1 -14 15 -14 z" fill="none" stroke="#26201A" stroke-width="2"/>
+</svg>

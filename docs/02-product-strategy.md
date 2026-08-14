@@ -30,9 +30,18 @@ Reserve), not invented numbers.
 | Hero | **Marine Collagen, Unflavoured** | 300 g tub + scoop; Type I peptides + Vit C, Zinc, Biotin | €39, −15% sub | Daily workhorse; per-serving price on every card (€1.30/day) |
 | Refill | Refill pouch | 300 g stand-up pouch | €34 sub-only | Lower COGS on repeat, sustainability line |
 | Companion | **Daily Sachets** | 30 × 10 g stick sachets | €45 | The winning EU compliance format (Absolute/Vida Glow model): a torn sachet is a completed ritual |
-| Companion | **Qahwa + Collagen** | ground Arabic coffee (cardamom/saffron) + marine collagen, 25 servings | €44 | The Reformed play on *our* ritual — they took coffee and matcha; qahwa and karak are ours. Same taste-integrity promise |
-| Companion (roadmap) | **Karak + Collagen** | karak chai blend + collagen | €44 | Second ritual SKU once qahwa proves |
+| Companion | **Collagen Coffee** | single-origin arabica + marine collagen, 25 servings, 414 g pouch | €42 | Reformed's proven lane, run directly — they validated the demand; we run it halal-native with marine collagen |
+| Companion | **Collagen Matcha** | ceremonial matcha + marine collagen, 25 servings, 286 g pouch | €44 | Same — their second proven lane |
+| Companion | **Qahwa + Collagen** | ground Arabic coffee (cardamom/saffron) + marine collagen, 25 servings | €44 | The lane Reformed CAN'T run — qahwa and karak are our rituals; our differentiator on top of their concept |
+| Companion (roadmap) | **Karak + Collagen** | karak chai blend + collagen | €44 | Second own-ritual SKU once qahwa proves |
 | Accessory | Brass measuring scoop / dallah-inspired frother later | | €12–15 | Foundation-kit logic: free with first subscription |
+
+**The Reformed concept, adopted whole:** the drink is the chassis. One pouch template spawns
+the matrix — base drink (coffee / matcha / qahwa) × carrier (marine collagen now; creatine
+later) × flavour drops as €15–19 add-ons — and hardware locks the ritual in the kitchen
+(frother, glass bottle, brass scoop as the free-with-subscription Foundation Kit). Their coffee
+and matcha lanes are proven demand we run directly; qahwa and karak are the lanes they can't
+follow us into.
 
 Marine (fish) collagen is deliberate: the lowest-friction halal choice — no slaughter-chain
 certification debate, "contains fish" is the only allergen line, and it carries the

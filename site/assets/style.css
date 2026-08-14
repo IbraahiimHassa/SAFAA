@@ -324,3 +324,19 @@ footer{background:var(--ink);color:var(--paper);padding:72px 0 40px}
   .rule{transform:none}
   .inkline::after{transform:scaleX(1)}
 }
+
+/* ---------- photography ---------- */
+.hart img{max-height:min(58vh,540px);width:auto;max-width:100%;box-shadow:0 30px 60px rgba(38,32,26,.18)}
+.rowp .thumb img{width:100%;height:100%;object-fit:cover;border:1px solid var(--line)}
+.scard .art{height:200px;overflow:hidden;margin:18px 0 6px}
+.scard .art img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.scard:hover .art img{transform:scale(1.03)}
+.bandfull{padding:0;border-block:1px solid var(--line)}
+.bandfull img{width:100%;display:block}
+.bandfull figcaption{font-family:var(--serif);font-style:italic;color:var(--fg-muted);font-size:15px;padding-top:14px;padding-bottom:14px}
+.film .filmgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:36px}
+@media(max-width:920px){.film .filmgrid{grid-template-columns:1fr}}
+.film video{width:100%;display:block;background:var(--ink);border:1px solid var(--line);aspect-ratio:16/9;object-fit:cover}
+.gal .main img{max-width:100%;height:auto;box-shadow:0 24px 48px rgba(38,32,26,.14)}
+.gal .strip>div{padding:0;overflow:hidden}
+.gal .strip img{width:100%;height:100%;object-fit:cover}

@@ -20,6 +20,23 @@ the label reads like a document because the document is the product.
 5. **No halal seal until certified** — the word and seal are printed only from the first
    certified batch, with body + certificate № in the ledger table (brand claims rule).
 
+## What the competitor packs taught us (captured 2026-08-14)
+
+- **Reformed (adopted whole):** the datasheet pouch — neutral body + one colour-coded top
+  panel per line + printed spec table, no hero imagery. Our pouch template (`pouch-*.svg`)
+  is exactly this anatomy in SAFA's system: taupe = Marine Collagen, espresso = Coffee,
+  forest = Matcha, amber = Qahwa.
+- **Balqees (honey):** bare flint glass, front-panel-only label so the honey colour is the
+  brand asset; premium tier signalled by label pattern density + metallic ink alone (their
+  crimson lattice carries a 10× price jump); Arabic wordmark above Latin; separate gift
+  architecture (rigid box + engraved olive-wood tool). Their gap: no closure ceremony on
+  €250+ jars — our batch-numbered tamper band + Reserve foil is the answer.
+- **Sunna (supplements):** one label template with colour-per-SKU across every format
+  (pouch, carton, bottle) — range recognition at near-zero design cost; certification
+  turned into a design language; three hard numbers on the front before any prose. Their
+  gap: commodity white HDPE bottles and an unnamed halal star — we out-material them and
+  print the certificate number or nothing.
+
 ## Colour (print)
 
 | Role | Hex | Print approximation |
@@ -49,6 +66,10 @@ mark. Jar lids: black metal, The Seal (ring variant) printed in amber on top.
 | `collagen-label.svg` | Marine Collagen 300 g tub, front panel | 90 × 70 mm |
 | `blackseed-label.svg` | Black Seed Oil 100 ml amber bottle, front | 50 × 80 mm |
 | `sidr-sticks-box.svg` | Sidr Sticks box of 12, front | 160 × 112 mm |
+| `pouch-marine-collagen.svg` | Marine Collagen stand-up pouch, front | 130 × 195 mm |
+| `pouch-collagen-coffee.svg` | Collagen Coffee pouch, front | 130 × 195 mm |
+| `pouch-collagen-matcha.svg` | Collagen Matcha pouch, front | 130 × 195 mm |
+| `pouch-qahwa-collagen.svg` | Qahwa + Collagen pouch, front | 130 × 195 mm |
 
 All SVGs are 10 units/mm. Back labels (nutrition declaration, NL/EN legal copy,
 EU operator address) follow the same ledger grammar — to be produced with the final
