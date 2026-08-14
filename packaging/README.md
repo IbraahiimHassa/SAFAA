@@ -70,6 +70,13 @@ mark. Jar lids: black metal, The Seal (ring variant) printed in amber on top.
 | `pouch-collagen-coffee.svg` | Collagen Coffee pouch, front | 130 × 195 mm |
 | `pouch-collagen-matcha.svg` | Collagen Matcha pouch, front | 130 × 195 mm |
 | `pouch-qahwa-collagen.svg` | Qahwa + Collagen pouch, front | 130 × 195 mm |
+| `pouch-*-front.svg` / `pouch-*-back.svg` | Pouch hero fronts + full back faces (4 SKUs) | 130 × 195 mm |
+| `*-back.svg` (jar, bottle, sticks) | Back faces: nutrition, directions, EU footer | matches front |
+| `sachets-box.svg` + `sachet-single.svg` | Daily Sachets carton + 10 g stick sachet | 160 × 112 mm / 25 × 82 mm |
+| `softgels-jar-label.svg` | Black Seed Softgels amber jar, front | 60 × 70 mm |
+| `blackseed-honey-label.svg` | Black Seed Honey 250 g jar, front | 70 × 90 mm |
+| `tasting-flight-box.svg` | Tasting Flight gift box lid | 180 × 124 mm |
+| `morning-ritual-box.svg` | Morning Ritual kit box lid | 180 × 124 mm |
 
 All SVGs are 10 units/mm. Back labels (nutrition declaration, NL/EN legal copy,
 EU operator address) follow the same ledger grammar — to be produced with the final

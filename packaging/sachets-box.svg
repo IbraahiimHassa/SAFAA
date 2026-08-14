@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560">
+  <title>SAFA Collagen Daily Sachets — box front, 160×112 mm</title>
+  <rect width="800" height="560" fill="#26201A"/>
+  <rect x="12" y="12" width="776" height="536" fill="none" stroke="#675E53" stroke-width="2"/>
+  <g transform="translate(64,56) scale(1.0)"><path d="M0 46 V21 C0 4 46 4 46 21 V46" stroke="#E8A33D" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M23 18 C23 18 32 31 32 37 A9 9 0 1 1 14 37 C14 31 23 18 23 18 Z" fill="#E8A33D"/></g>
+  <text x="130" y="86" font-family="Archivo, sans-serif" font-weight="800" font-size="21" letter-spacing="8" fill="#FBFAF6">SAFA</text>
+  <text x="131" y="105" font-family="Archivo, sans-serif" font-weight="700" font-size="9.5" letter-spacing="5" fill="#E8A33D">NUTRITION</text>
+  <text x="64" y="228" font-family="Newsreader, Georgia, serif" font-size="58" fill="#FBFAF6">Daily Sachets</text>
+  <text x="64" y="272" font-family="Newsreader, Georgia, serif" font-style="italic" font-size="23" fill="#B9AFA2">marine collagen · thirty torn-and-done doses</text>
+  <line x1="64" y1="306" x2="520" y2="306" stroke="#675E53" stroke-width="1.6"/>
+  <g font-family="Archivo, sans-serif" font-size="16" fill="#FBFAF6">
+    <text x="64" y="342">Contents</text><text x="520" y="342" text-anchor="end" font-weight="700">30 sachets × 10 g</text>
+    <line x1="64" y1="356" x2="520" y2="356" stroke="#675E53" stroke-width=".7" opacity=".5"/>
+    <text x="64" y="390">Collagen</text><text x="520" y="390" text-anchor="end" font-weight="700">Type I marine · same batch as the pouch</text>
+    <line x1="64" y1="404" x2="520" y2="404" stroke="#675E53" stroke-width=".7" opacity=".5"/>
+    <text x="64" y="438">Per sachet</text><text x="520" y="438" text-anchor="end" font-weight="700">10 g peptides · Vit C 80 mg</text>
+  </g>
+  <text x="64" y="500" font-family="Archivo, sans-serif" font-weight="800" font-size="17" fill="#FBFAF6">NET 300 G</text>
+  <text x="520" y="500" text-anchor="end" font-family="Amiri, serif" font-size="36" fill="#E8A33D">صفا</text>
+  <g transform="translate(596,84)">
+    <rect x="0" y="0" width="120" height="392" rx="14" fill="#675E53"/>
+    <rect x="0" y="0" width="120" height="392" rx="14" fill="none" stroke="#B9AFA2" stroke-width="1.5"/>
+    <rect x="14" y="26" width="92" height="130" rx="4" fill="#FBFAF6"/>
+    <g transform="translate(37,40) scale(1.0)"><path d="M0 46 V21 C0 4 46 4 46 21 V46" stroke="#26201A" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M23 18 C23 18 32 31 32 37 A9 9 0 1 1 14 37 C14 31 23 18 23 18 Z" fill="#B97F24"/></g>
+    <text x="60" y="118" text-anchor="middle" font-family="Newsreader, serif" font-size="13" fill="#26201A">Collagen</text>
+    <text x="60" y="136" text-anchor="middle" font-family="Newsreader, serif" font-size="13" fill="#26201A">№ 10 g</text>
+    <text x="60" y="330" text-anchor="middle" font-family="Newsreader, serif" font-style="italic" font-size="13" fill="#FBFAF6">tear · stir · done</text>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620">
+  <title>SAFA Morning Ritual — starter kit box, 180×124 mm</title>
+  <rect width="900" height="620" fill="#26201A"/>
+  <rect x="16" y="16" width="868" height="588" fill="none" stroke="#B97F24" stroke-width="2"/>
+  <g transform="translate(404,60) scale(1.4)"><path d="M0 46 V21 C0 4 46 4 46 21 V46" stroke="#E8A33D" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M23 18 C23 18 32 31 32 37 A9 9 0 1 1 14 37 C14 31 23 18 23 18 Z" fill="#E8A33D"/></g>
+  <text x="450" y="182" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="24" letter-spacing="11" fill="#FBFAF6">SAFA</text>
+  <text x="450" y="268" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="60" fill="#FBFAF6">The Morning Ritual</text>
+  <text x="450" y="310" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-style="italic" font-size="24" fill="#E8A33D">fourteen mornings, three goods, one habit</text>
+  <line x1="130" y1="352" x2="770" y2="352" stroke="#B97F24" stroke-width="1.6"/>
+  <g font-family="Archivo, sans-serif" font-size="17" fill="#FBFAF6">
+    <text x="150" y="398">14 × Sidr honey sticks</text><text x="750" y="398" text-anchor="end" font-weight="700">10 g each</text>
+    <line x1="130" y1="412" x2="770" y2="412" stroke="#B97F24" stroke-width=".7" opacity=".5"/>
+    <text x="150" y="446">14 × marine collagen sachets</text><text x="750" y="446" text-anchor="end" font-weight="700">10 g each</text>
+    <line x1="130" y1="460" x2="770" y2="460" stroke="#B97F24" stroke-width=".7" opacity=".5"/>
+    <text x="150" y="494">28 × black seed softgels</text><text x="750" y="494" text-anchor="end" font-weight="700">1000 mg each</text>
+  </g>
+  <text x="450" y="560" text-anchor="middle" font-family="Newsreader, serif" font-style="italic" font-size="17" fill="#B9AFA2">every component carries the batch page of the full-size product it came from</text>
+</svg>

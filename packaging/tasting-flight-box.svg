@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620">
+  <title>SAFA Tasting Flight — gift box lid, 180×124 mm</title>
+  <rect width="900" height="620" fill="#FBFAF6"/>
+  <rect x="16" y="16" width="868" height="588" fill="none" stroke="#26201A" stroke-width="3"/>
+  <rect x="30" y="30" width="840" height="560" fill="none" stroke="#B97F24" stroke-width="1.5"/>
+  <g transform="translate(404,64) scale(1.4)"><path d="M0 46 V21 C0 4 46 4 46 21 V46" stroke="#26201A" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M23 18 C23 18 32 31 32 37 A9 9 0 1 1 14 37 C14 31 23 18 23 18 Z" fill="#B97F24"/></g>
+  <text x="450" y="186" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="24" letter-spacing="11" fill="#26201A">SAFA</text>
+  <text x="450" y="272" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="60" fill="#26201A">The Tasting Flight</text>
+  <text x="450" y="314" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-style="italic" font-size="24" fill="#8A5A17">three honeys, forty grams each — read the ledger, then taste it</text>
+  <line x1="130" y1="356" x2="770" y2="356" stroke="#26201A" stroke-width="2"/>
+  <g font-family="Newsreader, Georgia, serif" font-size="24" fill="#26201A" text-anchor="middle">
+    <text x="255" y="412"><tspan font-style="italic" fill="#8A5A17">i.</tspan>  Sidr — Do&#8217;an</text>
+    <text x="450" y="412"><tspan font-style="italic" fill="#8A5A17">ii.</tspan>  Black Seed</text>
+    <text x="648" y="412"><tspan font-style="italic" fill="#8A5A17">iii.</tspan>  Reserve</text>
+  </g>
+  <line x1="130" y1="448" x2="770" y2="448" stroke="#26201A" stroke-width="2"/>
+  <text x="450" y="500" text-anchor="middle" font-family="Newsreader, serif" font-style="italic" font-size="17" fill="#675E53">each mini carries its own batch page — the ledger booklet is in the tray</text>
+  <text x="450" y="556" text-anchor="middle" font-family="Amiri, serif" font-size="36" fill="#B97F24">صفا</text>
+</svg>

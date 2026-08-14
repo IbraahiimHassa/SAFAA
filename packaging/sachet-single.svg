@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 660" width="200" height="660">
+  <title>SAFA collagen daily sachet, 10 g</title>
+  <rect x="8" y="8" width="184" height="644" rx="16" fill="#675E53"/>
+  <rect x="8" y="8" width="184" height="644" rx="16" fill="none" stroke="#26201A" stroke-width="2"/>
+  <line x1="20" y1="40" x2="180" y2="40" stroke="#FBFAF6" stroke-width="1" opacity=".4" stroke-dasharray="3 4"/>
+  <rect x="30" y="70" width="140" height="210" rx="4" fill="#FBFAF6"/>
+  <g transform="translate(77,92) scale(1.0)"><path d="M0 46 V21 C0 4 46 4 46 21 V46" stroke="#26201A" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M23 18 C23 18 32 31 32 37 A9 9 0 1 1 14 37 C14 31 23 18 23 18 Z" fill="#B97F24"/></g>
+  <text x="100" y="182" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="15" letter-spacing="5" fill="#26201A">SAFA</text>
+  <text x="100" y="216" text-anchor="middle" font-family="Newsreader, serif" font-size="16" fill="#26201A">Marine Collagen</text>
+  <text x="100" y="238" text-anchor="middle" font-family="Newsreader, serif" font-style="italic" font-size="12" fill="#8A5A17">one dose · 10 g</text>
+  <text x="100" y="420" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="700" font-size="12" letter-spacing="3" fill="#FBFAF6" transform="rotate(-90 100 420)">TEAR · STIR · DONE</text>
+  <text x="100" y="600" text-anchor="middle" font-family="Amiri, serif" font-size="26" fill="#E8A33D">صفا</text>
+</svg>

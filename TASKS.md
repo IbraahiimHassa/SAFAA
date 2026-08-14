@@ -30,6 +30,8 @@
 
 ## Done
 
+- [x] ~~Full media library: variation-pack visuals, usage stills, 6 usage films, 4 vertical reels~~ (2026-08-14)
+
 - [x] ~~All 7 product pages built (front/back galleries, assay cards, price ladders)~~ (2026-08-14)
 - [x] ~~Front + back visuals per product; Reformed-matrix strategy; Vercel config~~ (2026-08-14)
 
