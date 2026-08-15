@@ -4,8 +4,11 @@
 
 ## Active
 
-- [ ] **Review the shipped design package** - approve "Apothecary Ledger" direction or override to runner-up (green "Batch Ledger") - today
-  - Open `site/index.html` + `site/product.html` in a browser; jury scorecard is in the safa-ledger reference card
+- [ ] **Review the rebuilt site** - conversion-first architecture (feelreformed.com skeleton, SAFA visual identity); the "ledger/index/folio" vocabulary is gone - today
+  - Open `site/index.html` + `site/product.html`; content now lives in `build/data.mjs`, run `node build/build.mjs` to regenerate
+- [ ] **Cost the free-with-a-plan starter kits** - the single largest COGS commitment on the site, and currently all placeholder numbers - today
+  - Per family: honey €35 (olive-wood dipper, ceramic spoon, booklet) · collagen €35 · coffee €56 · matcha €65 · qahwa €59 · oil €29 · sticks €24
+  - Decide: ship once with first order (current copy) vs. spread across cycles; confirm margin survives at the 15% subscription discount
 - [ ] **Review the two Arabic lines** - flagged ⚠ DRAFT: footer tagline `صفا — نقاء يُتتبَّع إلى مصدره` and label line - today
 - [ ] **Confirm pricing targets against margins** - €49 honey / €39 collagen / €29 BSO + companion prices are competitive-analysis proposals, not costed - today
   - Needs rough COGS per SKU (supplier quotes below feed this)

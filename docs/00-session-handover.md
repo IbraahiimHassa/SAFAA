@@ -1,8 +1,37 @@
-# SAFA — Session Handover (2026-08-14)
+# SAFA — Session Handover (2026-08-15)
 
 Read this first in a new session. It says what exists, what's decided, what's fake,
-and what to do next. Everything below is committed on branch
-`claude/halal-wellness-ecommerce-adg9xs` across three repos.
+and what to do next.
+
+## ⚠ What changed on 2026-08-15 (read before touching the site)
+
+The site was **rebuilt on a conversion-first architecture** modelled on
+feelreformed.com, keeping SAFA's own visual identity. Three structural changes:
+
+1. **The "Apothecary Ledger" vocabulary is gone.** `Open the index` → `Shop all`,
+   `The Ledger` → `Lab reports`, `№ i / ii / iii` folios → removed, `assay` →
+   `This batch, tested`, `The house` → `About`. The numbered index *table* on the
+   homepage is now a **product card grid**. The paper/ink/amber palette, Newsreader +
+   Archivo + Amiri, and the COA-as-a-document module all stay — the look was never
+   the problem, the navigation words were.
+2. **The site is now generated.** Content lives in `build/data.mjs`; templates in
+   `build/build.mjs`. Run `node build/build.mjs` to regenerate all 8 pages.
+   **Never hand-edit `site/*.html`** — it is overwritten on the next build.
+3. **Fonts are self-hosted** in `site/assets/fonts/` (`build/fetch-fonts.mjs`
+   regenerates them). They were loading from the Google CDN, which sends every EU
+   visitor's IP to a third party on first paint — a settled GDPR problem, and an
+   avoidable one for a brand whose whole pitch is compliance discipline.
+
+New PDP order (the reference site's skeleton): annotated value shot → batch
+verification strip → three benefit bullets → two pickers (flavour/format + companion)
+→ 1/2/3 quantity tiles with save badges → plan card with a free starter kit →
+add to cart → delivery date → accordions → ingredient grid → comparison table →
+film → cross-sell.
+
+Two slots are deliberately filled differently from the reference, which fills them
+with claims we've forbidden ourselves: their inflated review count becomes our batch
+verification strip, and their "As Seen In" press row is simply omitted until we have
+actually been in the press.
 
 ## The one-paragraph brief
 
@@ -58,12 +87,13 @@ cross-sell shelf. Verified across all 8 pages at 1440 and 375 px:
 
 ## Decisions already made (don't re-litigate)
 
-1. **Design direction: "Apothecary Ledger"** — chosen by design-critic jury 25/30 over a
-   green-drenched and a dark-cellar direction. Paper ground `#FBFAF6`, single espresso ink
-   `#26201A`, sidr amber `#B97F24`/`#8A5A17`, pass-green `#2E6B3F`. Type: Newsreader
-   (serif) + Archivo (data) + Amiri (Arabic), all OFL and self-hostable.
-   Signature moves: products as a numbered **index table** (never card grids), the
-   **COA rendered as a physical document**, roman folios, per-day pricing.
+1. **Visual identity** — paper ground `#FBFAF6`, single espresso ink `#26201A`, sidr
+   amber `#B97F24`/`#8A5A17`, pass-green `#2E6B3F`. Type: Newsreader (serif) + Archivo
+   (data) + Amiri (Arabic), all OFL, now self-hosted. Signature moves: the **COA
+   rendered as a physical document**, drawn SVG ingredient marks (never stock
+   photography), per-serving pricing everywhere.
+   *Superseded 2026-08-15:* the numbered index table and roman folios — products are
+   card grids now; see the change note at the top of this file.
 2. **Marine (fish) collagen, not bovine** — lowest-friction halal choice.
 3. **Reformed's matrix adopted whole**: Collagen Coffee and Collagen Matcha run directly
    (their proven lanes), Qahwa + Collagen is the lane they can't follow. Black seed's
