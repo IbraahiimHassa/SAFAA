@@ -104,6 +104,26 @@ const navJs = `(function(){
   });
 })();`;
 
+
+const signup = `
+<section class="signup" aria-labelledby="sign-h">
+  <div class="wrap in">
+    <div>
+      <p class="kick">Before we open</p>
+      <h2 id="sign-h">The first batches will be <em>small.</em></h2>
+      <p class="secsub">We are not selling yet. Halal certification is in progress and no batch goes on sale before its lab report is published — so leave an address and we will write once, the day the first certified batch is live. Nothing else, and nothing sold on.</p>
+    </div>
+    <form class="signform" novalidate>
+      <label class="vh" for="sign-email">Email address</label>
+      <div class="row">
+        <input id="sign-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        <button type="submit">Keep me posted</button>
+      </div>
+      <p class="fine">One email at launch. Unsubscribe in a click. We never sell or share addresses \u2014 see Privacy.</p>
+    </form>
+  </div>
+</section>`;
+
 const foot = `
 <footer>
   <div class="wrap">
@@ -210,28 +230,35 @@ ${pk.opts.map(([v, d, img]) => {
   <div class="gal">
     <div class="main">
       <img id="galmain" src="assets/img/${p.gallery[0][0]}" alt="${p.name} — ${p.gallery[0][1]}" width="900" height="1117">
-      <span class="pins" aria-hidden="true">
+      ${p.preorder ? '' : `<span class="pins" aria-hidden="true">
 ${pins}
-      </span>
+      </span>`}
       <span class="vsfoot">${p.vsfoot}</span>
     </div>
-    <div class="pinlist" aria-hidden="true">
+    ${p.preorder ? '' : `<div class="pinlist" aria-hidden="true">
 ${p.kit.map(([n, v]) => `      <span><span class="n">${n}</span><s>€${v}</s><b>Free</b></span>`).join('\n')}
-    </div>
+    </div>`}
     <div class="strip">
 ${p.gallery.map((g, i) => `      <button type="button" class="galthumb${i === 0 ? ' sel' : ''}" data-img="assets/img/${g[0]}"><img src="assets/img/${g[0]}" alt="${g[1]}" loading="lazy"></button>`).join('\n')}
     </div>
   </div>
 
   <div>
-    <p class="vstrip">
+    ${p.preorder ? `<p class="vstrip pending">
+      ${I.doc}
+      <b>Batch ${p.batch} — not yet tested</b>
+      <span class="sep">·</span>
+      <span>its report publishes before the first unit sells</span>
+      <span class="sep">·</span>
+      <a href="index.html#proof">How we publish</a>
+    </p>` : `<p class="vstrip">
       ${I.shield}
       <b>Batch ${p.batch} verified</b>
       <span class="sep">·</span>
       <span>tested ${p.tested}</span>
       <span class="sep">·</span>
       <a href="index.html#proof">Read the lab report</a>
-    </p>
+    </p>`}
 
     <div class="pdphead">
       <p class="flag">${p.flag}</p>
@@ -253,7 +280,13 @@ ${tiles}
       </div>
     </div>
 
-    <div class="freq">
+    ${p.preorder ? `<div class="pre">
+      <p class="lab">Availability</p>
+      <div class="prebox">
+        <b>Wave 2 — not yet shipping</b>
+        <span>This batch is still in production. Its lab report goes live before a single jar is sold, and we will email you the day it does. Nothing is charged now.</span>
+      </div>
+    </div>` : `<div class="freq">
       <span class="lab">Frequency</span>
 
       <label class="plan sel" id="planSub">
@@ -290,10 +323,12 @@ ${p.kit.map(([n, v]) => `          <span class="row"><span class="n">${n}</span>
         <span class="pr"><b>€${base}</b> <span class="per">${p.qty[0].u}</span></span>
       </label>
     </div>
-
+    `}
     <div class="buy">
-      <button class="addcart" type="button" data-add="${p.name}">Add to cart — €${planPrice}</button>
-      <p class="deliv">Delivered on <b id="delivDate">—</b> with tracked EU shipping</p>
+      <button class="addcart" type="button" data-add="${p.name}">${p.preorder ? 'Notify me when it ships' : `Add to cart — €${planPrice}`}</button>
+      ${p.preorder
+        ? `<p class="deliv">No payment taken · we email once batch ${p.batch} clears its lab report</p>`
+        : `<p class="deliv">Delivered on <b id="delivDate">—</b> with tracked EU shipping</p>`}
     </div>
 
     <p class="pblurb">${p.blurb}</p>
@@ -353,7 +388,7 @@ ${p.film2.items.map(([src, poster, alt]) => `    <video controls muted loop play
   <h2 id="also-h">${p.also.h}</h2>
   ${shelf(p.also.items)}
 </section>
-${foot}
+${signup}${foot}
 <script>
 ${pageJs(p)}
 </script>
@@ -366,6 +401,28 @@ ${pageJs(p)}
 function pageJs(p) {
   return `addEventListener('load',()=>document.body.classList.add('loaded'));
 ${navJs}
+/* hero film — poster only when the visitor asks for reduced motion */
+(function(){
+  var v=document.querySelector('.herovid'); if(!v) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  v.src='assets/video/safa-hero.mp4';
+  var play=v.play(); if(play&&play.catch) play.catch(function(){});
+})();
+/* email capture — demo only, no ESP wired yet */
+(function(){
+  var f=document.querySelector('.signform'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var i=f.querySelector('input'), v=(i.value||'').trim();
+    var ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    i.setAttribute('aria-invalid', ok?'false':'true');
+    var t=document.querySelector('.toast'); if(!t) return;
+    t.textContent = ok ? 'Thank you — we will write once, at launch (demo)' : 'That email address does not look right';
+    t.classList.add('show'); clearTimeout(window.__st);
+    window.__st=setTimeout(function(){t.classList.remove('show')},2600);
+    if(ok) i.value='';
+  });
+})();
 
 /* delivery date — next working day + 2 */
 (function(){
@@ -380,6 +437,7 @@ ${navJs}
 var BASE=${JSON.stringify(p.qty.map(q => ({ p: q.p, u: q.u })))};
 var tiles=[].slice.call(document.querySelectorAll('.qt'));
 var plans=[].slice.call(document.querySelectorAll('.plan'));
+var PRE=${p.preorder ? 'true' : 'false'};
 var addBtn=document.querySelector('.addcart');
 var planPr=document.getElementById('planPr'), planPer=document.getElementById('planPer');
 var extra=0;
@@ -389,12 +447,14 @@ function refresh(){
   var i=tiles.findIndex(function(t){return t.querySelector('input').checked});
   if(i<0) i=0;
   tiles.forEach(function(t,n){t.classList.toggle('sel',n===i)});
-  var onPlan=document.querySelector('.plan input:checked').value==='plan';
+  var checked=document.querySelector('.plan input:checked');
+  var onPlan=!!checked&&checked.value==='plan';
   plans.forEach(function(pl){pl.classList.toggle('sel',pl.querySelector('input').checked)});
   var base=BASE[i].p;
   var sub=Math.round(base*0.85);
   if(planPr) planPr.textContent=money(sub);
   if(planPer) planPer.textContent=BASE[i].u;
+  if(PRE){ addBtn.textContent='Notify me when it ships'; return; }
   var total=(onPlan?sub:base)+extra;
   addBtn.textContent='Add to cart — '+money(total);
 }
@@ -430,7 +490,7 @@ var main=document.getElementById('galmain');
 /* toast */
 var toast=document.querySelector('.toast'),tt;
 addBtn.addEventListener('click',function(){
-  toast.textContent=${JSON.stringify(p.name)}+' — added to cart (demo)';
+  toast.textContent=PRE?${JSON.stringify(p.name)}+' — we will email you when it ships (demo)':${JSON.stringify(p.name)}+' — added to cart (demo)';
   toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},2200);
 });
 refresh();`;
@@ -474,7 +534,9 @@ function home() {
   </div>
   <div class="hright">
     <div class="hart">
-      <img src="assets/img/11-house-hero.jpg" alt="The SAFA range together: the four collagen pouches, the Sidr honey jar, cold-pressed black seed oil and the gift box" width="1200" height="900">
+      <video class="herovid" autoplay muted loop playsinline preload="metadata"
+             poster="assets/img/11-house-hero.jpg" width="1280" height="720"
+             aria-label="The SAFA range: four collagen pouches, the Sidr honey jar and black seed softgels, with a sample of each in front"></video>
     </div>
     <div class="hstats">
       <div><b>№ 011</b><span>batches published</span></div>
@@ -521,13 +583,6 @@ ${cards.map(c => `    <a class="pcard" href="${c.href}">
   ${shelf(['marine-collagen', 'collagen-coffee', 'collagen-matcha', 'qahwa-collagen'], true)}
 </section>
 
-<section class="bandfull" aria-label="The SAFA ritual line family">
-  <figure>
-    <img src="assets/img/08-family-lineup.jpg" alt="The four SAFA pouches in a row: Marine Collagen, Collagen Coffee, Collagen Matcha, Qahwa + Collagen" loading="lazy">
-    <figcaption class="wrap">One pouch, one spec table, one family — the panel colour names the ritual.</figcaption>
-  </figure>
-</section>
-
 <section class="wrap" aria-labelledby="ing-h">
   <p class="kick">What's actually in it</p>
   <h2 id="ing-h">Ingredients, <em>and what we can prove.</em></h2>
@@ -564,6 +619,34 @@ ${cards.map(c => `    <a class="pcard" href="${c.href}">
         <span>Decorative pattern — real per-batch QR codes are generated at production. Placeholder values throughout until supplier COAs exist.</span>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="halal" class="wrap" aria-labelledby="halal-h" style="padding-top:0">
+  <div class="halal">
+    <div>
+      <p class="kick">Halal certification</p>
+      <h2 id="halal-h">The seal goes on <em>when the paper does.</em></h2>
+      <p class="secsub">Every competitor in this category prints the word. Most cannot name the body that granted it, and none publish the certificate. We are doing it in the other order: certification first, then the word, then the seal \u2014 with the body and the number printed on the pack so you can check it yourself.</p>
+      <div class="steps" style="margin-top:22px">
+        <div class="st"><i>1</i><span><b>Marine by design</b>The collagen is fish-derived and the softgel shell with it \u2014 the lowest-friction position on the question, taken deliberately.</span></div>
+        <div class="st"><i>2</i><span><b>Certification in progress</b>Scope and quote stage with a Dutch certifying body. No word, no seal, no claim until it is on file.</span></div>
+        <div class="st"><i>3</i><span><b>Published when granted</b>Body, certificate number and expiry go on the pack and on this page, the same week they arrive.</span></div>
+      </div>
+    </div>
+    <figure class="certframe">
+      <div class="cf-in">
+        <span class="cf-chip">Awaiting certificate</span>
+        <span class="cf-mark" aria-hidden="true">\u062D\u0644\u0627\u0644</span>
+        <span class="cf-note">Reserved for the halal certificate</span>
+        <span class="cf-rows">
+          <span><b>Certifying body</b><i>to be published</i></span>
+          <span><b>Certificate \u2116</b><i>to be published</i></span>
+          <span><b>Valid until</b><i>to be published</i></span>
+        </span>
+      </div>
+      <figcaption>This frame stays empty until the document exists. It is the only honest thing to put here.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -625,10 +708,25 @@ ${cards.map(c => `    <a class="pcard" href="${c.href}">
 </section>
 
 </main>
-${foot}
+${signup}${foot}
 <script>
 addEventListener('load',()=>document.body.classList.add('loaded'));
 ${navJs}
+/* email capture — demo only, no ESP wired yet */
+(function(){
+  var f=document.querySelector('.signform'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var i=f.querySelector('input'), v=(i.value||'').trim();
+    var ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    i.setAttribute('aria-invalid', ok?'false':'true');
+    var t=document.querySelector('.toast'); if(!t) return;
+    t.textContent = ok ? 'Thank you — we will write once, at launch (demo)' : 'That email address does not look right';
+    t.classList.add('show'); clearTimeout(window.__st);
+    window.__st=setTimeout(function(){t.classList.remove('show')},2600);
+    if(ok) i.value='';
+  });
+})();
 if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });

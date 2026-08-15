@@ -594,3 +594,61 @@ footer{background:var(--ink);color:var(--paper);padding:72px 0 40px}
   .rule{transform:none}
   .inkline::after{transform:scaleX(1)}
 }
+
+/* ---------- pre-order (wave 2, nothing charged) ---------- */
+.pre{margin-top:22px}
+.pre .lab{font-size:10.5px;letter-spacing:.18em;font-weight:800;text-transform:uppercase;color:var(--fg-muted);margin-bottom:8px}
+.prebox{border:1.5px dashed var(--line-strong);background:var(--paper-2);padding:15px 17px}
+.prebox b{display:block;font-size:14.5px}
+.prebox span{display:block;margin-top:5px;font-size:13px;color:var(--fg-muted);max-width:52ch}
+
+/* ---------- email capture ---------- */
+.signup{background:var(--bg-plate);border-block:1px solid var(--line);padding:64px 0}
+.signup .in{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+@media(max-width:920px){.signup .in{grid-template-columns:1fr;gap:30px}.signup{padding:52px 0}}
+.signform .row{display:flex;gap:10px;flex-wrap:wrap}
+.signform input{
+  flex:1;min-width:220px;border:1.5px solid var(--line-strong);background:var(--card);
+  font:inherit;font-size:15px;padding:15px 16px;color:var(--fg);
+}
+.signform input::placeholder{color:var(--fg-muted)}
+.signform input:focus-visible{outline:2px solid var(--amber-deep);outline-offset:-2px}
+.signform button{
+  background:var(--ink);color:var(--paper);border:1.5px solid var(--ink);cursor:pointer;
+  font:inherit;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  padding:15px 26px;transition:transform .16s ease,box-shadow .2s ease;white-space:nowrap;
+}
+.signform button:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(38,32,26,.20)}
+.signform .fine{margin-top:11px;font-size:11.5px;color:var(--fg-muted)}
+.signform input[aria-invalid="true"]{border-color:#9B3B2F}
+
+/* ---------- halal certificate frame ---------- */
+.halal{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center}
+@media(max-width:920px){.halal{grid-template-columns:1fr;gap:36px}}
+.certframe{margin:0}
+.cf-in{
+  border:2px dashed var(--line-strong);background:var(--card);
+  padding:34px 30px;text-align:center;position:relative;
+}
+.cf-chip{
+  position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+  background:var(--paper-2);border:1px solid var(--line-strong);
+  font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--fg-muted);padding:4px 12px;white-space:nowrap;
+}
+.cf-mark{display:block;font-family:var(--ar);font-size:56px;color:var(--line-strong);line-height:1.1}
+.cf-note{display:block;margin-top:8px;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--fg-muted)}
+.cf-rows{display:block;margin-top:22px;border-top:1px solid var(--line);padding-top:6px}
+.cf-rows>span{display:flex;justify-content:space-between;gap:14px;padding:8px 0;border-bottom:1px solid rgba(38,32,26,.07);font-size:12.5px;text-align:start}
+.cf-rows b{font-weight:700}
+.cf-rows s{color:var(--fg-muted);font-weight:500}
+.certframe figcaption{margin-top:14px;font-size:12.5px;color:var(--fg-muted);font-family:var(--serif);font-style:italic;text-align:center}
+.cf-rows i{font-style:normal;color:var(--fg-muted);font-weight:500}
+.vstrip.pending{border-color:rgba(138,90,23,.40);background:rgba(185,127,36,.08)}
+.vstrip.pending svg{color:var(--amber-deep)}
+.vstrip.pending b{color:var(--amber-deep)}
+.hart .herovid{
+  max-height:min(58vh,540px);width:auto;max-width:100%;height:auto;
+  object-fit:cover;background:var(--paper-2);
+  box-shadow:0 30px 60px rgba(38,32,26,.18);
+}
