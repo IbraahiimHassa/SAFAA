@@ -23,9 +23,10 @@
     <text x="48" y="596" font-family="Archivo, sans-serif" font-weight="800" font-size="13" letter-spacing="2.5" fill="#8A5A17">INGREDIENTS</text>
     <text x="48" y="614" font-family="Archivo, sans-serif" font-size="12.5" fill="#26201A">Hydrolysed marine collagen peptides (fish), ascorbic acid,</text>
 <text x="48" y="633" font-family="Archivo, sans-serif" font-size="12.5" fill="#26201A">zinc citrate, D-biotin.</text>
-    <text x="48" y="668" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="#26201A">Contains FISH. Made in a facility that handles no gluten, milk, soy or nuts.</text>
-    <g transform="translate(48,672)"><rect width="60" height="60" fill="#FFFFFF" stroke="#26201A" stroke-width="1.5"/><g transform="translate(5,5) scale(1.52)" fill="#26201A"><path d="M0 0h9v9H0zM2 2h5v5H2zM24 0h9v9h-9zM26 2h5v5h-5zM0 24h9v9H0zM2 26h5v5H2zM12 0h3v3h-3zM18 3h3v3h-3zM12 6h3v3h-3zM15 9h3v3h-3zM21 12h3v3h-3zM12 12h3v3h-3zM27 12h3v3h-3zM3 12h3v3h-3zM9 15h3v3h-3zM15 15h3v3h-3zM24 18h3v3h-3zM30 18h3v3h-3zM12 21h3v3h-3zM18 21h3v3h-3zM12 27h3v3h-3zM18 27h3v3h-3zM24 24h3v3h-3zM27 27h3v3h-3zM30 30h3v3h-3z"/></g></g>
-    <text x="128" y="698" font-family="Archivo, sans-serif" font-size="11.5" fill="#675E53">Batch SF-25-0XX · report published</text>
+    <text x="48" y="654" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="#26201A">Contains FISH.</text>
+    <text x="48" y="669" font-family="Archivo, sans-serif" font-size="11.5" fill="#26201A">Packed in a facility free from gluten, milk, soy and nuts.</text>
+    <g transform="translate(48,680)"><rect width="60" height="60" fill="#FFFFFF" stroke="#26201A" stroke-width="1.5"/><g transform="translate(5,5) scale(1.52)" fill="#26201A"><path d="M0 0h9v9H0zM2 2h5v5H2zM24 0h9v9h-9zM26 2h5v5h-5zM0 24h9v9H0zM2 26h5v5H2zM12 0h3v3h-3zM18 3h3v3h-3zM12 6h3v3h-3zM15 9h3v3h-3zM21 12h3v3h-3zM12 12h3v3h-3zM27 12h3v3h-3zM3 12h3v3h-3zM9 15h3v3h-3zM15 15h3v3h-3zM24 18h3v3h-3zM30 18h3v3h-3zM12 21h3v3h-3zM18 21h3v3h-3zM12 27h3v3h-3zM18 27h3v3h-3zM24 24h3v3h-3zM27 27h3v3h-3zM30 30h3v3h-3z"/></g></g>
+    <text x="128" y="698" font-family="Archivo, sans-serif" font-size="11.5" fill="#675E53">Batch SF-25-021 · report published</text>
     <text x="128" y="716" font-family="Archivo, sans-serif" font-size="11.5" fill="#675E53">before sale — scan to read it.</text>
     <text x="472" y="698" text-anchor="end" font-family="Archivo, sans-serif" font-size="10.5" fill="#675E53">SAFA Nutrition B.V. · NL</text>
     <text x="472" y="716" text-anchor="end" font-family="Archivo, sans-serif" font-size="10.5" fill="#675E53">safanutrition.eu</text>
