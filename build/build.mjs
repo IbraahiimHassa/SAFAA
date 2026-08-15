@@ -439,16 +439,16 @@ refresh();`;
 /* ---------------- homepage ---------------- */
 function home() {
   const cards = [
-    { s: 'sidr-honey', href: 'product.html', cat: 'Raw honey', tag: 'The flagship',
-      name: 'Wild Yemeni Sidr Honey', img: 'assets/img/products/sidr-honey/front.jpg',
-      desc: 'Raw, unfiltered, from one valley in Hadhramaut — the autumn Sidr bloom, coarse-strained and never heated.',
-      facts: [['Ziziphus — monofloral', 1], ['HMF 4.2', 0], ['Moisture 16.8%', 0]],
-      pr: '€49', per: 'Harvest 2025 · 250 g' },
     { s: 'marine-collagen', href: 'marine-collagen.html', cat: 'Daily collagen', tag: 'Most ordered', amber: 1,
       name: 'Halal Marine Collagen', img: 'assets/img/products/marine-collagen/front.jpg',
       desc: 'Type I peptides hydrolysed to a stated weight, with the vitamin C, zinc and biotin that carry the authorised claims.',
       facts: [['Protein ≥90%', 1], ['~2 kDa', 0], ['Allergen: fish', 0]],
       pr: '€39', per: '€1.30 / day · 300 g' },
+    { s: 'sidr-honey', href: 'product.html', cat: 'Raw honey', tag: 'The flagship',
+      name: 'Wild Yemeni Sidr Honey', img: 'assets/img/products/sidr-honey/front.jpg',
+      desc: 'Raw, unfiltered, from one valley in Hadhramaut — the autumn Sidr bloom, coarse-strained and never heated.',
+      facts: [['Ziziphus — monofloral', 1], ['HMF 4.2', 0], ['Moisture 16.8%', 0]],
+      pr: '€49', per: 'Harvest 2025 · 250 g' },
     { s: 'black-seed-oil', href: 'black-seed-oil.html', cat: 'Cold-pressed oil', tag: 'TQ graded',
       name: 'Cold-Pressed Black Seed Oil', img: 'assets/img/products/black-seed-oil/front.jpg',
       desc: 'Ethiopian Nigella sativa pressed below 40 °C. The thymoquinone number on the front is this batch\'s HPLC result.',
@@ -474,7 +474,7 @@ function home() {
   </div>
   <div class="hright">
     <div class="hart">
-      <img src="assets/img/05-jar-sidr.jpg" alt="SAFA Sidr honey jar — raw Wadi Do'an honey behind its label, batch SF-25-011" width="900" height="1117">
+      <img src="assets/img/11-house-hero.jpg" alt="The SAFA range together: the four collagen pouches, the Sidr honey jar, cold-pressed black seed oil and the gift box" width="1200" height="900">
     </div>
     <div class="hstats">
       <div><b>№ 011</b><span>batches published</span></div>
