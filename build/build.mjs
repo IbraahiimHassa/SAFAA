@@ -5,7 +5,7 @@
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { site, nav, footer, props, ingredients, products, catalogue } from './data.mjs';
+import { site, nav, footer, props, ingredientLib, houseIngredients, products, catalogue } from './data.mjs';
 
 const OUT = join(dirname(fileURLToPath(import.meta.url)), '..', 'site');
 
@@ -23,16 +23,6 @@ const I = {
   arrow: '<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5"/></svg>',
   search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>',
   user:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>',
-};
-
-/* ingredient marks — drawn, not stock photography */
-const MARK = {
-  sidr:  '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M32 58V22"/><path d="M32 34c-9 0-14-5-14-13 8 0 14 5 14 13z"/><path d="M32 30c9 0 14-5 14-13-8 0-14 5-14 13z"/><path d="M32 46c-7 0-11-4-11-10 6 0 11 4 11 10z"/><circle cx="41" cy="38" r="4.5"/><path d="M32 40h4.5"/></svg>',
-  comb:  '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m32 8 9 5.5v11L32 30l-9-5.5v-11z"/><path d="m14 19 9 5.5v11L14 41l-9-5.5v-11z" transform="translate(4)"/><path d="m50 19 9 5.5v11L50 41l-9-5.5v-11z" transform="translate(-4)"/><path d="m32 40 9 5.5v11L32 62l-9-5.5v-11z" transform="translate(0 -4)"/></svg>',
-  fish:  '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 32c9-11 19-15 28-15 8 0 14 6 18 15-4 9-10 15-18 15-9 0-19-4-28-15z"/><circle cx="44" cy="27" r="2" fill="currentColor" stroke="none"/><path d="M6 32l8-7m-8 7 8 7M24 22c4 6 4 14 0 20M34 20c4 7 4 17 0 24"/></svg>',
-  seed:  '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M32 10c6 5 9 11 9 17s-3 12-9 17c-6-5-9-11-9-17s3-12 9-17z"/><path d="M32 14v30"/><ellipse cx="17" cy="46" rx="5" ry="3.4" transform="rotate(-25 17 46)"/><ellipse cx="32" cy="52" rx="5" ry="3.4"/><ellipse cx="47" cy="46" rx="5" ry="3.4" transform="rotate(25 47 46)"/></svg>',
-  citrus:'<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="32" cy="32" r="23"/><circle cx="32" cy="32" r="18"/><path d="M32 14v36M14 32h36M19.3 19.3l25.4 25.4M44.7 19.3 19.3 44.7"/></svg>',
-  mol:   '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="32" cy="17" r="6"/><circle cx="16" cy="43" r="6"/><circle cx="48" cy="43" r="6"/><circle cx="32" cy="34" r="4"/><path d="m32 23 0 7M28.5 36.5 20.5 40M35.5 36.5l8 3.5M21 41h22"/></svg>',
 };
 
 /* ---------------- shared chrome ---------------- */
@@ -139,27 +129,35 @@ ${links.map(([href, t]) => `        <a href="${href}">${t}</a>`).join('\n')}
 `;
 
 /* ---------------- shared blocks ---------------- */
-const shelf = (slugs) => `<div class="shelf">
-${slugs.map(s => { const c = catalogue[s]; return `    <a class="scard" href="${c.href}">
+const shelf = (slugs, useGlass) => `<div class="shelf">
+${slugs.map(s => { const c = catalogue[s]; const src = (useGlass && c.glass) || c.img; return `    <a class="scard" href="${c.href}">
       <span class="flag">${c.flag}</span>
-      <span class="art"><img src="${c.img}" alt="${c.name}" loading="lazy"></span>
+      <span class="art"><img src="${src}" alt="${c.name}" loading="lazy"></span>
       <h3>${c.name}</h3>
       <p>${c.desc}</p>
       <span class="pr">${c.pr} <small>${c.note}</small></span>
     </a>`; }).join('\n')}
   </div>`;
 
-/* the mark sits outside <details> — a closed <details> hides every child
-   that isn't its <summary>, which would swallow the artwork */
-const ingredientGrid = () => `<div class="ingrid">
-${ingredients.map(([mark, name, body]) => `    <div class="ing">
-      <div class="top">${MARK[mark]}</div>
+/* the photo sits outside <details> — a closed <details> hides every child
+   that isn't its <summary>, which would swallow the image */
+const ingredientGrid = (keys) => {
+  const n = keys.length;
+  const cols = Math.min(n, 6);
+  const cap = n < 4 ? `;max-width:${n * 260}px` : '';
+  return `<div class="ingrid" style="grid-template-columns:repeat(${cols},minmax(0,1fr))${cap}">
+${keys.map(k => {
+    const [name, body] = ingredientLib[k];
+    return `    <div class="ing">
+      <div class="top"><img src="assets/img/ingredients/${k}.jpg" alt="${name}" loading="lazy" width="600" height="600"></div>
       <details>
         <summary>${name}</summary>
         <div class="a">${body}</div>
       </details>
-    </div>`).join('\n')}
+    </div>`;
+  }).join('\n')}
   </div>`;
+};
 
 const propsStrip = () => `<div class="props">
   <div class="in">
@@ -321,8 +319,8 @@ ${p.acc.map(([t, body, open]) => `      <details${open ? ' open' : ''}>
 <section class="wrap" aria-labelledby="ing-h" style="padding-top:0">
   <p class="kick">What's actually in it</p>
   <h2 id="ing-h">Ingredients, <em>and what we can prove.</em></h2>
-  <p class="secsub">Claims here use EFSA-authorised wording only. Where a benefit isn't authorised, we don't imply it — we publish the number instead.</p>
-  ${ingredientGrid()}
+  <p class="secsub">${p.ingNote || "Claims here use EFSA-authorised wording only. Where a benefit isn't authorised, we don't imply it — we publish the number instead."}</p>
+  ${ingredientGrid(p.ing)}
 </section>
 ${p.cmp ? `
 <section class="wrap" aria-labelledby="cmp-h" style="padding-top:0">
@@ -520,7 +518,7 @@ ${cards.map(c => `    <a class="pcard" href="${c.href}">
   <p class="kick">The ritual line</p>
   <h2 id="shelf-h">The classic stays. <em>The ritual multiplies.</em></h2>
   <p class="secsub">The drink you already pour every morning, rebuilt to carry a full certified dose — coffee and matcha, and the rituals only we grew up with. The classic jars and tubs never leave the shelf.</p>
-  ${shelf(['collagen-coffee', 'collagen-matcha', 'qahwa-collagen', 'sidr-sticks'])}
+  ${shelf(['marine-collagen', 'collagen-coffee', 'collagen-matcha', 'qahwa-collagen'], true)}
 </section>
 
 <section class="bandfull" aria-label="The SAFA ritual line family">
@@ -534,7 +532,7 @@ ${cards.map(c => `    <a class="pcard" href="${c.href}">
   <p class="kick">What's actually in it</p>
   <h2 id="ing-h">Ingredients, <em>and what we can prove.</em></h2>
   <p class="secsub">Claims here use EFSA-authorised wording only. Where a benefit isn't authorised, we don't imply it — we publish the number instead.</p>
-  ${ingredientGrid()}
+  ${ingredientGrid(houseIngredients)}
 </section>
 
 <section id="proof" class="plate" aria-labelledby="proof-h">
@@ -571,12 +569,9 @@ ${cards.map(c => `    <a class="pcard" href="${c.href}">
 
 <section class="wrap film" aria-labelledby="film-h">
   <p class="kick">The house, filmed</p>
-  <h2 id="film-h">Quiet mornings, <em>on record.</em></h2>
-  <div class="filmgrid">
-    <video controls muted loop playsinline preload="metadata" poster="assets/img/10-life-honey.jpg" src="assets/video/safa-honey.mp4" aria-label="Sidr honey pouring, cinematic film"></video>
-    <video controls muted loop playsinline preload="metadata" poster="assets/img/09-life-qahwa.jpg" src="assets/video/safa-qahwa.mp4" aria-label="Morning qahwa ritual, cinematic film"></video>
-    <video controls muted loop playsinline preload="metadata" poster="assets/img/08-family-lineup.jpg" src="assets/video/safa-family.mp4" aria-label="SAFA product family, cinematic film"></video>
-  </div>
+  <h2 id="film-h">Every product, <em>in one reel.</em></h2>
+  <p class="secsub">Thirty-four seconds: the honey, the sticks, the collagen and its three rituals, the black seed, the whole family.</p>
+  <video class="filmone" style="max-width:none" controls muted loop playsinline preload="metadata" poster="assets/img/08-family-lineup.jpg" src="assets/video/safa-film.mp4" aria-label="SAFA Nutrition promotional film — the full product range"></video>
 </section>
 
 <section id="kits" class="wrap" aria-labelledby="gift-h" style="padding-top:0">

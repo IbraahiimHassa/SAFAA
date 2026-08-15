@@ -303,11 +303,11 @@ h3.pl em{font-style:italic;color:var(--amber-deep)}
 @media(max-width:620px){.ingrid{grid-template-columns:repeat(2,1fr)}}
 .ing{border:1px solid var(--line);background:var(--card);overflow:hidden}
 .ing .top{
-  aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:22px;
-  background:radial-gradient(75% 65% at 50% 45%, rgba(185,127,36,.10), transparent 74%);
+  aspect-ratio:1/1;overflow:hidden;background:var(--paper-2);
   border-bottom:1px solid var(--line);
 }
-.ing .top svg{width:100%;height:100%;max-width:112px;color:var(--amber-deep)}
+.ing .top img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.ing:hover .top img{transform:scale(1.04)}
 .ing summary{
   cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;
   padding:13px 14px;font-size:13px;font-weight:700;line-height:1.25;

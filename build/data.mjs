@@ -67,16 +67,26 @@ export const props = [
   ['ship', 'Free EU delivery', 'Over €55 · dispatched from Amsterdam'],
 ];
 
-/* --- ingredient grid (replaces reference site's stock ingredient photos
-       with drawn marks — we don't buy stock imagery) --------------------- */
-export const ingredients = [
-  ['sidr', 'Sidr (Ziziphus)', 'The autumn flowering of the Sidr tree in Wadi Do\'an. <b>Pollen analysis on every batch</b> is what proves the honey is monofloral — and what a blend can never show you.'],
-  ['comb', 'Raw, unheated honey', 'Coarse-strained at the apiary, never pasteurised. <b>HMF is stated per batch</b> — the number that tells you whether honey has been heated or aged.'],
-  ['fish', 'Marine collagen', 'Type I peptides hydrolysed from wild-caught fish skin to <b>~2 kDa, the size the absorption research used</b>. Marine by design: the lowest-friction halal choice.'],
-  ['seed', 'Nigella sativa', 'Ethiopian black seed, mechanically pressed below 40 °C. <b>Thymoquinone measured by HPLC</b> and printed on the front — the grade, not a range.'],
-  ['citrus', 'Vitamin C', 'Ascorbic acid at 80 mg — 100% RI. Carries the one authorised claim we are allowed to make: <b>vitamin C contributes to normal collagen formation</b> for the normal function of skin.'],
-  ['mol', 'Zinc & biotin', 'Zinc citrate and D-biotin at authorised levels. Both <b>contribute to the maintenance of normal hair, skin and nails</b> — EFSA wording, nothing embroidered on top.'],
-];
+/* --- ingredient library -----------------------------------------------
+   Keyed so each product shows only what is actually in it. Photographed to a
+   single spec (top-down, warm paper ground, one ingredient, no props, no text)
+   so any subset still reads as one grid. */
+export const ingredientLib = {
+  'sidr-blossom':    ['Sidr (Ziziphus)', 'The autumn flowering of the Sidr tree in Wadi Do\'an. <b>Pollen analysis on every batch</b> is what proves the honey is monofloral — and what a blend can never show you.'],
+  'raw-honey':       ['Raw, unheated honey', 'Coarse-strained at the apiary, never pasteurised. <b>HMF is stated per batch</b> — the number that tells you whether honey has been heated or aged.'],
+  'marine-collagen': ['Marine collagen', 'Type I peptides hydrolysed from wild-caught fish skin to <b>~2 kDa, the size the absorption research used</b>. Marine by design: the lowest-friction halal choice.'],
+  'nigella':         ['Nigella sativa', 'Ethiopian black seed, mechanically pressed below 40 °C. <b>Thymoquinone measured by HPLC</b> and printed on the front — the grade, not a range.'],
+  'arabica':         ['Single-origin arabica', 'Lightly roasted and ground for the brew it is built for — hot water for the coffee, fine for the dallah. <b>Cupped per roast</b>, origin on the batch page.'],
+  'matcha':          ['Ceremonial matcha', 'First-harvest, stone-ground in Japan. <b>Tested for lead and radiation</b> as standard for Japanese imports — both reports sit behind the QR.'],
+  'cardamom':        ['Hail cardamom', 'True hail pods, ground fresh. The half of qahwa that people actually taste — and the half most blends cut with filler.'],
+  'saffron':         ['Negin saffron', 'Negin-grade threads. Saffron is <b>the most adulterated spice on earth</b>, so ours ships with its own ISO 3632 grade on the batch page.'],
+  'mct':             ['MCT powder', 'Coconut-derived, for body in the cup. It is what makes a collagen coffee froth like a flat white instead of sitting thin.'],
+  'vitamin-c':       ['Vitamin C', 'Ascorbic acid at 80 mg — 100% RI. Carries the one authorised claim we are allowed to make: <b>vitamin C contributes to normal collagen formation</b> for the normal function of skin.'],
+  'zinc-biotin':     ['Zinc & biotin', 'Zinc citrate and D-biotin at authorised levels. Both <b>contribute to the maintenance of normal hair, skin and nails</b> — EFSA wording, nothing embroidered on top.'],
+};
+
+/* what the homepage shows — the house, not any one product */
+export const houseIngredients = ['sidr-blossom', 'raw-honey', 'marine-collagen', 'nigella', 'vitamin-c', 'zinc-biotin'];
 
 /* --- the free-with-a-plan kit, per product ----------------------------
    ⚠ PROPOSED accessory values — confirm against real sourcing before launch. */
@@ -102,6 +112,8 @@ export const products = [
     cat: 'Raw honey · Single wadi · 250 g',
     sub: 'Raw · unfiltered · single wadi · 250 g — from the autumn flowering of the Sidr tree in Wadi Do\'an, Hadhramaut. Coarse-strained only, never heated, never blended.',
     dir: 'products/sidr-honey', kit: kits.honey,
+    ing: ["sidr-blossom", "raw-honey"],
+    ingNote: 'Two things, and one of them is a flower. The ingredients list on this jar reads: <b>honey</b>. Everything else here is what we measured, not what we mixed in.',
     batch: 'SF-25-011', tested: '12 Aug 2026',
     bullets: [
       ['leaf', 'One valley, one flowering — not a country, not a blend'],
@@ -178,6 +190,7 @@ export const products = [
     cat: 'Type I peptides · Unflavoured · 300 g, 30 doses',
     sub: 'Type I peptides · unflavoured · 300 g, 30 doses — hydrolysed from wild-caught fish to a stated molecular weight, with the vitamin C, zinc and biotin that carry the authorised claims. No fillers, no flavours, no guesswork.',
     dir: 'products/marine-collagen', kit: kits.collagen,
+    ing: ["marine-collagen", "vitamin-c", "zinc-biotin"],
     batch: 'SF-25-021', tested: '09 Aug 2026',
     bullets: [
       ['doc', '≥90% protein and ~2 kDa — stated, not implied'],
@@ -226,6 +239,7 @@ export const products = [
     ],
     gallery: [
       ['products/marine-collagen/front.jpg', 'Front of the pouch'],
+      ['ritual/glass-collagen.jpg', 'Dissolved clear in a glass of water'],
       ['products/marine-collagen/back.jpg', 'Back of the pouch — spec table and the record'],
       ['products/marine-collagen/use.jpg', 'Collagen dissolving clear in a glass'],
       ['products/daily-sachets/front.jpg', 'Daily Sachets companion box'],
@@ -255,6 +269,8 @@ export const products = [
     cat: 'Nigella sativa · Ethiopian seed · 100 ml',
     sub: 'Nigella sativa · Ethiopian seed · 100 ml — pressed cold, never refined, never diluted. The thymoquinone number on the front is this batch\'s HPLC result, not a marketing range.',
     dir: 'products/black-seed-oil', kit: kits.oil,
+    ing: ["nigella"],
+    ingNote: 'One ingredient. The whole product is a single cold-pressed seed — so the only thing worth proving is what is in it, and at what strength.',
     batch: 'SF-25-031', tested: '07 Aug 2026',
     bullets: [
       ['doc', 'Thymoquinone % measured by HPLC and printed on the front'],
@@ -333,6 +349,7 @@ export const products = [
     cat: 'Single-origin arabica · 414 g, 25 servings',
     sub: 'Single-origin arabica · 414 g, 25 servings — your morning coffee rebuilt to carry a full 10 g marine collagen dose. Same ritual, same taste, one quiet upgrade.',
     dir: 'products/collagen-coffee', kit: kits.coffee,
+    ing: ["arabica", "marine-collagen", "mct", "vitamin-c"],
     batch: 'SF-25-021', tested: '09 Aug 2026',
     bullets: [
       ['spoon', '10 g Type I collagen in the cup you already pour'],
@@ -381,6 +398,7 @@ export const products = [
     ],
     gallery: [
       ['products/collagen-coffee/front.jpg', 'Front of the pouch'],
+      ['ritual/glass-coffee.jpg', 'The cup it becomes'],
       ['products/collagen-coffee/back.jpg', 'Back of the pouch — spec table'],
       ['products/collagen-coffee/use.jpg', 'Collagen coffee poured'],
       ['08-family-lineup.jpg', 'The ritual line in a row'],
@@ -399,6 +417,7 @@ export const products = [
     cat: 'Ceremonial grade · 286 g, 25 servings',
     sub: 'Ceremonial grade · 286 g, 25 servings — stone-ground Japanese matcha with the day\'s full 10 g marine collagen dose whisked invisibly inside. Green as it should be.',
     dir: 'products/collagen-matcha', kit: kits.matcha,
+    ing: ["matcha", "marine-collagen", "vitamin-c"],
     batch: 'SF-25-021', tested: '09 Aug 2026',
     bullets: [
       ['spoon', '10 g Type I collagen, whisked invisibly inside'],
@@ -447,6 +466,7 @@ export const products = [
     ],
     gallery: [
       ['products/collagen-matcha/front.jpg', 'Front of the pouch'],
+      ['ritual/glass-matcha.jpg', 'The bowl it becomes'],
       ['products/collagen-matcha/back.jpg', 'Back of the pouch — spec table'],
       ['products/collagen-matcha/use.jpg', 'Matcha whisked to a foam'],
       ['08-family-lineup.jpg', 'The ritual line in a row'],
@@ -465,6 +485,7 @@ export const products = [
     cat: 'Arabic coffee, cardamom & saffron · 380 g, 25 servings',
     sub: 'Arabic coffee, cardamom &amp; saffron · 380 g, 25 servings — the qahwa your family already brews, rebuilt to carry a full 10 g collagen dose. The ritual line no one else can follow.',
     dir: 'products/qahwa-collagen', kit: kits.qahwa,
+    ing: ["arabica", "cardamom", "saffron", "marine-collagen"],
     batch: 'SF-25-041', tested: 'wave 2 — before first sale',
     bullets: [
       ['spoon', '10 g Type I collagen dissolved silently in the simmer'],
@@ -513,6 +534,7 @@ export const products = [
     ],
     gallery: [
       ['products/qahwa-collagen/front.jpg', 'Front of the pouch'],
+      ['ritual/glass-qahwa.jpg', 'The finjan it becomes'],
       ['products/qahwa-collagen/back.jpg', 'Back of the pouch — spec table'],
       ['09-life-qahwa.jpg', 'The morning qahwa ritual'],
       ['08-family-lineup.jpg', 'The ritual line in a row'],
@@ -531,6 +553,8 @@ export const products = [
     cat: '12 × 10 g single-serve · Net 120 g',
     sub: '12 × 10 g single-serve sticks · Net 120 g — the exact honey from the 250 g jar, batch for batch, poured into a stick you can carry. Tear, pour, done.',
     dir: 'products/sidr-sticks', kit: kits.sticks,
+    ing: ["sidr-blossom", "raw-honey"],
+    ingNote: 'The ingredients list reads: <b>honey</b>. Same batch as the jar, same single flowering — just poured into a stick.',
     batch: 'SF-25-011', tested: '12 Aug 2026',
     bullets: [
       ['spoon', 'Ten grams is one honest spoonful — the dose stays true'],
@@ -589,11 +613,11 @@ export const products = [
 /* --- catalogue entries used by cross-sell shelves & card grids --------- */
 export const catalogue = {
   'sidr-honey':          { href: 'product.html', name: 'Wild Yemeni Sidr Honey', flag: 'The house flagship', img: 'assets/img/products/sidr-honey/front.jpg', desc: 'Raw, pollen-verified, single wadi.', pr: '€49', note: '· 250 g' },
-  'marine-collagen':     { href: 'marine-collagen.html', name: 'Marine Collagen', flag: 'The daily anchor', img: 'assets/img/products/marine-collagen/front.jpg', desc: 'Type I peptides, unflavoured — the workhorse.', pr: '€39', note: '· €1.30 / day' },
+  'marine-collagen':     { href: 'marine-collagen.html', name: 'Marine Collagen', flag: 'The daily anchor', img: 'assets/img/products/marine-collagen/front.jpg', desc: 'Type I peptides, unflavoured — the workhorse.', pr: '€39', note: '· €1.30 / day' , glass: 'assets/img/ritual/glass-collagen.jpg' },
   'black-seed-oil':      { href: 'black-seed-oil.html', name: 'Black Seed Oil', flag: 'Cold-pressed', img: 'assets/img/products/black-seed-oil/front.jpg', desc: 'TQ 2.1% verified — the classic, measured.', pr: '€29', note: '· 100 ml' },
-  'collagen-coffee':     { href: 'collagen-coffee.html', name: 'Collagen Coffee', flag: 'The ritual line', img: 'assets/img/products/collagen-coffee/front.jpg', desc: 'Single-origin arabica carrying the day\'s dose.', pr: '€42', note: '· 25 cups' },
-  'collagen-matcha':     { href: 'collagen-matcha.html', name: 'Collagen Matcha', flag: 'The ritual line', img: 'assets/img/products/collagen-matcha/front.jpg', desc: 'Ceremonial matcha, whisked as always.', pr: '€44', note: '· 25 bowls' },
-  'qahwa-collagen':      { href: 'qahwa-collagen.html', name: 'Qahwa + Collagen', flag: 'Ours alone', img: 'assets/img/products/qahwa-collagen/front.jpg', desc: 'Cardamom-and-saffron qahwa with a full dose.', pr: '€44', note: '· wave 2' },
+  'collagen-coffee':     { href: 'collagen-coffee.html', name: 'Collagen Coffee', flag: 'The ritual line', img: 'assets/img/products/collagen-coffee/front.jpg', desc: 'Single-origin arabica carrying the day\'s dose.', pr: '€42', note: '· 25 cups' , glass: 'assets/img/ritual/glass-coffee.jpg' },
+  'collagen-matcha':     { href: 'collagen-matcha.html', name: 'Collagen Matcha', flag: 'The ritual line', img: 'assets/img/products/collagen-matcha/front.jpg', desc: 'Ceremonial matcha, whisked as always.', pr: '€44', note: '· 25 bowls' , glass: 'assets/img/ritual/glass-matcha.jpg' },
+  'qahwa-collagen':      { href: 'qahwa-collagen.html', name: 'Qahwa + Collagen', flag: 'Ours alone', img: 'assets/img/products/qahwa-collagen/front.jpg', desc: 'Cardamom-and-saffron qahwa with a full dose.', pr: '€44', note: '· wave 2' , glass: 'assets/img/ritual/glass-qahwa.jpg' },
   'sidr-sticks':         { href: 'sidr-sticks.html', name: 'Sidr Sticks', flag: 'Same honey, new form', img: 'assets/img/products/sidr-sticks/front.jpg', desc: 'Twelve 10 g single-serve sticks.', pr: '€39', note: '· 12 sticks' },
   'daily-sachets':       { href: '#', name: 'Daily Sachets', flag: 'Companion to collagen', img: 'assets/img/products/daily-sachets/front.jpg', desc: 'Thirty pre-weighed doses. Torn and done.', pr: '€45', note: '· 30 days' },
   'black-seed-softgels': { href: 'black-seed-oil.html', name: 'Black Seed Softgels', flag: 'Companion to the oil', img: 'assets/img/products/black-seed-softgels/front.jpg', desc: '1000 mg of the same TQ-graded oil, no pepper.', pr: '€27', note: '· 60 softgels' },

@@ -64,7 +64,10 @@ values and must be replaced with genuine records:
 | Wadi Do'an sourcing, harvest year, "300 numbered jars" | site, packaging | Matches strategy intent — confirm against actual supplier contract |
 | Reviews/testimonials | none shown anywhere | Deliberate: no fake social proof, collect real reviews from day one |
 | Free-with-a-plan starter kits (dipper €14, chasen €22, dallah €29, frother €19…) | `build/data.mjs` → `kits`, shown on every PDP | **PLACEHOLDER accessory values** — proposed sourcing costs, never quoted. Confirm unit cost + landed shipping before this mechanic goes live; it is the largest single COGS commitment on the site |
-| Product photography & film (`site/assets/img`, `site/assets/video`) | site, docs | **AI-generated concept visuals** (Higgsfield: nano-banana-pro images, Seedance clips) from our real label designs — replace with studio photography of actual production packs before launch; some generated pack text carries small AI typos |
+| Product photography & film (`site/assets/img`, `site/assets/video`) | site, docs | **AI-generated concept visuals** (Higgsfield) from our real label designs — replace with studio photography of actual production packs before launch |
+| `site/assets/video/safa-family.mp4` (also inside `safa-film.mp4`) | homepage film | Still carries the **old pack text** including "soffron" on the qahwa pouch. Not legible at playback size, but reshoot with real product before launch |
+| Ingredient photography (`site/assets/img/ingredients`) | ingredient grids | AI-generated to a single spec. Deliberately contains **no text**, so nothing to mis-render — but they are illustrations of the ingredient, not photographs of our actual supply |
+| Ritual glassware (`site/assets/img/ritual`) | homepage shelf, collagen galleries | AI-generated. Glassware is **deliberately unbranded** — printing a logo on it would reintroduce the AI-text problem |
 
 No testimonial, award, review count or certification is invented anywhere on the site —
 the trust architecture is built to be filled with real documents, not to fake them.
