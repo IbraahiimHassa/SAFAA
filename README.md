@@ -8,6 +8,7 @@ lab reports, halal certification shown with body + number or not claimed at all.
 
 | Path | Contents |
 |---|---|
+| `docs/00-session-handover.md` | **Start here in a new session** — state of play, decisions, placeholders, next moves |
 | `docs/01-competitor-teardown.md` | Reformed / Balqees / Sunna teardown + where SAFA wins |
 | `docs/02-product-strategy.md` | Product ladders, new-format companions, pricing & AOV mechanics, launch waves |
 | `docs/03-supplier-qc-specs.md` | Procurement-grade QC specs per ingredient (send to suppliers) |

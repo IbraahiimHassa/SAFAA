@@ -1,5 +1,7 @@
 # Tasks
 
+> New session? Read `docs/00-session-handover.md` first.
+
 ## Active
 
 - [ ] **Review the shipped design package** - approve "Apothecary Ledger" direction or override to runner-up (green "Batch Ledger") - today
