@@ -55,7 +55,7 @@ export const nav = [
 export const footer = [
   ['Shop', [
     ['product.html', 'Sidr Honey'], ['marine-collagen.html', 'Marine Collagen'],
-    ['black-seed-oil.html', 'Black Seed Oil'], ['index.html#ritual', 'The ritual line'],
+    ['black-seed-oil.html', 'Black Seed Oil'], ['index.html#fam-collagen', 'The collagen line'],
     ['morning-ritual.html', 'Bundles & kits'],
   ]],
   ['About', [
@@ -96,6 +96,63 @@ export const ingredientLib = {
 
 /* what the homepage shows — the house, not any one product */
 export const houseIngredients = ['sidr-blossom', 'raw-honey', 'marine-collagen', 'nigella', 'vitamin-c', 'zinc-biotin'];
+
+
+/* --- the range, as it actually is: three goods, each with its formats -----
+   The classic never leaves the shelf; the formats surround it. This is the
+   strategy in docs/02, expressed as structure rather than as three loose
+   shelves that hid which product belonged to which. */
+export const families = [
+  {
+    id: 'honey', kick: 'Raw honey', classic: 'sidr-honey',
+    line: 'One valley, one flowering — in whichever form the morning takes.',
+    formats: ['sidr-sticks', 'black-seed-honey', 'tasting-flight'],
+  },
+  {
+    id: 'collagen', kick: 'Daily collagen', classic: 'marine-collagen',
+    line: 'One certified batch, poured into a ritual you already have.',
+    formats: ['daily-sachets', 'collagen-coffee', 'collagen-matcha', 'qahwa-collagen'],
+  },
+  {
+    id: 'blackseed', kick: 'Cold-pressed black seed', classic: 'black-seed-oil',
+    line: 'One pressing, one thymoquinone grade — with the pepper or without it.',
+    formats: ['black-seed-softgels'],
+  },
+];
+
+/* the three classics carry a fuller card than the formats do */
+export const classics = {
+  'sidr-honey': {
+    cat: 'Raw honey', tag: 'The flagship',
+    desc: "Raw, unfiltered, from one valley in Hadhramaut — the autumn Sidr bloom, coarse-strained and never heated.",
+    facts: [['Ziziphus — monofloral', 1], ['HMF 4.2', 0], ['Moisture 16.8%', 0]],
+    pr: '€49', per: 'Harvest 2025 · 250 g',
+  },
+  'marine-collagen': {
+    cat: 'Daily collagen', tag: 'Most ordered', amber: 1,
+    desc: 'Type I peptides hydrolysed to a stated weight, with the vitamin C, zinc and biotin that carry the authorised claims.',
+    facts: [['Protein ≥90%', 1], ['~2 kDa', 0], ['Allergen: fish', 0]],
+    pr: '€39', per: '€1.30 / day · 300 g',
+  },
+  'black-seed-oil': {
+    cat: 'Cold-pressed oil', tag: 'TQ graded',
+    desc: "Ethiopian Nigella sativa pressed below 40 °C. The thymoquinone number on the front is this batch's HPLC result.",
+    facts: [['TQ 2.1% (HPLC)', 1], ['Solvent-free', 0], ['≤40 °C', 0]],
+    pr: '€29', per: 'TQ verified per batch · 100 ml',
+  },
+};
+
+/* short factual line under each format card */
+export const formatSpec = {
+  'sidr-sticks': '12 × 10 g sticks · €39',
+  'black-seed-honey': 'Folded with nigella · €29',
+  'tasting-flight': 'Three 40 g minis · €35',
+  'daily-sachets': '30 pre-weighed doses · €45',
+  'collagen-coffee': 'Single-origin arabica · €42',
+  'collagen-matcha': 'Ceremonial grade · €44',
+  'qahwa-collagen': 'Cardamom & saffron · €44',
+  'black-seed-softgels': '60 × 1000 mg · €27',
+};
 
 /* --- the free-with-a-plan kit, per product ----------------------------
    ⚠ PROPOSED accessory values — confirm against real sourcing before launch. */

@@ -5,7 +5,7 @@
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { site, nav, footer, props, ingredientLib, houseIngredients, products, catalogue } from './data.mjs';
+import { site, nav, footer, props, ingredientLib, houseIngredients, products, catalogue, families, classics, formatSpec } from './data.mjs';
 
 const OUT = join(dirname(fileURLToPath(import.meta.url)), '..', 'site');
 
@@ -492,23 +492,6 @@ refresh();`;
 
 /* ---------------- homepage ---------------- */
 function home() {
-  const cards = [
-    { s: 'marine-collagen', href: 'marine-collagen.html', cat: 'Daily collagen', tag: 'Most ordered', amber: 1,
-      name: 'Halal Marine Collagen', img: 'assets/img/products/marine-collagen/front.jpg',
-      desc: 'Type I peptides hydrolysed to a stated weight, with the vitamin C, zinc and biotin that carry the authorised claims.',
-      facts: [['Protein ≥90%', 1], ['~2 kDa', 0], ['Allergen: fish', 0]],
-      pr: '€39', per: '€1.30 / day · 300 g' },
-    { s: 'sidr-honey', href: 'product.html', cat: 'Raw honey', tag: 'The flagship',
-      name: 'Wild Yemeni Sidr Honey', img: 'assets/img/products/sidr-honey/front.jpg',
-      desc: 'Raw, unfiltered, from one valley in Hadhramaut — the autumn Sidr bloom, coarse-strained and never heated.',
-      facts: [['Ziziphus — monofloral', 1], ['HMF 4.2', 0], ['Moisture 16.8%', 0]],
-      pr: '€49', per: 'Harvest 2025 · 250 g' },
-    { s: 'black-seed-oil', href: 'black-seed-oil.html', cat: 'Cold-pressed oil', tag: 'TQ graded',
-      name: 'Cold-Pressed Black Seed Oil', img: 'assets/img/products/black-seed-oil/front.jpg',
-      desc: 'Ethiopian Nigella sativa pressed below 40 °C. The thymoquinone number on the front is this batch\'s HPLC result.',
-      facts: [['TQ 2.1% (HPLC)', 1], ['Solvent-free', 0], ['≤40 °C', 0]],
-      pr: '€29', per: 'TQ verified per batch · 100 ml' },
-  ];
 
   return head({
     title: 'SAFA Nutrition — Sidr honey, halal collagen & black seed, sold with their papers',
@@ -558,32 +541,39 @@ ${propsStrip()}
     <div>
       <p class="kick">The range</p>
       <h2 id="shop-h">Three goods, sold <em>with their papers.</em></h2>
+      <p class="secsub">The classic never leaves the shelf. Around each one sit the formats that make it fit an actual morning — a stick instead of a spoon, a sachet instead of a scoop, the cup you already pour.</p>
     </div>
-    <a class="more" href="#kits">See bundles &amp; kits →</a>
+    <a class="more" href="morning-ritual.html">See bundles &amp; kits →</a>
   </div>
-  <div class="pcards">
-${cards.map(c => `    <a class="pcard" href="${c.href}">
-      <span class="tag${c.amber ? ' amber' : ''}">${c.tag}</span>
+
+${families.map(f => {
+  const c = catalogue[f.classic], k = classics[f.classic];
+  return `  <div class="fam" id="fam-${f.id}">
+    <a class="pcard classic" href="${c.href}">
+      <span class="tag${k.amber ? ' amber' : ''}">${k.tag}</span>
       <span class="shot"><img src="${c.img}" alt="${c.name}" loading="lazy"></span>
       <span class="body">
-        <span class="cat">${c.cat}</span>
+        <span class="cat">${k.cat}</span>
         <h3>${c.name}</h3>
-        <span class="desc">${c.desc}</span>
-        <span class="facts">${c.facts.map(([f, ok]) => `<i${ok ? ' class="ok"' : ''}>${f}</i>`).join('')}</span>
+        <span class="desc">${k.desc}</span>
+        <span class="facts">${k.facts.map(([t, ok]) => `<i${ok ? ' class="ok"' : ''}>${t}</i>`).join('')}</span>
         <span class="foot">
-          <span class="price">${c.pr}<span class="per">${c.per}</span></span>
+          <span class="price">${k.pr}<span class="per">${k.per}</span></span>
           <span class="go">Shop →</span>
         </span>
       </span>
-    </a>`).join('\n')}
-  </div>
-</section>
-
-<section id="ritual" class="wrap" aria-labelledby="shelf-h" style="padding-top:0">
-  <p class="kick">The ritual line</p>
-  <h2 id="shelf-h">The classic stays. <em>The ritual multiplies.</em></h2>
-  <p class="secsub">The drink you already pour every morning, rebuilt to carry a full certified dose — coffee and matcha, and the rituals only we grew up with. The classic jars and tubs never leave the shelf.</p>
-  ${shelf(['marine-collagen', 'collagen-coffee', 'collagen-matcha', 'qahwa-collagen'], true)}
+    </a>
+    <div class="formats">
+      <p class="flabel"><b>Also as</b><span>${f.line}</span></p>
+      <div class="frow" style="--n:${f.formats.length}">
+${f.formats.map(sl => { const x = catalogue[sl]; return `        <a class="fcard" href="${x.href}">
+          <span class="fshot"><img src="${x.img}" alt="${x.name}" loading="lazy"></span>
+          <b>${x.name}</b>
+          <span class="fspec">${formatSpec[sl]}</span>
+        </a>`; }).join('\n')}
+      </div>
+    </div>
+  </div>`; }).join('\n')}
 </section>
 
 <section class="wrap" aria-labelledby="ing-h">
@@ -661,9 +651,18 @@ ${cards.map(c => `    <a class="pcard" href="${c.href}">
 </section>
 
 <section id="kits" class="wrap" aria-labelledby="gift-h" style="padding-top:0">
-  <p class="kick">Bundles &amp; kits</p>
-  <h2 id="gift-h">The complete <em>catalogue.</em></h2>
-  ${shelf(['daily-sachets', 'black-seed-softgels', 'tasting-flight', 'morning-ritual'])}
+  <p class="kick">Kits &amp; gifting</p>
+  <h2 id="gift-h">Where to start, <em>and what to give.</em></h2>
+  <p class="secsub">Two boxes that cross the whole house — one to find out which of the three you actually keep doing, one to hand to somebody else.</p>
+  <div class="shelf two">
+${['morning-ritual', 'tasting-flight'].map(sl => { const c = catalogue[sl]; return `    <a class="scard" href="${c.href}">
+      <span class="flag">${c.flag}</span>
+      <span class="art"><img src="${c.img}" alt="${c.name}" loading="lazy"></span>
+      <h3>${c.name}</h3>
+      <p>${c.desc}</p>
+      <span class="pr">${c.pr} <small>${c.note}</small></span>
+    </a>`; }).join('\n')}
+  </div>
 </section>
 
 <section id="origin" class="wrap" aria-labelledby="prov-h">

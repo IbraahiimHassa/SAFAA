@@ -681,3 +681,48 @@ footer{background:var(--ink);color:var(--paper);padding:72px 0 40px}
   .herodoc{left:auto;right:0;bottom:-40px;width:min(300px,86%)}
 }
 @media (prefers-reduced-motion: reduce){.herodoc{opacity:1;transform:rotate(-1.4deg)}}
+
+/* ---------- the range, as families ----------
+   Each good is a block: the classic at full card weight, its formats beside it.
+   Replaces the old three separate shelves, which hid which product belonged
+   to which good. */
+.fam{
+  display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
+  gap:46px;align-items:start;padding:46px 0;border-top:1px solid var(--line);
+}
+.fam:first-of-type{margin-top:40px}
+@media(max-width:1080px){.fam{grid-template-columns:1fr;gap:28px}}
+.pcard.classic{align-self:start}
+.pcard.classic .shot{aspect-ratio:4/3}
+
+.formats{display:flex;flex-direction:column;justify-content:flex-start;padding-top:4px}
+.flabel{margin-bottom:16px}
+.flabel b{
+  display:block;font-size:11px;letter-spacing:.2em;font-weight:800;
+  text-transform:uppercase;color:var(--amber-deep);
+}
+.flabel span{display:block;margin-top:6px;font-size:14.5px;color:var(--fg-muted);max-width:52ch}
+
+.frow{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:14px}
+@media(max-width:1080px){.frow{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}}
+@media(max-width:560px){.frow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* a lone format must not stretch to the full column */
+.frow[style*="--n:1"]{grid-template-columns:minmax(0,238px)}
+
+.fcard{
+  background:var(--card);border:1px solid var(--line);text-decoration:none;
+  display:flex;flex-direction:column;overflow:hidden;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .25s ease;
+}
+.fcard:hover{border-color:var(--line-strong);box-shadow:0 12px 28px rgba(38,32,26,.10);transform:translateY(-2px)}
+.fcard .fshot{
+  aspect-ratio:1/1;overflow:hidden;
+  background:radial-gradient(78% 66% at 50% 45%, rgba(185,127,36,.09), transparent 72%), var(--paper);
+}
+.fcard .fshot img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.fcard:hover .fshot img{transform:scale(1.05)}
+.fcard b{display:block;padding:12px 13px 0;font-family:var(--serif);font-weight:500;font-size:17px;line-height:1.16}
+.fcard .fspec{display:block;padding:5px 13px 14px;font-size:11.5px;color:var(--fg-muted)}
+.shelf.two{grid-template-columns:repeat(2,1fr)}
+@media(max-width:560px){.shelf.two{grid-template-columns:1fr}}
+.shelf.two .scard:nth-child(2){border-inline-end:0}
