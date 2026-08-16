@@ -404,13 +404,7 @@ addEventListener('load',()=>document.body.classList.add('loaded'));
     pnl.classList.toggle('open',!open);
   });
 })();
-/* hero film — poster only when the visitor asks for reduced motion */
-(function(){
-  var v=document.querySelector('.herovid'); if(!v) return;
-  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  v.src='assets/video/safa-hero.mp4';
-  var play=v.play(); if(play&&play.catch) play.catch(function(){});
-})();
+
 /* email capture — demo only, no ESP wired yet */
 (function(){
   var f=document.querySelector('.signform'); if(!f) return;

@@ -647,8 +647,14 @@ footer{background:var(--ink);color:var(--paper);padding:72px 0 40px}
 .vstrip.pending{border-color:rgba(138,90,23,.40);background:rgba(185,127,36,.08)}
 .vstrip.pending svg{color:var(--amber-deep)}
 .vstrip.pending b{color:var(--amber-deep)}
-.hart .herovid{
+/* hero: a slow push-in on the composed plate — no video payload, and the
+   pack fronts stay pin-sharp because nothing is re-encoded */
+.hart{overflow:hidden}
+.hart .heroshot{
   max-height:min(58vh,540px);width:auto;max-width:100%;height:auto;
-  object-fit:cover;background:var(--paper-2);
   box-shadow:0 30px 60px rgba(38,32,26,.18);
+  transform-origin:58% 72%;
+  animation:heropush 26s ease-in-out infinite alternate;
 }
+@keyframes heropush{from{transform:scale(1)}to{transform:scale(1.075)}}
+@media (prefers-reduced-motion: reduce){.hart .heroshot{animation:none}}

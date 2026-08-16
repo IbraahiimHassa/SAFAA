@@ -401,13 +401,7 @@ ${pageJs(p)}
 function pageJs(p) {
   return `addEventListener('load',()=>document.body.classList.add('loaded'));
 ${navJs}
-/* hero film — poster only when the visitor asks for reduced motion */
-(function(){
-  var v=document.querySelector('.herovid'); if(!v) return;
-  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  v.src='assets/video/safa-hero.mp4';
-  var play=v.play(); if(play&&play.catch) play.catch(function(){});
-})();
+
 /* email capture — demo only, no ESP wired yet */
 (function(){
   var f=document.querySelector('.signform'); if(!f) return;
@@ -534,9 +528,8 @@ function home() {
   </div>
   <div class="hright">
     <div class="hart">
-      <video class="herovid" autoplay muted loop playsinline preload="metadata"
-             poster="assets/img/11-house-hero.jpg" width="1280" height="720"
-             aria-label="The SAFA range: four collagen pouches, the Sidr honey jar and black seed softgels, with a sample of each in front"></video>
+      <img class="heroshot" src="assets/img/11-house-hero.jpg" width="1800" height="969"
+           alt="The SAFA range together: Marine Collagen, Collagen Coffee, Collagen Matcha and Qahwa + Collagen, the Sidr honey jar and black seed softgels, with a sample of each in front">
     </div>
     <div class="hstats">
       <div><b>№ 011</b><span>batches published</span></div>
