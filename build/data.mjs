@@ -102,7 +102,7 @@ export const houseIngredients = ['sidr-blossom', 'raw-honey', 'marine-collagen',
 export const bestsellers = [
   { slug: 'marine-collagen',  flavour: 'Unflavoured',        per: '€1.30 / day' },
   { slug: 'collagen-coffee',  flavour: 'Coffee',             per: '€1.68 / cup' },
-  { slug: 'collagen-matcha',  flavour: 'Matcha',             per: '€1.76 / bowl' },
+  { slug: 'collagen-matcha',  flavour: 'Matcha',             per: '€1.76 / bowl', tag: 'Most ordered' },
   { slug: 'qahwa-collagen',   flavour: 'Qahwa',              per: '€1.76 / cup' },
 ];
 
@@ -137,7 +137,7 @@ export const classics = {
     pr: '€49', per: 'Harvest 2025 · 250 g',
   },
   'marine-collagen': {
-    cat: 'Daily collagen', tag: 'Most ordered', amber: 1,
+    cat: 'Daily collagen', tag: 'The base',
     desc: 'Type I peptides hydrolysed to a stated weight, with the vitamin C, zinc and biotin that carry the authorised claims.',
     facts: [['Protein ≥90%', 1], ['~2 kDa', 0], ['Allergen: fish', 0]],
     pr: '€39', per: '€1.30 / day · 300 g',
@@ -148,6 +148,12 @@ export const classics = {
     facts: [['TQ 2.1% (HPLC)', 1], ['Solvent-free', 0], ['≤40 °C', 0]],
     pr: '€29', per: 'TQ verified per batch · 100 ml',
   },
+};
+
+/* optional badge on a format card, so the family row agrees with the
+   best-seller grid about which one actually sells */
+export const formatTag = {
+  'collagen-matcha': 'Most ordered',
 };
 
 /* short factual line under each format card */

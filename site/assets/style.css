@@ -676,9 +676,14 @@ footer{background:var(--ink);color:var(--paper);padding:72px 0 40px}
 .hd-r b{font-weight:700;color:var(--fg);text-align:end}
 .hd-r b.ok{color:var(--pass)}
 .hd-f{display:block;margin-top:9px;font-size:10.5px;color:var(--fg-muted);font-family:var(--serif);font-style:italic}
+/* Below 920 there is no column gutter left for the certificate to hang into,
+   so floating it lands it on top of the jar — the one thing in the frame that
+   has to stay readable. It stacks under the shot instead, full width. */
 @media(max-width:920px){
   .heroplate{max-width:none}
-  .herodoc{left:auto;right:0;bottom:-40px;width:min(300px,86%)}
+  .herodoc{position:static;width:auto;max-width:460px;margin-top:16px;transform:none}
+  .js .herodoc{transform:translateY(16px)}
+  .loaded .herodoc{transform:none}
 }
 @media (prefers-reduced-motion: reduce){.herodoc{opacity:1;transform:rotate(-1.4deg)}}
 
@@ -736,6 +741,13 @@ footer{background:var(--ink);color:var(--paper);padding:72px 0 40px}
   transition:border-color .2s ease,box-shadow .25s ease,transform .25s ease;
 }
 .bcard:hover{border-color:var(--line-strong);box-shadow:0 14px 32px rgba(38,32,26,.10);transform:translateY(-2px)}
+/* the one badge that says which of the four actually sells */
+.bcard .bshot,.fcard .fshot{position:relative}
+.btag,.ftag{
+  position:absolute;top:10px;inset-inline-start:10px;z-index:2;
+  background:var(--amber);color:var(--ink);font-size:9.5px;font-weight:800;
+  letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:999px;
+}
 .bcard .bshot{
   aspect-ratio:1/1;overflow:hidden;
   background:radial-gradient(78% 66% at 50% 45%, rgba(185,127,36,.10), transparent 72%), var(--paper-2);
@@ -775,12 +787,14 @@ footer{background:var(--ink);color:var(--paper);padding:72px 0 40px}
 
   /* hero */
   .hleft{padding:38px 22px 30px}
-  .hart{padding:0 22px 46px}
+  /* The photograph is the only full-bleed element on the phone, and it takes a
+     taller crop anchored right — the default 16/11 centre crop was clipping the
+     labelled jar off its own edge. The certificate returns to the text gutter. */
+  .hart{padding:0 0 34px}
+  .heroplate .heroshot{aspect-ratio:5/4;object-position:100% center}
   .hstats{padding:16px 22px;font-size:11.5px;gap:10px}
   .hstats b{font-size:14px}
-  .herodoc{position:static;width:auto;transform:none;margin-top:-26px;
-    margin-inline:14px;box-shadow:0 16px 34px rgba(38,32,26,.18)}
-  .js .herodoc{opacity:1;transform:none}
+  .herodoc{margin:18px 22px 0;box-shadow:0 14px 30px rgba(38,32,26,.16)}
 
   /* value props */
   .props .in{padding:18px 22px;gap:14px}

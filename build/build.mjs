@@ -5,7 +5,7 @@
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { site, nav, footer, props, ingredientLib, houseIngredients, products, catalogue, families, classics, formatSpec, bestsellers } from './data.mjs';
+import { site, nav, footer, props, ingredientLib, houseIngredients, products, catalogue, families, classics, formatSpec, formatTag, bestsellers } from './data.mjs';
 
 const OUT = join(dirname(fileURLToPath(import.meta.url)), '..', 'site');
 
@@ -546,8 +546,8 @@ ${propsStrip()}
     <a class="more" href="#shop">See the whole range →</a>
   </div>
   <div class="bgrid">
-${bestsellers.map(({slug, flavour, per}) => { const c = catalogue[slug]; return `    <a class="bcard" href="${c.href}">
-      <span class="bshot"><img src="${c.img}" alt="${c.name}" loading="lazy"></span>
+${bestsellers.map(({slug, flavour, per, tag}) => { const c = catalogue[slug]; return `    <a class="bcard" href="${c.href}">
+      <span class="bshot">${tag ? `<span class="btag">${tag}</span>` : ''}<img src="${c.img}" alt="${c.name}" loading="lazy"></span>
       <span class="bflav">${flavour}</span>
       <b>${c.name}</b>
       <span class="bmeta">From ${c.pr} <span>· ${per}</span></span>
@@ -587,7 +587,7 @@ ${families.map(f => {
       <p class="flabel"><b>Also as</b><span>${f.line}</span></p>
       <div class="frow" style="--n:${f.formats.length}">
 ${f.formats.map(sl => { const x = catalogue[sl]; return `        <a class="fcard" href="${x.href}">
-          <span class="fshot"><img src="${x.img}" alt="${x.name}" loading="lazy"></span>
+          <span class="fshot">${formatTag[sl] ? `<span class="ftag">${formatTag[sl]}</span>` : ''}<img src="${x.img}" alt="${x.name}" loading="lazy"></span>
           <b>${x.name}</b>
           <span class="fspec">${formatSpec[sl]}</span>
         </a>`; }).join('\n')}
