@@ -547,7 +547,7 @@ ${propsStrip()}
   </div>
   <div class="bgrid">
 ${bestsellers.map(({slug, flavour, per}) => { const c = catalogue[slug]; return `    <a class="bcard" href="${c.href}">
-      <span class="bshot"><img src="${c.glass || c.img}" alt="${c.name}" loading="lazy"></span>
+      <span class="bshot"><img src="${c.img}" alt="${c.name}" loading="lazy"></span>
       <span class="bflav">${flavour}</span>
       <b>${c.name}</b>
       <span class="bmeta">From ${c.pr} <span>· ${per}</span></span>

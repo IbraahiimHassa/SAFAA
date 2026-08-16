@@ -740,7 +740,7 @@ footer{background:var(--ink);color:var(--paper);padding:72px 0 40px}
   aspect-ratio:1/1;overflow:hidden;
   background:radial-gradient(78% 66% at 50% 45%, rgba(185,127,36,.10), transparent 72%), var(--paper-2);
 }
-.bcard .bshot img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.bcard .bshot img{width:100%;height:100%;object-fit:contain;padding:6px;transition:transform .6s cubic-bezier(.16,1,.3,1)}
 .bcard:hover .bshot img{transform:scale(1.04)}
 .bcard .bflav{
   display:block;padding:13px 15px 0;font-size:10.5px;letter-spacing:.16em;
