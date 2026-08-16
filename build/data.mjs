@@ -100,9 +100,9 @@ export const houseIngredients = ['sidr-blossom', 'raw-honey', 'marine-collagen',
 
 /* --- best sellers: the collagen flavours, first thing after the hero ----- */
 export const bestsellers = [
+  { slug: 'collagen-matcha',  flavour: 'Matcha',             per: '€1.76 / bowl', tag: 'Most ordered', amber: 1 },
   { slug: 'marine-collagen',  flavour: 'Unflavoured',        per: '€1.30 / day' },
   { slug: 'collagen-coffee',  flavour: 'Coffee',             per: '€1.68 / cup' },
-  { slug: 'collagen-matcha',  flavour: 'Matcha',             per: '€1.76 / bowl', tag: 'Most ordered', amber: 1 },
   { slug: 'qahwa-collagen',   flavour: 'Qahwa',              per: '€1.76 / cup' },
 ];
 
