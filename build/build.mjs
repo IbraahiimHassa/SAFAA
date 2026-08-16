@@ -164,8 +164,11 @@ ${slugs.map(s => { const c = catalogue[s]; const src = (useGlass && c.glass) || 
 const ingredientGrid = (keys) => {
   const n = keys.length;
   const cols = Math.min(n, 6);
+  /* column counts go out as custom properties, never as an inline
+     grid-template-columns — an inline declaration outranks every media query,
+     which is what pinned this grid to six columns on a 390px screen */
   const cap = n < 4 ? `;max-width:${n * 260}px` : '';
-  return `<div class="ingrid" style="grid-template-columns:repeat(${cols},minmax(0,1fr))${cap}">
+  return `<div class="ingrid" style="--cols:${cols};--cols-md:${Math.min(cols, 3)}${cap}">
 ${keys.map(k => {
     const [name, body] = ingredientLib[k];
     return `    <div class="ing">
@@ -546,8 +549,8 @@ ${propsStrip()}
     <a class="more" href="#shop">See the whole range →</a>
   </div>
   <div class="bgrid">
-${bestsellers.map(({slug, flavour, per, tag}) => { const c = catalogue[slug]; return `    <a class="bcard" href="${c.href}">
-      <span class="bshot">${tag ? `<span class="btag">${tag}</span>` : ''}<img src="${c.img}" alt="${c.name}" loading="lazy"></span>
+${bestsellers.map(({slug, flavour, per, tag, amber}) => { const c = catalogue[slug]; return `    <a class="bcard" href="${c.href}">
+      <span class="bshot">${tag ? `<span class="btag${amber ? ' amber' : ''}">${tag}</span>` : ''}<img src="${c.img}" alt="${c.name}" loading="lazy"></span>
       <span class="bflav">${flavour}</span>
       <b>${c.name}</b>
       <span class="bmeta">From ${c.pr} <span>· ${per}</span></span>

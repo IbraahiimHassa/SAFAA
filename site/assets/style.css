@@ -298,9 +298,8 @@ h3.pl em{font-style:italic;color:var(--amber-deep)}
 .arline{margin-top:26px;font-family:var(--ar);font-size:26px;color:var(--fg)}
 
 /* ---------- ingredient grid ---------- */
-.ingrid{margin-top:40px;display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-@media(max-width:1080px){.ingrid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:620px){.ingrid{grid-template-columns:repeat(2,1fr)}}
+.ingrid{margin-top:40px;display:grid;grid-template-columns:repeat(var(--cols,6),minmax(0,1fr));gap:16px}
+@media(max-width:1080px){.ingrid{grid-template-columns:repeat(var(--cols-md,3),minmax(0,1fr))}}
 .ing{border:1px solid var(--line);background:var(--card);overflow:hidden}
 .ing .top{
   aspect-ratio:1/1;overflow:hidden;background:var(--paper-2);
@@ -320,6 +319,27 @@ h3.pl em{font-style:italic;color:var(--amber-deep)}
 .ing details[open] summary::after{content:"–"}
 .ing .a{padding:0 14px 16px;font-size:12.5px;color:var(--fg-muted)}
 .ing .a b{color:var(--fg)}
+
+/* Below 620 the grid stops being a grid. These names are Latin binomials —
+   "Sidr (Ziziphus)", "Nigella sativa" — and no card narrow enough to tile on a
+   phone can hold one. It becomes a list of rows instead: thumbnail, name, and
+   the explanation opening full width underneath. */
+@media(max-width:620px){
+  .ingrid{
+    grid-template-columns:1fr;gap:0;margin-top:26px;
+    border-block:1px solid var(--line);
+  }
+  .ing{
+    border:0;border-bottom:1px solid var(--line);background:transparent;overflow:visible;
+    display:grid;grid-template-columns:74px minmax(0,1fr);align-items:start;
+    column-gap:14px;padding:12px 0;
+  }
+  .ingrid .ing:last-child{border-bottom:0}
+  .ing .top{border:0;border-radius:2px}
+  .ing summary{padding:0;min-height:74px;font-size:15.5px;font-weight:700}
+  .ing summary::after{width:21px;height:21px;font-size:14px}
+  .ing .a{padding:2px 0 12px;font-size:13.5px;line-height:1.5}
+}
 
 /* ---------- faq ---------- */
 .faq{max-width:840px}
@@ -741,13 +761,15 @@ footer{background:var(--ink);color:var(--paper);padding:72px 0 40px}
   transition:border-color .2s ease,box-shadow .25s ease,transform .25s ease;
 }
 .bcard:hover{border-color:var(--line-strong);box-shadow:0 14px 32px rgba(38,32,26,.10);transform:translateY(-2px)}
-/* the one badge that says which of the four actually sells */
+/* badges on the smaller cards — same pill as .pcard .tag, ink by default,
+   amber reserved for the one that says which of the four actually sells */
 .bcard .bshot,.fcard .fshot{position:relative}
 .btag,.ftag{
   position:absolute;top:10px;inset-inline-start:10px;z-index:2;
-  background:var(--amber);color:var(--ink);font-size:9.5px;font-weight:800;
+  background:var(--ink);color:var(--paper);font-size:9.5px;font-weight:800;
   letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:999px;
 }
+.btag.amber,.ftag.amber{background:var(--amber);color:var(--ink)}
 .bcard .bshot{
   aspect-ratio:1/1;overflow:hidden;
   background:radial-gradient(78% 66% at 50% 45%, rgba(185,127,36,.10), transparent 72%), var(--paper-2);
@@ -835,10 +857,8 @@ footer{background:var(--ink);color:var(--paper);padding:72px 0 40px}
   .cf-in{padding:26px 20px}
   .cf-mark{font-size:44px}
 
-  /* ingredients */
-  .ingrid{gap:10px}
-  .ing summary{padding:11px 11px;font-size:12px}
-  .ing .a{padding:0 11px 13px;font-size:11.5px}
+  /* ingredients — the row layout is set in the 620 block above; nothing to
+     shrink here, since shrinking it is what broke it in the first place */
 
   /* faq + signup */
   .faq summary{font-size:17px;padding:16px 0}

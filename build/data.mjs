@@ -102,7 +102,7 @@ export const houseIngredients = ['sidr-blossom', 'raw-honey', 'marine-collagen',
 export const bestsellers = [
   { slug: 'marine-collagen',  flavour: 'Unflavoured',        per: '€1.30 / day' },
   { slug: 'collagen-coffee',  flavour: 'Coffee',             per: '€1.68 / cup' },
-  { slug: 'collagen-matcha',  flavour: 'Matcha',             per: '€1.76 / bowl', tag: 'Most ordered' },
+  { slug: 'collagen-matcha',  flavour: 'Matcha',             per: '€1.76 / bowl', tag: 'Most ordered', amber: 1 },
   { slug: 'qahwa-collagen',   flavour: 'Qahwa',              per: '€1.76 / cup' },
 ];
 
@@ -117,9 +117,9 @@ export const families = [
     formats: ['sidr-sticks', 'black-seed-honey', 'tasting-flight'],
   },
   {
-    id: 'collagen', kick: 'Daily collagen', classic: 'marine-collagen',
-    line: 'One certified batch, poured into a ritual you already have.',
-    formats: ['daily-sachets', 'collagen-coffee', 'collagen-matcha', 'qahwa-collagen'],
+    id: 'collagen', kick: 'Daily collagen', classic: 'collagen-matcha',
+    line: 'The same certified batch — unflavoured, pre-dosed, or already in the cup you pour.',
+    formats: ['marine-collagen', 'daily-sachets', 'collagen-coffee', 'qahwa-collagen'],
   },
   {
     id: 'blackseed', kick: 'Cold-pressed black seed', classic: 'black-seed-oil',
@@ -136,11 +136,11 @@ export const classics = {
     facts: [['Ziziphus — monofloral', 1], ['HMF 4.2', 0], ['Moisture 16.8%', 0]],
     pr: '€49', per: 'Harvest 2025 · 250 g',
   },
-  'marine-collagen': {
-    cat: 'Daily collagen', tag: 'The base',
-    desc: 'Type I peptides hydrolysed to a stated weight, with the vitamin C, zinc and biotin that carry the authorised claims.',
-    facts: [['Protein ≥90%', 1], ['~2 kDa', 0], ['Allergen: fish', 0]],
-    pr: '€39', per: '€1.30 / day · 300 g',
+  'collagen-matcha': {
+    cat: 'Ceremonial matcha', tag: 'Most ordered', amber: 1,
+    desc: "Stone-ground first-harvest matcha from Japan, with the day's full 10 g marine collagen dose whisked invisibly inside.",
+    facts: [['10 g collagen / bowl', 1], ['Radiation tested', 0], ['Allergen: fish', 0]],
+    pr: '€44', per: '€1.76 / bowl · 286 g',
   },
   'black-seed-oil': {
     cat: 'Cold-pressed oil', tag: 'TQ graded',
@@ -153,7 +153,7 @@ export const classics = {
 /* optional badge on a format card, so the family row agrees with the
    best-seller grid about which one actually sells */
 export const formatTag = {
-  'collagen-matcha': 'Most ordered',
+  'marine-collagen': 'The base',
 };
 
 /* short factual line under each format card */
@@ -161,9 +161,9 @@ export const formatSpec = {
   'sidr-sticks': '12 × 10 g sticks · €39',
   'black-seed-honey': 'Folded with nigella · €29',
   'tasting-flight': 'Three 40 g minis · €35',
+  'marine-collagen': 'Unflavoured · €39',
   'daily-sachets': '30 pre-weighed doses · €45',
   'collagen-coffee': 'Single-origin arabica · €42',
-  'collagen-matcha': 'Ceremonial grade · €44',
   'qahwa-collagen': 'Cardamom & saffron · €44',
   'black-seed-softgels': '60 × 1000 mg · €27',
 };
