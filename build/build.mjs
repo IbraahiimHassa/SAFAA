@@ -5,7 +5,7 @@
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { site, nav, footer, props, ingredientLib, houseIngredients, products, catalogue, families, classics, formatSpec } from './data.mjs';
+import { site, nav, footer, props, ingredientLib, houseIngredients, products, catalogue, families, classics, formatSpec, bestsellers } from './data.mjs';
 
 const OUT = join(dirname(fileURLToPath(import.meta.url)), '..', 'site');
 
@@ -535,6 +535,26 @@ function home() {
 ${propsStrip()}
 
 <main>
+
+<section id="best" class="wrap" aria-labelledby="best-h">
+  <div class="seclead">
+    <div>
+      <p class="kick">Best sellers</p>
+      <h2 id="best-h">One dose, <em>four ways.</em></h2>
+      <p class="secsub">The same certified Type I collagen — unflavoured, or already inside the cup you pour anyway.</p>
+    </div>
+    <a class="more" href="#shop">See the whole range →</a>
+  </div>
+  <div class="bgrid">
+${bestsellers.map(({slug, flavour, per}) => { const c = catalogue[slug]; return `    <a class="bcard" href="${c.href}">
+      <span class="bshot"><img src="${c.glass || c.img}" alt="${c.name}" loading="lazy"></span>
+      <span class="bflav">${flavour}</span>
+      <b>${c.name}</b>
+      <span class="bmeta">From ${c.pr} <span>· ${per}</span></span>
+      <span class="bbtn">Shop now</span>
+    </a>`; }).join('\n')}
+  </div>
+</section>
 
 <section id="shop" class="wrap" aria-labelledby="shop-h">
   <div class="seclead">

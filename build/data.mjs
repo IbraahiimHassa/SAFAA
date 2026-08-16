@@ -98,6 +98,14 @@ export const ingredientLib = {
 export const houseIngredients = ['sidr-blossom', 'raw-honey', 'marine-collagen', 'nigella', 'vitamin-c', 'zinc-biotin'];
 
 
+/* --- best sellers: the collagen flavours, first thing after the hero ----- */
+export const bestsellers = [
+  { slug: 'marine-collagen',  flavour: 'Unflavoured',        per: '€1.30 / day' },
+  { slug: 'collagen-coffee',  flavour: 'Coffee',             per: '€1.68 / cup' },
+  { slug: 'collagen-matcha',  flavour: 'Matcha',             per: '€1.76 / bowl' },
+  { slug: 'qahwa-collagen',   flavour: 'Qahwa',              per: '€1.76 / cup' },
+];
+
 /* --- the range, as it actually is: three goods, each with its formats -----
    The classic never leaves the shelf; the formats surround it. This is the
    strategy in docs/02, expressed as structure rather than as three loose
