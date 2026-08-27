@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direction B — Diepte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Archivo:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep:#0B272E; --deep-2:#0F3138; --ivory:#F2EFE7; --ivory-dim:rgba(242,239,231,.62);
+    --hair:rgba(242,239,231,.28); --pearl:#C7D4D2; --ink:#122A30; --paperline:#DCE3E1;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--deep);color:var(--ivory);font:400 16px/1.65 "Archivo",sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .caps{font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:26px 64px;border-bottom:1px solid var(--hair)}
+  .wordmark{font:300 22px "Fraunces",serif;letter-spacing:.30em}
+  .navlinks{display:flex;gap:44px}
+  .navlinks a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ivory-dim)}
+  .navlinks a:hover{color:var(--ivory)}
+
+  .hero{min-height:78vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:90px 24px 110px;position:relative;
+    background:radial-gradient(120% 90% at 50% 118%, #16424C 0%, #0F3138 42%, #0B272E 78%)}
+  .hero .kicker{color:var(--pearl);margin-bottom:34px}
+  .hero h1{font:300 clamp(3.2rem,6vw,5.4rem)/1.06 "Fraunces",serif;letter-spacing:-0.01em;max-width:18ch;text-wrap:balance}
+  .hero h1 em{font-style:italic;font-weight:300}
+  .hero .sub{margin-top:30px;max-width:52ch;color:var(--ivory-dim);font-size:16.5px}
+  .hero .claim{margin-top:26px;max-width:60ch;color:var(--pearl);font:italic 300 17px/1.6 "Fraunces",serif}
+  .cta-row{margin-top:48px;display:flex;gap:20px}
+  .btn{display:inline-block;padding:17px 40px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--ivory);transition:all .3s}
+  .btn:hover{background:var(--ivory);color:var(--deep)}
+  .btn.solid{background:var(--ivory);color:var(--deep)}
+  .btn.solid:hover{background:transparent;color:var(--ivory)}
+
+  .factline{display:flex;justify-content:center;gap:56px;padding:26px 24px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);flex-wrap:wrap}
+  .factline span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ivory-dim)}
+
+  /* light chapter */
+  .chapter-light{background:#FBFBF9;color:var(--ink);padding:130px 64px}
+  .cl-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:96px;align-items:center}
+  .product-stage{aspect-ratio:4/5;background:linear-gradient(168deg,#E9EEEC 0%,#DFE7E4 55%,#D3DEDA 100%);display:flex;align-items:center;justify-content:center;position:relative}
+  .canister{width:180px;height:260px;background:#10333A;position:relative;box-shadow:0 30px 60px rgba(11,39,46,.25)}
+  .canister::after{content:"HELDER";position:absolute;top:44%;left:0;right:0;text-align:center;color:#F2EFE7;font:300 15px "Fraunces",serif;letter-spacing:.34em}
+  .canister::before{content:"MARINE COLLAGEEN · TYPE I · 300 G";position:absolute;top:58%;left:0;right:0;text-align:center;color:rgba(242,239,231,.55);font:400 6.5px "Archivo",sans-serif;letter-spacing:.18em}
+  .chapter-light h2{font:300 clamp(2.2rem,3.6vw,3.2rem)/1.12 "Fraunces",serif}
+  .chapter-light h2 em{font-style:italic}
+  .chapter-light .lead{margin-top:24px;color:#51686C;max-width:50ch}
+  .chapter-light .claim{margin-top:26px;padding:20px 24px;border:1px solid var(--paperline);font-size:14.5px;line-height:1.6;color:var(--ink);max-width:54ch}
+  .price-row{margin-top:36px;display:flex;align-items:center;gap:28px}
+  .price{font:300 30px "Fraunces",serif}
+  .btn-dark{display:inline-block;padding:17px 40px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;background:var(--deep);color:var(--ivory);border:1px solid var(--deep);transition:all .3s}
+  .btn-dark:hover{background:transparent;color:var(--deep)}
+
+  /* halal honesty — dark chapter */
+  .halal{padding:130px 64px;background:var(--deep-2)}
+  .halal-inner{max-width:1080px;margin:0 auto;text-align:center}
+  .halal .caps{color:var(--pearl)}
+  .halal h2{font:300 clamp(2rem,3.4vw,3rem)/1.15 "Fraunces",serif;margin-top:26px}
+  .halal h2 em{font-style:italic}
+  .halal p{margin-top:22px;color:var(--ivory-dim);max-width:58ch;margin-left:auto;margin-right:auto}
+  .seal{margin:56px auto 0;width:min(440px,90%);border:1px solid var(--hair);padding:44px 36px;display:flex;flex-direction:column;gap:14px;align-items:center}
+  .seal .ring{width:74px;height:74px;border:1px solid var(--pearl);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:.24em;color:var(--pearl)}
+  .seal .t{font:italic 300 19px "Fraunces",serif;max-width:30ch}
+  .seal .caps{color:var(--ivory-dim)}
+
+  footer{padding:44px 64px;border-top:1px solid var(--hair);display:flex;justify-content:space-between;color:var(--ivory-dim);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navlinks"><a href="#">Het product</a><a href="#">Herkomst</a></div>
+  <div class="wordmark">HELDER</div>
+  <div class="navlinks"><a href="#">Certificering</a><a href="#">Winkelwagen (0)</a></div>
+</nav>
+
+<section class="hero">
+  <div class="kicker caps">Marine collageen · Type I · Amsterdam</div>
+  <h1>Uit de diepte,<br><em>zonder geheimen.</em></h1>
+  <p class="sub">Gehydrolyseerde marine collageen peptiden met vitamine C. Eén ingrediëntenlijst, volledig herleidbaar tot de bron — elk document openbaar.</p>
+  <p class="claim">Vitamine C draagt bij tot de normale collageenvorming voor de normale werking van de huid.</p>
+  <div class="cta-row">
+    <a class="btn solid" href="#">Bekijk het product</a>
+    <a class="btn" href="#">Lees het etiket</a>
+  </div>
+</section>
+
+<div class="factline">
+  <span>10 g per dosering</span><span>Type I peptiden</span><span>Met vitamine C</span><span>Zonder toevoegingen</span><span>Bevat: vis</span>
+</div>
+
+<section class="chapter-light">
+  <div class="cl-inner">
+    <div class="product-stage"><div class="canister" role="img" aria-label="HELDER canister packshot placeholder"></div></div>
+    <div>
+      <h2>Eén pot. Eén belofte: <em>volledige openheid.</em></h2>
+      <p class="lead">300 gram gehydrolyseerde marine collageen peptiden, Type I, met 80 mg vitamine C per dosering. Geen mengsels, geen kleine lettertjes — de volledige analyse van elke batch is openbaar.</p>
+      <div class="claim">Vitamine C draagt bij tot de normale collageenvorming voor de normale werking van de huid.</div>
+      <div class="price-row">
+        <span class="price">€ 34,95</span>
+        <a class="btn-dark" href="#">In winkelwagen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="halal">
+  <div class="halal-inner">
+    <div class="caps">Certificering</div>
+    <h2>Halalcertificering: in aanvraag.<br><em>En dat zeggen we eerlijk.</em></h2>
+    <p>Onze collageen is afkomstig van vis — halal door herkomst. Tóch laten we het volledige proces onafhankelijk certificeren. Tot het certificaat er is, gebruiken we het woord "gecertificeerd" niet.</p>
+    <div class="seal">
+      <div class="ring">Q4 · 2026</div>
+      <div class="t">Deze plek is gereserveerd voor ons halalcertificaat.</div>
+      <div class="caps">Status: aanvraag ingediend</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Helder — marine collageen, zonder omwegen</span>
+  <span>KvK · Voorwaarden · Privacy</span>
+</footer>
+
+</body>
+</html>

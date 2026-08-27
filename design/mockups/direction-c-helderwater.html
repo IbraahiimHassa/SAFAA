@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direction C — Helder Water</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12484F;           /* single ink — ALL text is this */
+    --ground:#F5F9F8;        /* ice, cool chroma */
+    --glass:#DCEAE6;         /* sea-glass block */
+    --glass-deep:#B9D4CD;    /* deeper glass */
+    --warm:#C96F45;          /* one warm accent */
+    --line:#CFDEDA;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font:400 16px/1.65 "Work Sans",sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.05em}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:24px 56px}
+  .wordmark{font:500 19px "Work Sans",sans-serif;letter-spacing:.24em}
+  .navlinks{display:flex;gap:36px;font-size:14px}
+  .navlinks a{opacity:.75}.navlinks a:hover{opacity:1}
+
+  .hero{padding:110px 56px 96px;max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;gap:72px;align-items:center}
+  .hero h1{font:300 clamp(3.4rem,6vw,5.5rem)/1.05 "Work Sans",sans-serif;letter-spacing:-0.025em;text-wrap:balance}
+  .hero h1 strong{font-weight:500}
+  .hero .sub{margin-top:30px;font-size:18px;max-width:50ch;opacity:.85}
+  .hero .claim{margin-top:22px;font-size:14px;max-width:56ch;opacity:.9;border-left:none;background:var(--glass);padding:16px 20px;border-radius:10px}
+  .cta-row{margin-top:42px;display:flex;gap:18px;align-items:center}
+  .btn{display:inline-block;padding:17px 36px;font:500 15px "Work Sans",sans-serif;border-radius:999px;transition:all .25s}
+  .btn-warm{background:var(--warm);color:#fff}
+  .btn-warm:hover{background:#B25E38}
+  .btn-quiet{border:1px solid var(--ink);color:var(--ink)}
+  .btn-quiet:hover{background:var(--glass)}
+
+  .glasscard{background:linear-gradient(165deg,var(--glass) 0%,var(--glass-deep) 100%);border-radius:24px;aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:flex-end;padding:34px;position:relative;overflow:hidden}
+  .glasscard .bubble{position:absolute;border-radius:50%;background:rgba(255,255,255,.35)}
+  .glasscard .b1{width:180px;height:180px;top:-40px;right:-40px}
+  .glasscard .b2{width:90px;height:90px;top:120px;left:30px;background:rgba(255,255,255,.22)}
+  .glasscard .spec{background:rgba(255,255,255,.72);backdrop-filter:blur(4px);border-radius:14px;padding:20px 22px;display:grid;gap:8px}
+  .glasscard .spec .row{display:flex;justify-content:space-between;font-size:13.5px}
+  .glasscard .spec .row span:last-child{font-family:"IBM Plex Mono",monospace;font-size:12.5px}
+
+  .factbar{max-width:1328px;margin:0 auto;padding:0 56px;display:flex;gap:14px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-size:13.5px;background:#fff}
+
+  .story{max-width:1440px;margin:96px auto 0;padding:0 56px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .tile{border-radius:22px;padding:38px 32px;min-height:340px;display:flex;flex-direction:column;justify-content:space-between}
+  .tile.t1{background:#fff}
+  .tile.t2{background:var(--glass)}
+  .tile.t3{background:var(--ink);color:var(--ground)}
+  .tile h3{font:400 24px/1.25 "Work Sans",sans-serif;max-width:16ch}
+  .tile p{margin-top:14px;font-size:14.5px;opacity:.8}
+  .tile .foot{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.05em}
+
+  .halal{max-width:1440px;margin:110px auto;padding:0 56px}
+  .halal-card{background:#fff;border-radius:28px;padding:76px 64px;display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}
+  .halal h2{font:300 clamp(2rem,3.4vw,2.9rem)/1.12 "Work Sans",sans-serif;letter-spacing:-0.02em}
+  .halal h2 strong{font-weight:500}
+  .halal p{margin-top:20px;opacity:.85;max-width:50ch}
+  .halal .status{margin-top:28px;display:inline-block;border-radius:999px;background:var(--glass);padding:12px 22px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.05em}
+  .frame{border:1.5px dashed var(--glass-deep);border-radius:20px;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:32px}
+  .frame .t{font:400 18px "Work Sans",sans-serif;max-width:24ch}
+
+  footer{padding:44px 56px;display:flex;justify-content:space-between;font-size:13px;opacity:.75}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wordmark">HELDER</div>
+  <div class="navlinks"><a href="#">Het product</a><a href="#">Herkomst</a><a href="#">Certificering</a><a href="#">Vragen</a></div>
+  <a class="mono" href="#">TAS (0)</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1>Zo helder kan<br><strong>collageen</strong> zijn.</h1>
+    <p class="sub">Gehydrolyseerde marine collageen peptiden, Type I, met vitamine C. Lost helder op, smaakt nergens naar, en elk batchdocument is openbaar.</p>
+    <p class="claim">Vitamine C draagt bij tot de normale collageenvorming voor de normale werking van de huid.</p>
+    <div class="cta-row">
+      <a class="btn btn-warm" href="#">Bekijk het product — €34,95</a>
+      <a class="btn btn-quiet" href="#">Lees het etiket</a>
+    </div>
+  </div>
+  <div class="glasscard">
+    <div class="bubble b1"></div><div class="bubble b2"></div>
+    <div class="spec">
+      <div class="row"><span>Collageen per dosering</span><span>10 g</span></div>
+      <div class="row"><span>Type</span><span>I — peptiden</span></div>
+      <div class="row"><span>Vitamine C</span><span>80 mg</span></div>
+      <div class="row"><span>Allergenen</span><span>Bevat: vis</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="factbar">
+  <span class="chip">Type I peptiden</span>
+  <span class="chip">10 g per dosering</span>
+  <span class="chip">Met vitamine C</span>
+  <span class="chip">Zonder toevoegingen</span>
+  <span class="chip">Bevat: vis</span>
+</div>
+
+<section class="story">
+  <div class="tile t1">
+    <h3>Eén bron, elke batch herleidbaar.</h3>
+    <p>Zeevis uit gecontroleerde visserij. Soort, vangstgebied en verwerker liggen per batch vast.</p>
+    <span class="foot">→ HERKOMSTVERKLARING</span>
+  </div>
+  <div class="tile t2">
+    <h3>Onafhankelijk geanalyseerd.</h3>
+    <p>Elke batch getest op zuiverheid en zware metalen door een extern laboratorium.</p>
+    <span class="foot">→ ANALYSECERTIFICAAT</span>
+  </div>
+  <div class="tile t3">
+    <h3>Het etiket is het hele verhaal.</h3>
+    <p>Volledige doseringen, geen mengsels met kleine lettertjes. Wat er staat, is wat erin zit.</p>
+    <span class="foot">→ VOLLEDIG ETIKET (PDF)</span>
+  </div>
+</section>
+
+<section class="halal">
+  <div class="halal-card">
+    <div>
+      <h2>Halalcertificering: <strong>in aanvraag.</strong><br>En dat zeggen we eerlijk.</h2>
+      <p>Onze collageen is afkomstig van vis — halal door herkomst. Tóch laten we het volledige proces onafhankelijk certificeren. Tot het certificaat er is, claimen we het woord "gecertificeerd" niet.</p>
+      <span class="status">STATUS: AANVRAAG INGEDIEND — Q4 2026</span>
+    </div>
+    <div class="frame">
+      <span class="mono">GERESERVEERD</span>
+      <span class="t">Deze ruimte is gereserveerd voor ons halalcertificaat.</span>
+      <span class="mono">CERTIFICAATNR. VOLGT</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>HELDER — marine collageen, zonder omwegen.</span>
+  <span class="mono">KVK · VOORWAARDEN · PRIVACY</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HELDER — Marine collageen, zonder omwegen</title>
+<meta name="description" content="Gehydrolyseerde marine collageen peptiden, Type I, met vitamine C. Eén ingrediëntenlijst, volledig herleidbaar tot de bron.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E2F36; --ink-2:#48646A; --line:#D9E2E2; --ground:#FFFFFF;
+    --accent:#C8573B; --wash:#F2F6F6; --stage:#EDF3F2; --ink-on-dark:#F4F7F7;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--ground);color:var(--ink);font:400 16px/1.6 "IBM Plex Sans",sans-serif;-webkit-font-smoothing:antialiased}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  }
+
+  /* announcement */
+  .announce{background:var(--ink);color:var(--ink-on-dark);text-align:center;padding:9px 24px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.05em}
+
+  /* nav */
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 56px;border-bottom:1px solid var(--line);gap:24px}
+  .wordmark{font:600 20px "Archivo",sans-serif;letter-spacing:.18em}
+  .navlinks{display:flex;gap:36px;font-size:14px;color:var(--ink-2)}
+  .navlinks a{transition:color .2s}
+  .navlinks a:hover{color:var(--ink)}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:72px;padding:88px 56px 80px;max-width:1400px;margin:0 auto;align-items:start}
+  .hero h1{font:600 clamp(2.9rem,5vw,4.4rem)/1.05 "Archivo",sans-serif;letter-spacing:-0.02em;text-wrap:balance}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero .sub{margin-top:26px;font-size:18px;line-height:1.65;color:var(--ink-2);max-width:50ch}
+  .hero .claim{margin-top:22px;font-size:14px;line-height:1.6;color:var(--ink);max-width:54ch;border-top:1px solid var(--line);padding-top:15px}
+  .cta-row{margin-top:38px;display:flex;gap:14px;align-items:stretch;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;padding:16px 30px;font:500 15px "Archivo",sans-serif;letter-spacing:.02em;cursor:pointer;transition:background .2s,color .2s}
+  .btn-primary{background:var(--ink);color:#fff}
+  .btn-primary:hover{background:#123B44}
+  .btn-doc{border:1px solid var(--ink);color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.06em;padding:16px 22px}
+  .btn-doc:hover{background:var(--wash)}
+  .hero-note{margin-top:22px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);letter-spacing:.04em}
+
+  /* the document (packshot plate + dossier) */
+  .doc{border:1px solid var(--ink)}
+  .doc > header{display:flex;justify-content:space-between;padding:13px 20px;border-bottom:1px solid var(--ink);font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em}
+  .plate{background:linear-gradient(178deg,#F0F5F4 0%,#E7EFEE 100%);display:flex;align-items:flex-end;justify-content:center;padding:44px 24px 0;position:relative}
+  .plate-caption{position:absolute;left:20px;bottom:14px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;color:var(--ink-2)}
+  /* coded canister render — design-intent stand-in for the real packshot */
+  .can{position:relative;width:172px;height:252px;margin-bottom:46px}
+  .can::after{content:"";position:absolute;left:-22px;right:-22px;bottom:-22px;height:26px;background:radial-gradient(50% 100% at 50% 50%,rgba(14,47,54,.28),rgba(14,47,54,0) 70%)}
+  .can-lid{position:absolute;top:0;left:5px;right:5px;height:24px;border-radius:10px 10px 4px 4px;background:linear-gradient(90deg,#071B20 0%,#144049 26%,#1B4E58 36%,#0F343C 62%,#071B20 100%)}
+  .can-body{position:absolute;top:20px;left:0;right:0;bottom:0;border-radius:10px 10px 12px 12px;background:linear-gradient(90deg,#0A252B 0%,#113740 22%,#1A4B55 34%,#123A43 52%,#0C2A31 78%,#07191E 100%)}
+  .can-label{position:absolute;top:52px;left:0;right:0;bottom:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;color:var(--ink-on-dark);text-align:center;padding:0 18px}
+  .can-label .wm{font:600 16px "Archivo",sans-serif;letter-spacing:.32em;margin-left:.32em}
+  .can-label hr{border:none;border-top:1px solid rgba(244,247,247,.35);width:58px}
+  .can-label .l1{font-family:"IBM Plex Mono",monospace;font-size:7.5px;letter-spacing:.12em;opacity:.92;white-space:nowrap}
+  .can-label .l2{font-family:"IBM Plex Mono",monospace;font-size:7.5px;letter-spacing:.12em;opacity:.65;white-space:nowrap}
+  .doc .row{display:flex;justify-content:space-between;gap:24px;padding:12px 20px;border-top:1px solid var(--line);font-size:14px}
+  .doc .row:first-of-type{border-top:1px solid var(--ink)}
+  .doc .k{color:var(--ink-2)}
+  .doc .v{font-family:"IBM Plex Mono",monospace;font-size:13px;text-align:right}
+
+  /* spec strip */
+  .strip{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;justify-content:space-between;padding:17px 56px;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.03em;flex-wrap:wrap;gap:10px 28px}
+
+  /* featured product */
+  .product{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;padding:120px 56px;max-width:1400px;margin:0 auto;align-items:center}
+  .waterplate{border:1px solid var(--ink);position:relative}
+  .waterplate .ph{aspect-ratio:4/4.6;overflow:hidden}
+  .waterplate img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.02)}
+  .waterplate footer{display:flex;justify-content:space-between;padding:12px 18px;border-top:1px solid var(--ink);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;color:var(--ink-2)}
+  .product h2{font:600 clamp(1.9rem,3.2vw,2.7rem)/1.12 "Archivo",sans-serif;letter-spacing:-0.015em}
+  .product .desc{margin-top:18px;color:var(--ink-2);max-width:52ch;font-size:16.5px}
+  .product .claim{margin-top:24px;border:1px solid var(--line);padding:18px 22px;font-size:14px;line-height:1.6;max-width:56ch}
+  .buyline{margin-top:34px;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+  .price{font:600 28px "Archivo",sans-serif;letter-spacing:-0.01em}
+  .price small{font:400 13px "IBM Plex Mono",monospace;color:var(--ink-2);letter-spacing:.04em;margin-left:10px}
+  .allergen{margin-top:20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;color:var(--ink-2)}
+
+  /* transparency chain */
+  .chainwrap{background:var(--ground)}
+  .chain{padding:0 56px 120px;max-width:1400px;margin:0 auto}
+  .chain h2{font:600 clamp(2rem,3.4vw,3rem)/1.12 "Archivo",sans-serif;letter-spacing:-0.015em}
+  .chain p.lead{margin-top:18px;color:var(--ink-2);max-width:58ch;font-size:17px}
+  .steps{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr)}
+  .step{border-left:1px solid var(--line);padding:6px 32px 6px 28px}
+  .step:first-child{border-left:none;padding-left:0}
+  .step .num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);letter-spacing:.06em}
+  .step h3{font:500 20px "Archivo",sans-serif;margin-top:13px}
+  .step p{margin-top:10px;font-size:14.5px;color:var(--ink-2)}
+  .step .docl{margin-top:18px;display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;border:1px solid var(--ink);padding:9px 13px;transition:background .2s}
+  .step .docl:hover{background:var(--wash)}
+
+  /* halal honesty */
+  .halal{background:var(--wash);padding:110px 56px}
+  .halal-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}
+  .halal h2{font:600 clamp(1.8rem,3vw,2.5rem)/1.16 "Archivo",sans-serif;letter-spacing:-0.015em;text-wrap:balance}
+  .halal p{margin-top:18px;color:var(--ink-2);max-width:50ch}
+  .halal .status{margin-top:24px;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.04em;display:inline-block;border:1px solid var(--ink);padding:10px 16px;background:var(--ground)}
+  .frame{border:1px dashed var(--ink-2);background:var(--ground);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;text-align:center;padding:52px 36px}
+  .frame .fmono{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;color:var(--ink-2)}
+  .frame .t{font:500 18px/1.4 "Archivo",sans-serif;max-width:24ch}
+
+  /* newsletter */
+  .news{background:var(--ink);color:var(--ink-on-dark);padding:72px 56px}
+  .news-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+  .news h2{font:600 clamp(1.4rem,2.4vw,1.9rem)/1.2 "Archivo",sans-serif;letter-spacing:-0.01em}
+  .news p{margin-top:10px;color:rgba(244,247,247,.62);font-size:15px}
+  .newsform{display:flex;min-width:min(420px,100%)}
+  .newsform input{flex:1;background:transparent;border:1px solid rgba(244,247,247,.45);border-right:none;color:var(--ink-on-dark);padding:15px 18px;font:400 14px "IBM Plex Sans",sans-serif;outline:none}
+  .newsform input::placeholder{color:rgba(244,247,247,.45)}
+  .newsform button{background:var(--ink-on-dark);color:var(--ink);border:1px solid var(--ink-on-dark);padding:15px 26px;font:500 14px "Archivo",sans-serif;cursor:pointer;transition:opacity .2s}
+  .newsform button:hover{opacity:.88}
+
+  footer.site{padding:36px 56px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:13px;color:var(--ink-2);flex-wrap:wrap}
+  footer.site .fm{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.05em}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1024px){
+    .hero{grid-template-columns:1fr;gap:56px;padding:64px 40px}
+    .product{grid-template-columns:1fr;gap:48px;padding:88px 40px}
+    .halal-inner{grid-template-columns:1fr;gap:48px}
+    .chain{padding:0 40px 88px}
+    .strip{padding:15px 40px}
+    nav{padding:20px 40px}
+  }
+  @media (max-width:640px){
+    nav{padding:18px 22px}
+    .navlinks{display:none}
+    .hero{padding:52px 22px 48px;gap:44px}
+    .hero .sub{font-size:16.5px}
+    .strip{padding:14px 22px;justify-content:flex-start}
+    .product{padding:72px 22px;gap:40px}
+    .chain{padding:0 22px 72px}
+    .steps{grid-template-columns:1fr;gap:36px}
+    .step{border-left:none;padding:0}
+    .halal{padding:72px 22px}
+    .news{padding:56px 22px}
+    .newsform{min-width:100%}
+    footer.site{padding:28px 22px}
+    .cta-row .btn{width:100%;justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<div class="announce">GRATIS VERZENDING IN NL &amp; BE VANAF €35 — VERZONDEN UIT AMSTERDAM</div>
+
+<nav>
+  <div class="wordmark">HELDER</div>
+  <div class="navlinks">
+    <a href="#product">Het product</a><a href="#herkomst">Herkomst</a><a href="#certificering">Certificering</a><a href="#">Veelgestelde vragen</a>
+  </div>
+  <a class="mono" style="font-size:13px" href="#">Winkelwagen (0)</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1>Marine collageen.<br><em>Meer niet.</em></h1>
+    <p class="sub">Gehydrolyseerde marine collageen peptiden, Type&nbsp;I, met vitamine&nbsp;C. Eén ingrediëntenlijst die je in één adem kunt voorlezen — en een leverancierdossier dat je mag inzien.</p>
+    <p class="claim">Vitamine C draagt bij tot de normale collageenvorming voor de normale werking van de huid.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#product">Bekijk het product — €34,95</a>
+      <a class="btn btn-doc" href="#">→ LEES HET ETIKET</a>
+    </div>
+    <p class="hero-note">300 G POEDER · CA. 30 DOSERINGEN · BEVAT: VIS</p>
+  </div>
+  <aside class="doc" aria-label="Productdossier">
+    <header><span>PRODUCTDOSSIER</span><span>NR. 001</span></header>
+    <div class="plate">
+      <div class="can" role="img" aria-label="HELDER verpakking, ontwerpweergave">
+        <div class="can-lid"></div>
+        <div class="can-body"></div>
+        <div class="can-label">
+          <span class="wm">HELDER</span>
+          <hr>
+          <span class="l1">MARINE COLLAGEEN</span>
+          <span class="l1">TYPE I PEPTIDEN</span>
+          <hr>
+          <span class="l2">300 G · MET VITAMINE C</span>
+        </div>
+      </div>
+      <span class="plate-caption">AFB. 01 — VERPAKKING, 300 G (ONTWERPWEERGAVE)</span>
+    </div>
+    <div class="row"><span class="k">Collageen per dosering</span><span class="v">10 g</span></div>
+    <div class="row"><span class="k">Type</span><span class="v">I — gehydrolyseerd</span></div>
+    <div class="row"><span class="k">Bron</span><span class="v">Zeevis</span></div>
+    <div class="row"><span class="k">Vitamine C per dosering</span><span class="v">80 mg (100% RI)</span></div>
+    <div class="row"><span class="k">Allergenen</span><span class="v">Bevat: vis</span></div>
+    <div class="row"><span class="k">Toevoegingen</span><span class="v">Geen</span></div>
+  </aside>
+</section>
+
+<div class="strip">
+  <span>TYPE I PEPTIDEN</span><span>10 G PER DOSERING</span><span>MET VITAMINE C</span><span>ZONDER TOEVOEGINGEN</span><span>BEVAT: VIS</span>
+</div>
+
+<section class="product" id="product">
+  <figure class="waterplate">
+    <div class="ph"><img src="plate-water-glass.jpg" alt="Poeder lost helder op in een glas water" loading="lazy"></div>
+    <footer><span>AFB. 02 — VOLLEDIG OPGELOST, 250 ML WATER</span><span>NEUTRALE SMAAK</span></footer>
+  </figure>
+  <div>
+    <h2>Eén pot. Eén ingrediëntenlijst.</h2>
+    <p class="desc">300 gram gehydrolyseerde marine collageen peptiden met 80 mg vitamine C per dosering van 10 gram. Lost helder op in koffie, water of yoghurt en smaakt nergens naar. Geen mengsels, geen kleine lettertjes — de volledige analyse van elke batch is openbaar.</p>
+    <div class="claim">Vitamine C draagt bij tot de normale collageenvorming voor de normale werking van de huid.</div>
+    <div class="buyline">
+      <span class="price">€ 34,95 <small>€ 1,17 PER DOSERING</small></span>
+      <a class="btn btn-primary" href="#">In winkelwagen</a>
+      <a class="btn btn-doc" href="#">→ ANALYSE VAN DEZE BATCH</a>
+    </div>
+    <p class="allergen">ALLERGENEN: BEVAT VIS · GEEN GLUTEN, LACTOSE, SOJA OF TOEGEVOEGDE SUIKERS</p>
+  </div>
+</section>
+
+<div class="chainwrap" id="herkomst">
+  <section class="chain">
+    <h2>Van vangst tot pot:<br>drie stappen, drie documenten.</h2>
+    <p class="lead">Transparantie is bij ons geen slogan maar een archief. Elke batch is terug te leiden tot de bron — en elk document dat dat bewijst, publiceren we.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">STAP 01</div>
+        <h3>De bron</h3>
+        <p>Zeevis uit gecontroleerde visserij. Soort, vangstgebied en verwerker staan per batch vast.</p>
+        <a class="docl" href="#">→ HERKOMSTVERKLARING</a>
+      </div>
+      <div class="step">
+        <div class="num">STAP 02</div>
+        <h3>De analyse</h3>
+        <p>Elke batch wordt door een onafhankelijk laboratorium geanalyseerd op zuiverheid en zware metalen.</p>
+        <a class="docl" href="#">→ ANALYSECERTIFICAAT (COA)</a>
+      </div>
+      <div class="step">
+        <div class="num">STAP 03</div>
+        <h3>Het etiket</h3>
+        <p>Wat op het etiket staat, is alles wat erin zit. Volledige doseringen, geen mengsels met kleine lettertjes.</p>
+        <a class="docl" href="#">→ VOLLEDIG ETIKET (PDF)</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="halal" id="certificering">
+  <div class="halal-inner">
+    <div>
+      <h2>Halalcertificering: in aanvraag. En dat zeggen we eerlijk.</h2>
+      <p>Onze marine collageen is afkomstig van vis — halal door herkomst. Tóch laten we het volledige productieproces onafhankelijk certificeren. Dat traject loopt. Tot het certificaat er is, claimen we het woord "gecertificeerd" niet.</p>
+      <span class="status">STATUS: AANVRAAG INGEDIEND — Q4 2026</span>
+    </div>
+    <div class="frame">
+      <span class="fmono">GERESERVEERD</span>
+      <span class="t">Deze ruimte is gereserveerd voor ons halalcertificaat.</span>
+      <span class="fmono">CERTIFICAATNR. VOLGT</span>
+    </div>
+  </div>
+</section>
+
+<section class="news">
+  <div class="news-inner">
+    <div>
+      <h2>Eén mail per maand.</h2>
+      <p>Batchnieuws en documenten — geen buzzwords, geen dagelijkse aanbiedingen.</p>
+    </div>
+    <form class="newsform" onsubmit="return false">
+      <input type="email" placeholder="E-mailadres" aria-label="E-mailadres">
+      <button type="submit">Aanmelden</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site">
+  <span>HELDER — marine collageen, zonder omwegen.</span>
+  <span class="fm">KVK · VOORWAARDEN · PRIVACY · CONTACT</span>
+</footer>
+
+</body>
+</html>
