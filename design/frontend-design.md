@@ -15,6 +15,14 @@
 >
 > Kept here because §1's reasoning and §10's verdict are the record of *why* the look is what
 > it is, and the reference set below is still the one the shipped site was composed from.
+>
+> **Reference captures now live in the vault**, not here — they belong to the cross-project
+> library so they compound instead of being stranded in one repo:
+> `ibrah-knowledge/02_References/web-design/` → `ritual.md`, `aesop.md`,
+> `sunna-supplements.md` (the anti-reference), `bottega-veneta.md`, and `helder-dossier.md`
+> for this direction's own mockup. What stays in `design/mockups/` is the exploration record
+> itself: the three juried directions and the developed winner (`helder-home.html`), which is
+> the file `helder-dossier.md` in the vault points back to.
 
 ---
 
