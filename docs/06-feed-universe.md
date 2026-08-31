@@ -200,6 +200,94 @@ Two craft notes that decide whether this works:
 - **Keep the total spread inside roughly 10 semitones.** Past that the voice stops sounding
   like one performer doing voices and starts sounding like a broken plugin.
 
+#### Voice spec, derived from reference analysis (2026-08-31)
+
+Built from a measured analysis of a 20-minute sample of the reference creator
+(3,074 words, 219 segments, transcribed locally). **This is a style spec, not a clone
+target** — the same rule the animation style follows in §2. We build an original voice that
+occupies this register; we do not reproduce a specific person's vocal identity. That keeps
+the voice owned, unrecognisable as any real creator, and immune to a likeness complaint.
+
+**Pace — the defining feature.**
+
+| Measure | Value | For contrast |
+|---|---|---|
+| Words per minute (over speech) | **205** | Conversational English ≈ 140–160 |
+| Median sentence | **8 words** | |
+| Sentences ≤ 5 words | **39%** | |
+| Questions | 1 in every 5 sentences | Keeps it conversational, not declarative |
+
+Short, fast, punchy. Almost no subordinate clauses. The energy comes from *rate and
+sentence length*, not from shouting — which matters, because rate is the one dial that
+survives pitch-shifting intact.
+
+**Address markers — the signature.** Per 1,000 words: `y'all` **7.2** · `girl` **6.8** ·
+`okay` 4.6 · `look` (imperative) 3.6 · `wait` 3.6 · `baby` 2.3 · `matter of fact` 1.0.
+
+The voice is relentlessly **second-person**. It talks *to* you and *at* the other
+characters — never narrates. `girl` and `y'all` are the two load-bearing words; `look` and
+`matter of fact` are escalation triggers.
+
+**Dialect grammar** (per 1,000 words): `ain't` 3.6 · `gon/gonna` 3.6 · negative concord
+("don't… nothing") 2.0 · copula deletion ("she pacing", "he bout to") 1.6 · "is you" 0.7 ·
+"don't got" 0.7.
+
+Naturalistic, not performative. The features are consistently present but at moderate
+density — this reads as someone's actual speech, not an accent being *worn*. Match that
+level. Overshooting is the single fastest way to turn the voice into caricature.
+
+**The comedic engine — four devices, in order of value to us:**
+
+1. **The escalation ladder.** A demand is made, then escalated past reason, one rung at a
+   time. The reference's grocery-store bit runs: don't touch → don't look → don't smell →
+   close your eyes → don't breathe → *you don't have arms any more* → stop using your legs
+   → I don't know you. Each rung is a beat. **This is the most transferable device we have
+   and it needs no profanity at all.**
+2. **One performer, every character.** The reference plays all parts — mother, children,
+   neighbour — switching by pitch and rate alone. This is empirical support for the
+   one-source casting decision above: it is a proven format, not a cost compromise.
+3. **Mundane stakes at maximum intensity.** Splitting an Airbnb bill, a hair appointment,
+   apartment gossip. The comedy is the *disproportion* between trivial subject and total
+   commitment. Our cast argues about sugar content and a missing lab report with exactly
+   that intensity.
+4. **Hard cut, no resolution.** Bits end on the peak, not on a conclusion.
+
+**Format precedent worth stealing.** The reference runs paid integrations *inside* the
+skit: an argument about splitting a holiday bill turns mid-scene into a product solving the
+argument, then the skit resumes. That is a working answer to "how does a product enter this
+format without killing it" — the product interrupts the fight rather than being announced.
+Note it lands there without a claim: the product simply *does something*, on screen.
+
+#### ⚠ What does NOT transfer — read before writing a line
+
+The reference's comedy is substantially **transgressive**, and the numbers are not close:
+
+- **Profanity: 16.6 per 1,000 words — one roughly every 60 words.** At 205 wpm that is a
+  profanity about **every 17 seconds**: ~2 in a 30-second reel, ~5 in a 90-second one.
+  Breakdown per 1,000: `fuck*` 4.6 · `damn` 2.6 · `bitch` 2.6 · `shit` 2.3 · `ass` 2.0 ·
+  `hell` 2.0.
+- Racially-charged premises used as punchlines (a bit built on someone being reported for
+  a slur), and sexual/crude material throughout.
+
+**None of this can appear in SAFAA content.** Not a taste call — three separate reasons:
+it contradicts the brand's halal integrity and its MENA/Gulf reach; it contradicts Lane A's
+credibility, which Lane B still has to be compatible with; and profanity suppresses reach
+and monetisation on both target platforms.
+
+The trap: profanity is doing real comedic work in the source, so **removing it leaves a
+hole**. Do not write the same jokes clean — they will land flat and the lane will read as
+a corporate imitation of the format, which is worse than not attempting it.
+
+Fill the hole with the four devices above instead. Concretely, the escalation ladder gets
+*longer and more absurd* to carry what the profanity was carrying: the fifth rung has to be
+genuinely surprising, because it no longer has a shock word propping it up. In the source,
+"you don't have arms any more" is the funniest line in the bit and contains no profanity —
+that is the proof the format survives the constraint.
+
+Substitutes that keep the intensity: escalating absurdity, flat deadpan understatement
+against a screaming counterpart, the rate spike (a character going from 150 to 250 wpm
+mid-sentence), and unexpected specificity ("three centimetres" is funnier than "short").
+
 #### The casting test — run this BEFORE locking any voice
 
 The source has to survive being shifted in both directions. Generate the candidate saying
