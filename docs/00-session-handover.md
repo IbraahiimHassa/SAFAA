@@ -56,8 +56,12 @@ beating Sunna on materials, design and published proof.
 
 ```
 docs/     00 handover (this) · 01 competitor teardown · 02 product strategy
-          03 supplier QC specs · 04 Shopify build plan
-brand/    brand-guidelines.html (original concept) + logo/ production SVGs
+          03 supplier QC specs · 04 Shopify build plan · 05 starter-kit costing
+          06 Feed universe (Lane B: TikTok + Instagram) · approved-claims · product-info
+brand/    logo/ production SVGs only
+archive/  SUPERSEDED — nothing live. The July 2026 concept guidelines. See archive/README.md
+design/   ARCHIVE — the HELDER direction + design-critic verdict; kept for the reasoning,
+          not the tokens. Live tokens are site/assets/style.css
 packaging/ 20+ label SVGs: fronts, backs, pouches, variation packs + README (print spec)
 site/     8 HTML pages, one CSS design system, all photography + film — Vercel-ready
 social/   4 vertical 9:16 reels for TikTok/Instagram
