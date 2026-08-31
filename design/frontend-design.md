@@ -1,18 +1,55 @@
-# frontend-design.md — Halal Marine Collagen (werknaam "HELDER")
+# frontend-design.md — ARCHIVE: the "HELDER" marine-collagen direction (2026-07-07)
 
-> **STATUS: FINAL — critic-verified.** Three directions were mocked and juried by the
-> design-critic on screenshots. **Direction A "Het Dossier" won: 26/30, PASS (no criterion
-> below 4)** — Distinctiveness 5 · Brief fit 5 · Match-or-beat 4 · Type craft 4 · Layout 4 ·
-> Commercial 4. Runner-up: B "Diepte" (21/30) — see §10. The winner was developed into the
-> high-fidelity homepage mockup (`mockups/helder-home.html`, screenshots at 1440 + 375) with the
-> jury's three fixes applied. All token values below are final and ready to apply to the theme.
+> **⚠ STATUS: SUPERSEDED on 2026-08-15. Do not apply the tokens in this file.**
 >
-> Wordmark "HELDER" is a **placeholder**: the identity is type-set (no logo glyph), so any final
-> name drops into the same system unchanged.
+> This is the record of the July 2026 design exploration for a single-SKU, Dutch-first marine
+> collagen brand under the working name **HELDER**. Three directions were mocked and juried by
+> the design-critic; **A "Het Dossier" won 26/30** (§10). That decision was real and the
+> reference set survived — but the brand it was designed for did not. The project became
+> **SAFA Nutrition**, a three-ingredient halal wellness house, and the shipped identity is a
+> different palette and a different type stack.
+>
+> **Live system:** `site/assets/style.css` (the `:root` block is the source of truth).
+> **Live architecture:** `build/data.mjs` + `build/build.mjs` — edit content there, never in
+> `site/*.html`. **Live summary:** `README.md` §Design direction, `docs/00-session-handover.md`.
+>
+> Kept here because §1's reasoning and §10's verdict are the record of *why* the look is what
+> it is, and the reference set below is still the one the shipped site was composed from.
 
 ---
 
-## 1. Direction: "Het Dossier" (Dutch rationalist document design)
+## 0. What actually shipped (read this instead of §2–§4, §9)
+
+| | Archived (HELDER, §2–§4 below) | **Shipped (SAFA Nutrition)** |
+|---|---|---|
+| Ground | `#FFFFFF` true white, cream banned | `--paper #FBFAF6` warm paper · plate `#F3F0E7` · card `#FFFFFF` |
+| Ink | `#0E2F36` Noordzee petrol | `--ink #26201A` espresso · secondary `--ink-2 #675E53` |
+| Accent | `#C8573B` terracotta | `--amber #B97F24` (decorative) · `--amber-deep #8A5A17` (text-safe) · `--pass #2E6B3F` |
+| Hairline | `#D9E2E2` | `rgba(38,32,26,.16)` · strong `rgba(38,32,26,.55)` |
+| Display | Archivo 600 | **Newsreader** 400/500, italic for captions and figure notes |
+| Body / data | IBM Plex Sans + IBM Plex Mono | **Archivo** (body default *and* labels/data — no mono face) |
+| Arabic | not in scope | **Amiri** |
+| Font delivery | Shopify library / Google Fonts | **Self-hosted** in `site/assets/fonts/` (`build/fetch-fonts.mjs`) — the CDN leaked EU visitor IPs on first paint |
+| Radius | 0px everywhere | Mostly square, but *not* absolute: pill cart button, 2px on menu items and focus rings |
+| Shadow | none anywhere | Used, sparingly — dropdowns and lifted cards |
+| Language | NL-first | Site ships **`lang="en"`**; NL + AR with true RTL are a planned next pass |
+| Scope | one marine-collagen SKU | 8 pages across honey, collagen (+ coffee/matcha/qahwa), black seed oil |
+| Platform | Shopify Dawn theme settings | Static generated site, Vercel; Shopify port is `docs/04-shopify-build-plan.md` |
+
+**What carried over unchanged:** the dossier thesis — proof rendered as a physical document,
+specification tables, hairline rules, drawn SVG ingredient marks over stock photography, one
+rationed warm accent, no badges, no gamification, no claim-shaped copy. Also the reference set
+(§1) and the EFSA discipline (§5's principle, not its Dutch section list).
+
+**What the shipped site added that this file never anticipated:** the feelreformed.com
+conversion skeleton — annotated value shot → batch verification strip → stacked pickers →
+1/2/3 quantity tiles → plan card with free starter kit → accordions → ingredient grid →
+comparison table → film → cross-sell. Where that reference puts an inflated review count and
+an "As Seen In" press row, SAFA puts a batch verification strip and nothing.
+
+---
+
+## 1. Direction: "Het Dossier" (Dutch rationalist document design) — *thesis still live*
 
 The brand wins on **sourcing integrity and credibility**. The design literalizes that: the site is
 composed like a beautiful scientific dossier — hairline rules, specification tables, mono-spaced
@@ -35,7 +72,9 @@ hierarchy). Sunna captured as the anti-reference.
 
 ---
 
-## 2. Palette — exact hex, mapped to Shopify color scheme slots
+## 2. Palette — exact hex, mapped to Shopify color scheme slots — ⚠ SUPERSEDED
+
+> Replaced by the `:root` block in `site/assets/style.css`. See §0. Nothing below ships.
 
 OKLCH-derived, sRGB hex for Shopify settings. Strategy: *restrained* — tinted neutrals + one
 accent under 10% of surface.
@@ -77,7 +116,9 @@ Contrast (WCAG): `#0E2F36` on `#FFFFFF` = 12.9:1 ✓ · on `#F2F6F6` = 11.6:1 �
 
 ---
 
-## 3. Typography
+## 3. Typography — ⚠ SUPERSEDED
+
+> Shipped stack is Newsreader / Archivo / Amiri, self-hosted. See §0.
 
 | Role | Face | Source | Weights | Notes |
 |---|---|---|---|---|
@@ -101,7 +142,10 @@ free).
 
 ---
 
-## 4. Spacing, radius, borders, buttons
+## 4. Spacing, radius, borders, buttons — ⚠ SUPERSEDED
+
+> The shipped system is square-*leaning*, not absolutist, and does use shadow on dropdowns and
+> lifted cards. See §0 and `site/assets/style.css`.
 
 - **Radius: 0px everywhere.** Square corners are the direction's signature (Aesop discipline).
   Shopify theme settings: buttons/inputs/cards corner radius → 0.
@@ -116,7 +160,12 @@ free).
 
 ---
 
-## 5. Homepage architecture → Shopify OS 2.0 sections (in order)
+## 5. Homepage architecture → Shopify OS 2.0 sections (in order) — ⚠ SUPERSEDED
+
+> Written for one NL-language SKU on Dawn. The shipped homepage follows the feelreformed
+> conversion skeleton across 8 English pages (§0). **The EFSA discipline at the end of this
+> section still holds verbatim** — it is the reason the layout has no star ratings and no
+> testimonial-shaped copy. Live claims source: `docs/approved-claims.md`.
 
 | # | Section | Shopify section type | Scheme | Content rule |
 |---|---|---|---|---|
@@ -139,7 +188,12 @@ testimonial-shaped claims, no before/after imagery, no "beauty from within" fram
 
 ---
 
-## 6. Product page (PDP) guidance
+## 6. Product page (PDP) guidance — ⚠ SUPERSEDED
+
+> Live PDP order is in `docs/00-session-handover.md` and built by `build/build.mjs`. The
+> principles here that survived: no review stars until imported testimonial text is
+> claims-verified, allergen line stated plainly, subscription priced matter-of-factly (the
+> shipped Subscribe & Save toggle states the difference, it does not shout a badge).
 
 - Layout: gallery left (square, hairline-framed, white bg packshots + one texture macro), buy
   column right. Title Archivo 600 28–32px; price 20px with `#C8573B` only if discounted.
@@ -156,7 +210,13 @@ testimonial-shaped claims, no before/after imagery, no "beauty from within" fram
 
 ---
 
-## 7. Imagery direction (for future packshots/lifestyle)
+## 7. Imagery direction — ⚠ SUPERSEDED (grade inverted)
+
+> This section grades every image cool, toward petrol `#0E2F36`. The shipped brand is warm —
+> paper, espresso ink, sidr amber — and the media library is already generated against it
+> (`site/assets/img/`, `site/assets/video/`). What survived: no stock photography, drawn SVG
+> ingredient marks, documentary rather than aspirational-glow people, never before/after.
+> Provenance and replace-before-launch status: `README.md` real-content manifest.
 
 - **Packshot:** matte white/ink-labelled canister or pouch on pure white, hairline shadow only,
   straight-on, document-flat. Label design = same dossier typography (Archivo + Plex Mono spec table).
@@ -170,7 +230,7 @@ testimonial-shaped claims, no before/after imagery, no "beauty from within" fram
 - Generated interim imagery (Firefly) allowed for water/texture only; packshots wait for the real
   product. Every image cool-graded toward `#0E2F36`.
 
-## 8. Motion notes
+## 8. Motion notes — *still live*
 
 Lens: **Jakub (production polish) primary, Emil (restraint) secondary** — e-commerce mapping.
 - Scroll-entry: single quiet pattern site-wide — `translateY(12px)` + fade, 500–600ms,
@@ -183,7 +243,11 @@ Lens: **Jakub (production polish) primary, Emil (restraint) secondary** — e-co
 
 ---
 
-## 9. Exact Shopify theme setting values (apply now)
+## 9. Exact Shopify theme setting values — ⚠ SUPERSEDED, DO NOT APPLY
+
+> These were the HELDER values. Applying them would revert the brand's palette and type stack.
+> The live Shopify mapping is `docs/04-shopify-build-plan.md`, built from the SAFA tokens in
+> `site/assets/style.css`.
 
 ```
 Colors → Scheme 1: bg #FFFFFF · text #0E2F36 · solid button #0E2F36 / label #FFFFFF ·
@@ -235,7 +299,10 @@ or 1440. Responsive verified at 1440 and 375 (screenshots saved). Slop scan on b
 clean — no eyebrow dashes, no icon-card grids, no pills, no cream ground, no Inter/Geist, no
 badge bars, accent rationed to one element.
 
-## 11. Real-content manifest (liability guard)
+## 11. Real-content manifest (liability guard) — ⚠ SUPERSEDED
+
+> The live manifest is in `README.md` and covers all 8 pages and the packaging SVGs. The list
+> below is HELDER-era and covers only the single marine-collagen SKU.
 
 | Item | Status |
 |---|---|

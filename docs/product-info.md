@@ -60,7 +60,10 @@ page. This honesty IS the brand's trust play — keep it prominent, not buried.
 - [ ] Supplier + COA → fill in fish species/origin in the transparency block (placeholder promise is live on page)
 - [ ] Halal certificate (body, number, expiry) → unlock "halal-gecertificeerd"
 - [ ] Regulatory consultant sign-off on approved-claims.md (it is a working draft)
-- [ ] Product imagery (packshots + lifestyle per design direction in `design/frontend-design.md`)
+- [ ] Product imagery — real studio packshots of production packs. Concept visuals already exist
+  (`site/assets/img/`), AI-generated against the shipped SAFA identity; grade to the live design
+  system in `site/assets/style.css`, **not** to `design/frontend-design.md` (archived HELDER
+  direction, cool petrol grade, superseded 2026-08-15)
 - [ ] NVWA supplement notification; product liability insurance; upgrade store off trial plan
 - [ ] Sunna market intel snapshot (2026-07-06): marine collagen 10 g/serving unflavoured, sub-and-save
   ~20% off, 3/6-bag bundles, trust-badge-heavy PDP, claims NOT EU-compliant (their weakness = our angle)

@@ -14,6 +14,7 @@ lab reports, halal certification shown with body + number or not claimed at all.
 | `docs/03-supplier-qc-specs.md` | Procurement-grade QC specs per ingredient (send to suppliers) |
 | `docs/04-shopify-build-plan.md` | Mapping the design onto Shopify (theme, sections, metaobjects, apps) |
 | `brand/` | Brand guidelines (original concept HTML) + production logo SVGs |
+| `design/` | **Archive.** `frontend-design.md` = the July 2026 "HELDER" direction + design-critic verdict, superseded 2026-08-15; its palette and type tokens are **not** the shipped ones. Live tokens are the `:root` block in `site/assets/style.css` |
 | `packaging/` | Label/box SVGs per SKU + packaging system spec |
 | `build/` | The site generator — `data.mjs` (all copy, prices, specs) + `build.mjs` (templates). Run `node build/build.mjs` to regenerate every page in `site/` |
 | `site/` | The shipped design: 8 generated HTML pages + one CSS design system, with AI-generated product photography + promo film. **Vercel-ready:** import the repo, keep root directory as-is — `vercel.json` serves `site/` |
