@@ -171,12 +171,55 @@ no human figures, no faces.
   ("arobica", "solvont-free").
 - Save to `social/` beside the four existing reels.
 
-### Voices
+### Voices — one source, pitch-shifted into the whole cast
 
-The cast are **performances, not brand voices.** SAFAA's two locked voice slots (House and
-Feed) govern narration and brand address; a pitch-shifted cartoon cast sits outside that
-count. One source voice pitch-shifted across several characters is the classic technique
-and the cheapest to keep consistent.
+**Decided 2026-08-31.** Lane B has **one voice**. The Feed voice (SAFAA's `Secondary` slot)
+is the *source*, and every character is that same voice at a different pitch and rate.
+Narration, when there is any, is the source at neutral.
+
+So SAFAA still carries exactly two voices total — House and Feed — and the cartoon cast
+costs nothing extra. Everything in the lane sounds like one show made by one person, which
+is the register the format wants.
+
+**The source voice:** comedic, raggedy, African American accent, hilarious, internet-native.
+
+#### The pitch map — a starting point, not gospel
+
+| Character | Pitch | Rate | Delivery |
+|---|---|---|---|
+| **COLLAGEN** | +3 to +5 st | slightly slow | Smooth, glamorous, unbothered. Never rushes |
+| **COFFEE** | +1 to +2 st | **1.5–2×** | Manic drill sergeant. The rate does most of the work here, not the pitch |
+| **MATCHA** | −1 to −2 st | slow, quiet | Breathy, controlled, lands one sharp line then stops |
+| **QAHWA** | −3 to −5 st | slow | Resonant, proud, unhurried |
+| **Narration** | 0 | natural | The source voice as itself |
+
+Two craft notes that decide whether this works:
+
+- **Preserve formants when shifting.** A raw pitch shift without formant correction gives
+  you chipmunk and demon, not characters. Any tool worth using exposes this separately.
+- **Keep the total spread inside roughly 10 semitones.** Past that the voice stops sounding
+  like one performer doing voices and starts sounding like a broken plugin.
+
+#### The casting test — run this BEFORE locking any voice
+
+The source has to survive being shifted in both directions. Generate the candidate saying
+**all four signature lines at their four target pitches**, then listen for:
+
+1. Does the comedy survive at −5 st? Raggedy timbre often flattens out when pitched down.
+2. Does it survive at +5 st? Grit tends to turn thin and shrill.
+3. **Does Qahwa still read as dignified?** This is the hard one. Qahwa is proud, royal,
+   heritage — a comedic voice pitched down has to land *dramatic*, not *mocking*. If the
+   register clash cannot be resolved by rate and delivery, Qahwa is the character that
+   justifies an exception, and that exception needs a decision, not a workaround.
+4. Can you tell all four apart with your eyes shut? If two collapse into each other, widen
+   the rate difference before widening the pitch difference.
+
+A source voice that fails on Qahwa but passes the other three is a *recast*, not a
+compromise — the whole point of one source is that it carries the entire cast.
+
+Pick the source with ElevenLabs Voice Design or Hume Octave (describe it, don't hunt a
+library), then bring it in with `create_voice` so it lands as `voice_type: "element"`.
+`voice_change` handles the per-character shifts.
 
 ## 7. Open
 
