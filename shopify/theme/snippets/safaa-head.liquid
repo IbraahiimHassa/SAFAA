@@ -1,0 +1,29 @@
+{%- comment -%}
+  SAFAA type system. Newsreader (display) / Archivo (data & labels) / Amiri (Arabic), all OFL
+  and self-hosted as theme assets — no visitor IP reaches a third-party font CDN, which is a
+  settled GDPR problem and an avoidable one for a brand whose pitch is compliance discipline.
+
+  Subsetting note: the static site splits latin / latin-ext per family. Here the latin files
+  cover the storefront's Latin content and Amiri is scoped to the Arabic range, so a Latin
+  page never downloads the Arabic face.
+{%- endcomment -%}
+<link rel="preload" href="{{ 'newsreader-latin-400-500-n.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ 'archivo-latin-400-900-n.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:400 500;font-display:swap;
+  src:url({{ 'newsreader-latin-400-500-n.woff2' | asset_url }}) format('woff2')}
+@font-face{font-family:'Newsreader';font-style:italic;font-weight:400 500;font-display:swap;
+  src:url({{ 'newsreader-latin-400-500-i.woff2' | asset_url }}) format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400 900;font-stretch:100%;font-display:swap;
+  src:url({{ 'archivo-latin-400-900-n.woff2' | asset_url }}) format('woff2')}
+@font-face{font-family:'Amiri';font-style:normal;font-weight:400;font-display:swap;
+  src:url({{ 'amiri-arabic-400-n.woff2' | asset_url }}) format('woff2');
+  unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:'Amiri';font-style:normal;font-weight:700;font-display:swap;
+  src:url({{ 'amiri-arabic-700-n.woff2' | asset_url }}) format('woff2');
+  unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:'Amiri';font-style:normal;font-weight:400;font-display:swap;
+  src:url({{ 'amiri-latin-400-n.woff2' | asset_url }}) format('woff2')}
+</style>
+{{ 'safaa-base.css' | asset_url | stylesheet_tag }}
+{{ 'safaa-store.css' | asset_url | stylesheet_tag }}

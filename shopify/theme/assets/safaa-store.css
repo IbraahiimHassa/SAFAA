@@ -1,0 +1,116 @@
+/* SAFAA — storefront layer.
+   safaa-base.css is the design system, ported verbatim from the static site. This file is
+   only what Shopify adds: the chrome the static site never had (header, cart drawer,
+   wordmark close) and the handful of places Horizon's base.css has to be told to stand down.
+   Nothing here introduces a new colour or typeface — everything resolves to the tokens. */
+
+/* --- make the theme's chrome speak our language ------------------------- */
+body,
+.shopify-section {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+}
+
+#header-group,
+#header-group .header,
+#header-group .header-section {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+}
+
+#header-group a,
+#header-group .header__menu-item {
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+/* Horizon sets generous section padding; our layout carries its own rhythm. */
+.shopify-section:has(> .wrap.safaa) { padding-block: 0; }
+
+/* The buy button is a submit inside a real product form now, not a demo toast. */
+.addcart[disabled] { opacity: .45; cursor: not-allowed; }
+.safaa-form { display: contents; }
+
+/* Variant tiles: the ladder is real variants, so the label wraps a radio. */
+.qt { display: block; }
+.qt input:focus-visible + img { outline: 2px solid var(--accent); outline-offset: 3px; }
+.qt:has(input:disabled) { opacity: .4; cursor: not-allowed; }
+.qt .u s { color: var(--fg-muted); font-weight: 400; }
+
+/* --- the wordmark close ------------------------------------------------- */
+/* Set at optical size and cropped at the baseline so the letterforms run off the
+   page rather than sitting inside a box. The crop is the point: it reads as a mark
+   pressed into the paper, not a logo placed on it. */
+.safaa-wordmark {
+  border-top: 1px solid var(--line);
+  margin-top: 80px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.safaa-wordmark__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px 28px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 22px 28px 0;
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+
+.safaa-wordmark__links nav { display: flex; flex-wrap: wrap; gap: 18px; }
+
+.safaa-wordmark__links a {
+  color: var(--fg-muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color .18s ease, border-color .18s ease;
+}
+
+.safaa-wordmark__links a:hover {
+  color: var(--fg);
+  border-bottom-color: var(--line-strong);
+}
+
+.safaa-wordmark__mark {
+  /* Cropped to roughly cap height: the descender space below the baseline is trimmed
+     so the mark sits flush to the bottom edge of the page. */
+  margin-top: 18px;
+  height: .60em;
+  font-size: clamp(88px, 21vw, 300px);
+  line-height: 1;
+  overflow: hidden;
+}
+
+.safaa-wordmark__mark span {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1em;
+  line-height: .78;
+  letter-spacing: -.02em;
+  text-align: center;
+  color: var(--fg);
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .safaa-wordmark__links { justify-content: flex-start; }
+  .safaa-wordmark__mark { height: .58em; }
+}
+
+/* Respect the same motion contract the static site honours. */
+@media (prefers-reduced-motion: reduce) {
+  .safaa-wordmark__links a,
+  .galthumb img { transition: none; }
+}

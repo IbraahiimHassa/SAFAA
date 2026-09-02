@@ -1,0 +1,7 @@
+{
+  "sections": {
+    "main": { "type": "safaa-product", "settings": {} },
+    "wordmark": { "type": "safaa-wordmark", "settings": {} }
+  },
+  "order": ["main", "wordmark"]
+}

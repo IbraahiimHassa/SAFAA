@@ -1,0 +1,15 @@
+{%- comment -%}
+  The house icon set, drawn as SVG rather than pulled from a font or a sprite sheet —
+  the same marks the static site uses, so the storefront and the design cannot drift.
+  Usage: {% render 'safaa-icon', i: 'doc' %}
+{%- endcomment -%}
+{%- case i -%}
+  {%- when 'doc' -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
+  {%- when 'pin' -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+  {%- when 'leaf' -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 20c0-8 5-14 16-15 0 11-5.5 16-13 15"/><path d="M4 20c3-4 6.5-6.6 11-8.5"/></svg>
+  {%- when 'ship' -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg>
+  {%- when 'spoon' -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M13.5 3.5c1.8 1.8 1.8 4.7 0 6.5s-4.7 1.8-6.5 0 1-8.3 6.5-6.5z"/><path d="M9.5 11.5 5 20"/></svg>
+  {%- when 'check' -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+  {%- when 'shield' -%}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 5 6v6c0 4.4 3 7.9 7 9 4-1.1 7-4.6 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+  {%- when 'arrow' -%}<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5"/></svg>
+{%- endcase -%}

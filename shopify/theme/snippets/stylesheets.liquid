@@ -1,0 +1,4 @@
+{{ 'overflow-list.css' | asset_url | preload_tag: as: 'style' }}
+{{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+{%- comment -%} SAFAA's design system loads last so it wins on conflicts. {%- endcomment -%}
+{% render 'safaa-head' %}

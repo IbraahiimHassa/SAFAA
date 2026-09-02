@@ -1,0 +1,253 @@
+{%- comment -%}
+  SAFAA product page. Structure ported from site/collagen-matcha.html; the data comes from
+  the product itself plus the safa.spec JSON metafield, so the storefront and the design
+  system cannot drift apart.
+
+  Deliberate differences from the static page, because Shopify owns these:
+  - the quantity ladder is real variants posting to /cart/add, not a JS price calculator
+  - the flavour picker links to sibling products, since each flavour is its own product
+  - the plan card renders only when a selling plan actually exists on the product
+{%- endcomment -%}
+
+{%- liquid
+  assign spec = product.metafields.safa.spec.value
+  assign fmt = product.metafields.safa.format
+  assign per = product.metafields.safa.per_serving
+  assign current = product.selected_or_first_available_variant
+-%}
+
+<div class="wrap safaa">
+  <p class="crumbs">
+    <a href="{{ routes.root_url }}">Home</a> ·
+    <a href="{{ routes.all_products_collection_url }}">Shop</a> ·
+    <span>{{ product.title }}</span>
+  </p>
+
+  <div class="pdp">
+    {%- comment -%} ---------- gallery ---------- {%- endcomment -%}
+    <div class="gal">
+      <div class="main">
+        {%- if product.featured_media -%}
+          <img id="galmain" src="{{ product.featured_media | image_url: width: 900 }}"
+               alt="{{ product.featured_media.alt | escape }}" width="900" height="917" loading="eager">
+        {%- endif -%}
+        {%- if spec.vsfoot != blank -%}<span class="vsfoot">{{ spec.vsfoot }}</span>{%- endif -%}
+      </div>
+      {%- if product.media.size > 1 -%}
+        <div class="strip">
+          {%- for m in product.media limit: 5 -%}
+            <button type="button" class="galthumb{% if forloop.first %} sel{% endif %}"
+                    data-img="{{ m | image_url: width: 900 }}">
+              <img src="{{ m | image_url: width: 220 }}" alt="{{ m.alt | escape }}" loading="lazy">
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ---------- buy column ---------- {%- endcomment -%}
+    <div>
+      {%- if spec.preorder -%}
+        <p class="vstrip pending">
+          {% render 'safaa-icon', i: 'doc' %}
+          <b>Not yet tested</b>
+          <span class="sep">·</span>
+          <span>its report publishes before the first unit sells</span>
+        </p>
+      {%- else -%}
+        <p class="vstrip">
+          {% render 'safaa-icon', i: 'shield' %}
+          <b>Published before it sells</b>
+          <span class="sep">·</span>
+          <span>every batch, an accredited lab</span>
+        </p>
+      {%- endif -%}
+
+      <div class="pdphead">
+        {%- if spec.flag != blank -%}<p class="flag">{{ spec.flag }}</p>{%- endif -%}
+        <h1>{{ product.title }}</h1>
+        <p class="cat">{{ spec.cat | default: fmt }}</p>
+        <a class="nutlink" href="#nutrition">Nutritional information {% render 'safaa-icon', i: 'arrow' %}</a>
+      </div>
+
+      {%- if spec.bullets.size > 0 -%}
+        <ul class="bul">
+          {%- for b in spec.bullets -%}
+            <li>{% render 'safaa-icon', i: 'leaf' %}<span>{{ b }}</span></li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- form 'product', product, id: 'safaa-buy', class: 'safaa-form' -%}
+        {%- if product.variants.size > 1 -%}
+          <div class="qty">
+            <span class="lab">{{ product.options.first }} — save more</span>
+            <div class="qtiles">
+              {%- for v in product.variants -%}
+                <label class="qt{% if v.id == current.id %} sel{% endif %}" data-price="{{ v.price }}">
+                  {%- if v.compare_at_price > v.price -%}
+                    {%- assign pct = v.compare_at_price | minus: v.price | times: 100.0 | divided_by: v.compare_at_price | round -%}
+                    <span class="save">Save {{ pct }}%</span>
+                  {%- endif -%}
+                  <input type="radio" name="id" value="{{ v.id }}"
+                         {% if v.id == current.id %}checked{% endif %}
+                         {% unless v.available %}disabled{% endunless %}>
+                  {%- if product.featured_media -%}
+                    <img src="{{ product.featured_media | image_url: width: 90 }}" alt="" loading="lazy">
+                  {%- endif -%}
+                  <b>{{ v.title }}</b>
+                  <span class="u">
+                    {{ v.price | money }}
+                    {%- if v.compare_at_price > v.price %} <s>{{ v.compare_at_price | money }}</s>{% endif -%}
+                  </span>
+                </label>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- else -%}
+          <input type="hidden" name="id" value="{{ current.id }}">
+        {%- endif -%}
+
+        {%- if product.selling_plan_groups.size > 0 -%}
+          <div class="freq">
+            <span class="lab">Frequency</span>
+            {%- for group in product.selling_plan_groups -%}
+              {%- for plan in group.selling_plans -%}
+                <label class="plan{% if forloop.first %} sel{% endif %}">
+                  <input type="radio" name="selling_plan" value="{{ plan.id }}" {% if forloop.first %}checked{% endif %}>
+                  <span class="ph"><span class="dot"></span><span class="ttl">{{ plan.name }}</span>
+                    {%- if forloop.first -%}<span class="best">Best value</span>{%- endif -%}
+                  </span>
+                </label>
+              {%- endfor -%}
+            {%- endfor -%}
+            <label class="plan">
+              <input type="radio" name="selling_plan" value="">
+              <span class="ph"><span class="dot"></span><span class="ttl">One-time purchase</span></span>
+              <span class="pr"><b>{{ current.price | money }}</b> <span class="per">{{ per }}</span></span>
+            </label>
+          </div>
+        {%- endif -%}
+
+        <div class="buy">
+          <button class="addcart" type="submit" name="add" {% unless product.available %}disabled{% endunless %}>
+            {%- if product.available -%}
+              Add to cart — <span data-safaa-price>{{ current.price | money }}</span>
+            {%- else -%}
+              Sold out
+            {%- endif -%}
+          </button>
+          <p class="deliv">
+            {%- if spec.preorder -%}
+              No payment taken until the batch clears its lab report
+            {%- else -%}
+              Tracked EU shipping · free over €55
+            {%- endif -%}
+          </p>
+        </div>
+      {%- endform -%}
+
+      {%- if spec.blurb != blank -%}<p class="pblurb">{{ spec.blurb }}</p>{%- endif -%}
+
+      {%- comment -%} ---------- the assay card: the signature module ---------- {%- endcomment -%}
+      {%- if spec.assay.rows.size > 0 -%}
+        <div class="assay" id="nutrition">
+          <div class="ah">{{ spec.assay.head }} <span>
+            {%- if spec.assay.verified -%}independently verified{%- else -%}per serving{%- endif -%}
+          </span></div>
+          <table>
+            {%- for r in spec.assay.rows -%}
+              <tr><td>{{ r.k }}</td><td{% if r.ok %} class="pass"{% endif %}>{{ r.v }}</td></tr>
+            {%- endfor -%}
+          </table>
+          {%- if spec.assay.note != blank -%}<p class="note">{{ spec.assay.note }}</p>{%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if spec.acc.size > 0 -%}
+        <div class="acc">
+          {%- for a in spec.acc -%}
+            <details{% if a.open %} open{% endif %}>
+              <summary>{{ a.t }}</summary>
+              <div class="a">{{ a.body }}</div>
+            </details>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{%- if spec.ingredients.size > 0 -%}
+  <section class="wrap safaa" aria-labelledby="ing-h" style="padding-top:0">
+    <p class="kick">What's actually in it</p>
+    <h2 id="ing-h">Ingredients, <em>and what we can prove.</em></h2>
+    <p class="secsub">Claims here use EFSA-authorised wording only. Where a benefit isn't authorised, we don't imply it — we publish the number instead.</p>
+    <div class="ingrid">
+      {%- for ing in spec.ingredients -%}
+        <div class="ing"><h3>{{ ing.name }}</h3><p>{{ ing.body }}</p></div>
+      {%- endfor -%}
+    </div>
+  </section>
+{%- endif -%}
+
+{%- if spec.cmp -%}
+  <section class="wrap safaa" aria-labelledby="cmp-h" style="padding-top:0">
+    <p class="kick">The honest comparison</p>
+    <h2 id="cmp-h">{{ spec.cmp.h }}</h2>
+    <div class="cmp" tabindex="0" role="region" aria-label="How {{ product.title }} compares">
+      <table>
+        <tr>
+          {%- for c in spec.cmp.cols -%}
+            <th scope="col"{% if forloop.last %} class="safa"{% endif %}>{{ c }}</th>
+          {%- endfor -%}
+        </tr>
+        {%- for row in spec.cmp.rows -%}
+          <tr>
+            {%- for cell in row -%}
+              {%- if forloop.last -%}
+                <td class="safa"><span class="y">✓</span> {{ cell }}</td>
+              {%- else -%}
+                <td>{{ cell }}</td>
+              {%- endif -%}
+            {%- endfor -%}
+          </tr>
+        {%- endfor -%}
+      </table>
+    </div>
+  </section>
+{%- endif -%}
+
+<script>
+  // Gallery swap + keeping the button price in step with the chosen variant.
+  (function () {
+    var root = document.currentScript.parentNode;
+    var main = document.getElementById('galmain');
+    root.querySelectorAll('.galthumb').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (main) main.src = b.dataset.img;
+        root.querySelectorAll('.galthumb').forEach(function (o) { o.classList.remove('sel'); });
+        b.classList.add('sel');
+      });
+    });
+    var out = root.querySelector('[data-safaa-price]');
+    root.querySelectorAll('.qt input').forEach(function (input) {
+      input.addEventListener('change', function () {
+        root.querySelectorAll('.qt').forEach(function (t) { t.classList.remove('sel'); });
+        input.closest('.qt').classList.add('sel');
+        var tile = input.closest('.qt');
+        if (out && tile.dataset.price) {
+          out.textContent = '€' + (parseInt(tile.dataset.price, 10) / 100).toFixed(2).replace('.00', '');
+        }
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "SAFAA product",
+  "settings": [],
+  "enabled_on": { "templates": ["product"] }
+}
+{% endschema %}
