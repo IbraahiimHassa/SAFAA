@@ -84,7 +84,7 @@
             <span class="lab">{{ product.options.first }} — save more</span>
             <div class="qtiles">
               {%- for v in product.variants -%}
-                <label class="qt{% if v.id == current.id %} sel{% endif %}" data-price="{{ v.price }}">
+                <label class="qt{% if v.id == current.id %} sel{% endif %}" data-price="{{ v.price | money }}">
                   {%- if v.compare_at_price > v.price -%}
                     {%- assign pct = v.compare_at_price | minus: v.price | times: 100.0 | divided_by: v.compare_at_price | round -%}
                     <span class="save">Save {{ pct }}%</span>
@@ -236,9 +236,9 @@
         root.querySelectorAll('.qt').forEach(function (t) { t.classList.remove('sel'); });
         input.closest('.qt').classList.add('sel');
         var tile = input.closest('.qt');
-        if (out && tile.dataset.price) {
-          out.textContent = '€' + (parseInt(tile.dataset.price, 10) / 100).toFixed(2).replace('.00', '');
-        }
+        // Use the money string Liquid already formatted, so the locale's separators
+        // and currency placement never change under the customer mid-interaction.
+        if (out && tile.dataset.price) out.textContent = tile.dataset.price;
       });
     });
   })();
