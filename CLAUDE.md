@@ -98,6 +98,36 @@ client.yaml            # NON-SECRET client config
 README.md              # Build + transfer runbook
 ```
 
+### Where decisions get written — do this every time
+
+**Any decision about the brand, the voice, the design, the content, or the claims is
+written to a file in this repo and committed. Never left in chat.** A decision that exists
+only in a conversation is lost the moment the session ends, and the next session will
+re-litigate it — or worse, decide it differently.
+
+| Kind of decision | Goes to |
+|---|---|
+| Brand, voice, design direction, content strategy | `docs/NN-<topic>.md`, next free number |
+| What may be said about the product | `docs/approved-claims.md` (human-reviewed changes only) |
+| Copy, prices, specs | `build/data.mjs` — **never** `site/*.html`, which is generated |
+| Colours, type, spacing | `site/assets/style.css` `:root` — the source of truth |
+| A superseded direction | `archive/`, stamped. Never deleted if it holds live reasoning |
+
+Rules that go with it:
+
+- **Say which file you wrote to**, in the reply. The user should never have to ask where
+  something was saved.
+- **Record the reasoning, not just the conclusion.** The next session needs to know *why*,
+  or it will undo the decision the first time it looks inconvenient.
+- **When a direction is replaced, stamp the old one** — do not leave two files that both
+  read as current. This repo has been bitten by exactly that twice (`design/` and the old
+  `brand/brand-guidelines.html`, both now archived).
+- **Reference captures go to the vault**, not here:
+  `ibrah-knowledge/02_References/web-design/`. They compound across projects; stranded in
+  one repo they help nobody.
+- Verbatim third-party material (full transcripts of someone's video, competitor copy at
+  length) stays out of the repo. Derived analysis is fine and is our own work.
+
 ---
 
 ## 5. Config & secrets
