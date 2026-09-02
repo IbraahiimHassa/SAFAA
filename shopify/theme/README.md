@@ -59,3 +59,38 @@ Three things are deliberately different from `site/`, because Shopify owns them:
 - [ ] Header and footer sections — currently Horizon's, restyled by CSS only.
 - [ ] Real product photography (the current images are AI-generated concepts).
 - [ ] Selling plans, so the plan card appears.
+
+## Seeing what was built
+
+The storefront is a normal web page, so verifying it needs browser access to the shop
+domain. The Shopify **Admin** API reaches the agent through an approved connector, which is
+why products, images and theme files can be written from a sandboxed session — but the
+**storefront** goes over ordinary HTTP egress, and in Claude Code on the web that is
+governed by the environment's network policy.
+
+`shopify/scripts/verify-storefront.mjs` closes that loop the moment access exists: it drives
+a real Chromium over the theme, unlocks the storefront password, and reports missing
+modules, horizontal overflow, broken images, console errors and axe violations, with
+screenshots at 1440 / 768 / 375.
+
+```bash
+npm i -D playwright @axe-core/playwright
+STORE=hjqqqb-at.myshopify.com \
+STOREFRONT_PASSWORD=... \
+THEME_ID=199437222271 \
+CHROME_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome \
+node shopify/scripts/verify-storefront.mjs
+```
+
+**Hosts that must be reachable** (allow these in the environment's network policy, or run
+locally where no policy applies):
+
+| Host | Why |
+|---|---|
+| `*.myshopify.com` | the storefront, now and after the dev store is replaced |
+| `cdn.shopify.com` | theme assets and product images — without it every screenshot is unstyled and imageless |
+| `safaa-sigma.vercel.app` | the static site, and the interim stylesheet link above |
+
+Chromium is already present in the cloud image at
+`/opt/pw-browsers/chromium-1194/chrome-linux/chrome`; only the npm packages and the egress
+allowance are missing.
