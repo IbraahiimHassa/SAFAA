@@ -1,8 +1,12 @@
 # Supplier sample request — the three collagen drinks
 
-For the CMO/blender already identified. Goal: **demo samples of Collagen Matcha, Qahwa +
-Collagen and Collagen Coffee**, and — just as important — the paperwork that tells us whether
-this supplier can actually hold the spec once we are paying for volume.
+For the contact already identified. Goal: **samples of Collagen Matcha, Qahwa + Collagen and
+Collagen Coffee**, and — just as important — the paperwork that says whether whoever makes them
+can hold the spec once we are paying for volume.
+
+Two versions below, because the contact is a **sourcing agent** rather than the factory: he goes
+and finds the producer. The WhatsApp message is the one to send him. The email is for the
+manufacturer once he names one — or for approaching a CMO directly.
 
 ## Before you send it
 
@@ -10,12 +14,16 @@ this supplier can actually hold the spec once we are paying for volume.
    brand. The email below is written so it works either way — replace `[BRAND]` with SAFA
    Nutrition if the check is clean, or delete the name and say "a Netherlands-based halal
    wellness brand launching Q1". Suppliers do not need the name to quote.
-2. **Attach `docs/03-supplier-qc-specs.md`** — SKU 2 (the collagen) and SKU 4 (the blends).
+2. **Know which framing you need.** If the contact manufactures, the email below works as
+   written. If he is a sourcing agent who will go and find the factory, use the WhatsApp
+   version further down — it asks him to bring a producer back against the spec, rather than
+   asking about "his" product.
+3. **Attach `docs/03-supplier-qc-specs.md`** — SKU 2 (the collagen) and SKU 4 (the blends).
    Sending the spec with the first email is the whole play: it changes what they send back,
    and it filters out the traders in one round instead of three.
-3. **Offer to pay for samples and courier.** It costs ~€60–150 and it is the difference
+4. **Offer to pay for samples and courier.** It costs ~€60–150 and it is the difference
    between a production-batch sample and a hand-made mock-up from the sales desk.
-4. **Ship to a real NL address** you can receive at, and expect fish-derived powder to need
+5. **Ship to a real NL address** you can receive at, and expect fish-derived powder to need
    a commercial invoice.
 
 ---
@@ -44,17 +52,17 @@ production run, because it is the specification we will actually test against.
 
 **What I would like to receive:**
 
-- **Samples of your current standard versions** of each of the three (or the nearest equivalent
-  you already produce), taken from a real production batch and batch-coded — not a lab mock-up.
-  Two units of each if possible, so one can go to an independent lab.
+- **Samples of each of the three** — or the nearest equivalent the producer already makes —
+  taken from a real production batch and batch-coded, not a lab mock-up. Two units of each if
+  possible, so one can go to an independent lab.
 - The **COA for the exact batch each sample comes from**, plus the raw-material COA for the
   collagen used in it.
-- If a qahwa blend is not in your range, please say so directly — I would rather develop it with
-  you as a custom formulation than receive an approximation.
+- If a qahwa blend is not already made anywhere, say so directly — I would rather develop it as
+  a custom formulation with the right producer than receive an approximation.
 
 We are happy to pay for the samples and the courier. Please send me an invoice.
 
-**Documentation, so I can assess you properly:**
+**Documentation, so I can assess the producer properly:**
 
 - Facility certificates: GMP, HACCP/ISO 22000, BRC or IFS if held — with expiry dates
 - **Halal certificate** covering the blending and filling facility and the collagen line —
@@ -64,8 +72,8 @@ We are happy to pay for the samples and the courier. Please send me an invoice.
   of processing**, protein content, and the **molecular weight distribution report**
 - Allergen statement, including cross-contact — in particular whether dairy protein runs on
   the same line
-- Confirmation of whether you manufacture in your own plant or through a partner facility, and
-  where that facility is
+- Confirmation of who actually manufactures — own plant or a partner facility — and where that
+  facility is
 
 **Commercial questions:**
 
@@ -100,25 +108,56 @@ Shipping address for samples: [address]
 
 ---
 
-## The short version — WhatsApp / first contact
+## The WhatsApp message — for a sourcing agent
 
-> Hi [Name], following up on our conversation. I'm launching a halal wellness brand in the
-> Netherlands and I want to develop three collagen drink blends with you: collagen coffee
-> (arabica), collagen matcha (ceremonial grade), and a qahwa blend with cardamom and saffron.
-> All three at a full 10 g marine collagen dose per serving, no sugar, no flavourings, no
-> fillers.
->
-> Could you send me samples of your current versions of each — from a real production batch,
-> with the COA for that batch? Two of each if possible, so one can go to a lab. Happy to pay
-> for the samples and the shipping.
->
-> I'm also sending our quality specification and a few questions by email — MOQ, pilot batch
-> size, price at 500/1,000/2,500 units, and your halal certificate with the body and number on
-> it, since we print that on pack.
->
-> Address for the samples: [address]. Thank you.
+Use this when the contact is a **sourcing agent or trader who will go and find the factory**,
+not the manufacturer himself. The ask is "find me a producer who can hit this spec", and the
+requirements list is what he has to bring back from any factory he shortlists — it is also what
+stops him returning with the cheapest blender he can find.
 
----
+> Hi [Name], good speaking with you.
+>
+> This is the brand: https://safaa-sigma.vercel.app/ — SAFAA, halal wellness, launching from
+> the Netherlands into the EU.
+>
+> I'm starting with the collagen line, and specifically these three:
+>
+> • Collagen Coffee — single-origin arabica
+> • Collagen Matcha — ceremonial grade
+> • Qahwa + Collagen — Arabic coffee with cardamom and saffron
+>
+> All three carry a full 10 g marine collagen dose per serving, around 25 servings a pouch.
+> No sugar, no sweeteners, no flavourings, no fillers.
+>
+> I'm looking for a manufacturer who can produce these properly. If you can find one, here is
+> what I need from them before I take it further:
+>
+> 1. Samples of each — from a real production batch, not a lab mock-up. Two of each if
+>    possible, so one can go to an independent lab. I'll pay for the samples and the courier.
+> 2. The COA for the exact batch each sample comes from, plus the COA for the collagen in it.
+> 3. Their halal certificate — certifying body, certificate number, scope and expiry. We print
+>    the body and number on the pack, so "halal compliant" without a certificate is no use to me.
+> 4. MOQ, the smallest pilot batch they'll run, and price per finished pouch at
+>    500 / 1,000 / 2,500 units, filled and labelled to our artwork.
+>
+> Two questions that sort the serious factories from the rest quickly:
+>
+> — can their base carry a 10 g collagen loading without going chalky?
+> — does the collagen stay clean in a hot cup at around 80 °C? A lot of marine collagen is fine
+>   in cold water and tastes fishy in hot coffee.
+>
+> I have a full written specification I can send to any factory you shortlist. Where should the
+> samples go — [address]?
+
+**If you would rather not send one long block,** split it: the brand link plus the three
+products first, then the numbered requirements once he replies.
+
+**One check before sending the link.** The live site still carries placeholder lab values
+(batch numbers, HMF, TQ%) and AI-generated packshots from the design phase. That is fine for a
+supplier conversation — it shows him the standard you are working to — but make sure the
+"halal-certified shell" line on the softgels page is gone before he reads it, or he will assume
+a certificate already exists. It was fixed in `build/data.mjs`; the deployment has to be
+rebuilt from that fix.
 
 ## When the samples arrive — the evaluation that decides it
 
