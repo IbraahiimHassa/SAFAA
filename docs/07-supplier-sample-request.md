@@ -140,14 +140,21 @@ stops him returning with the cheapest blender he can find.
 > 4. MOQ, the smallest pilot batch they'll run, and price per finished pouch at
 >    500 / 1,000 / 2,500 units, filled and labelled to our artwork.
 >
-> Two questions that sort the serious factories from the rest quickly:
+> Two things to ask any factory you shortlist — they sort the serious ones out quickly:
 >
 > — can their base carry a 10 g collagen loading without going chalky?
 > — does the collagen stay clean in a hot cup at around 80 °C? A lot of marine collagen is fine
 >   in cold water and tastes fishy in hot coffee.
 >
-> I have a full written specification I can send to any factory you shortlist. Where should the
-> samples go — [address]?
+> I have a full written specification I'll send across once you have someone in mind. Where
+> should the samples go — [address]?
+
+Phrase those two as questions **for the factory**, never as questions to the agent — he cannot
+answer them, and an agent put on the spot tends to bluff rather than go and check. Framed as a
+brief he carries, they still do the filtering: a factory that answers concretely ("we run 12 g
+on our own line, here is the dissolution data") is worth a conversation, and one that says "yes
+yes, no problem" without checking has told you just as much. Keep the address question last —
+it is the line that turns an enquiry into a live process.
 
 **If you would rather not send one long block,** split it: the brand link plus the three
 products first, then the numbered requirements once he replies.
