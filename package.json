@@ -1,0 +1,14 @@
+{
+  "name": "safaa",
+  "private": true,
+  "type": "module",
+  "description": "SAFA Nutrition — brand site generator, Shopify theme source, and verification harnesses.",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "verify:storefront": "node shopify/scripts/verify-storefront.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "playwright": "^1.62.1"
+  }
+}
