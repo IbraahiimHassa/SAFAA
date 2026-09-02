@@ -110,10 +110,21 @@ const report = [];
 for (const page of PAGES) {
   const tab = await context.newPage();
   const consoleErrors = [];
+  const blocked = new Set();
   tab.on('console', (m) => { if (m.type() === 'error') consoleErrors.push(m.text()); });
   tab.on('pageerror', (e) => consoleErrors.push(String(e)));
+  /* A host the egress policy refuses to tunnel is an environment fact, not a storefront
+     fault — Shopify's telemetry endpoints are the usual case. Report them apart from real
+     errors so a blocked analytics beacon cannot masquerade as a broken page. */
+  tab.on('requestfailed', (r) => {
+    if (r.failure()?.errorText === 'net::ERR_TUNNEL_CONNECTION_FAILED') blocked.add(new URL(r.url()).host);
+  });
+  // A sub-resource that 404s is invisible in a screenshot and shows in the console only as
+  // "Failed to load resource" — record the URL so the finding is actionable.
+  const failedResources = [];
+  tab.on('response', (r) => { if (r.status() >= 400) failedResources.push(`${r.status()} ${r.url()}`); });
 
-  const entry = { page: page.name, status: 0, missing: [], overflow: [], brokenImages: [], consoleErrors, axe: [] };
+  const entry = { page: page.name, status: 0, missing: [], overflow: [], brokenImages: [], consoleErrors, blocked, failedResources, axe: [] };
   let res = null;
   try {
     res = await tab.goto(url(page.path), { waitUntil: 'networkidle' });
@@ -159,11 +170,22 @@ for (const page of PAGES) {
   try {
     const { default: AxeBuilder } = await import('@axe-core/playwright');
     await tab.setViewportSize({ width: 1440, height: 1200 });
-    const axe = await new AxeBuilder({ page: tab }).withTags(['wcag2a', 'wcag2aa']).analyze();
-    entry.axe = axe.violations.map((v) => `${v.id} (${v.nodes.length})`);
+    // The theme-preview bar is Shopify's admin chrome, not the storefront a customer sees.
+    const axe = await new AxeBuilder({ page: tab }).withTags(['wcag2a', 'wcag2aa'])
+      .exclude('#PBarNextFrame').analyze();
+    // Name the first offending node so a finding can be attributed to our sections or
+    // to Horizon's chrome without re-running the audit.
+    entry.axe = axe.violations.map((v) => `${v.id} (${v.nodes.length}) @ ${v.nodes[0].target.join(' ')}`);
     if (entry.axe.length) failures++;
   } catch {
     entry.axe = ['@axe-core/playwright not installed — skipped'];
+  }
+
+  if (entry.blocked.size) {
+    // Drop the console noise those blocked hosts produce; anything left is a real error.
+    // The preview bar's own error reporter is the other casualty of the blocked hosts.
+    entry.consoleErrors = entry.consoleErrors.filter((m) =>
+      !/ERR_TUNNEL_CONNECTION_FAILED|Failed to fetch|preview-bar/.test(m));
   }
 
   report.push(entry);
@@ -178,6 +200,8 @@ for (const r of report) {
   console.log(`   h-overflow at   : ${r.overflow.length ? r.overflow.join(', ') : 'none'}`);
   console.log(`   broken images   : ${r.brokenImages.length || 0}`);
   console.log(`   console errors  : ${r.consoleErrors.length ? r.consoleErrors.slice(0, 5).join(' | ') : 'none'}`);
+  if (r.failedResources.length) console.log(`   failed resources: ${r.failedResources.slice(0, 5).join(' | ')}`);
+  if (r.blocked.size) console.log(`   blocked by egress: ${[...r.blocked].join(', ')}  (environment, not the theme)`);
   console.log(`   axe violations  : ${r.axe.length ? r.axe.join(', ') : 'none'}`);
 }
 console.log(`\nScreenshots in ${OUT}/`);

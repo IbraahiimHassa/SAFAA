@@ -117,6 +117,38 @@ Compared the theme files in Shopify against this directory by MD5:
 | `sections/safaa-product.liquid` | identical apart from four section-divider comments the store copy lacks |
 | `snippets/safaa-head.liquid` | **diverged.** The store copy carries a `settings.safaa_external_css` switch and, by default, the Vercel stylesheet link. This directory's copy loads `safaa-base.css` as a theme asset — **which does not exist in the theme**. Uploading this directory as-is would ship an unstyled storefront. Upload `assets/safaa-base.min.css` as `assets/safaa-base.css` first (text body, not URL body), then the head snippet. |
 
+## Browser verification — 2026-09-02, past the gate
+
+Run against the preview of this theme with the storefront password, through the cloud
+session's proxy. PDP `/products/collagen-coffee` and the homepage, at 1440 / 768 / 375.
+
+**PDP:** all eight signature modules present (assay card, quantity tiles, verification strip,
+accordions, ingredient grid, comparison table, wordmark, add-to-cart). No broken images.
+No horizontal overflow at any width. Zero axe violations in SAFAA-owned markup.
+
+Two findings were ours, both fixed in this directory and uploaded to the theme:
+
+1. **1 px overflow at 375.** Horizon's `base.css` styles `label:has(input[type=radio])` as
+   an inline flex row; that selector (0,1,1) outranks `.qt` (0,1,0) no matter which sheet
+   loads last, so each tile collapsed into a row and the struck-through price became its
+   own column, ending 0.9 px past the viewport. `.qtiles .qt` (0,2,0) restores the block
+   tile; `.freq .plan` gets the same guard because the plan card wraps a radio the same way.
+2. **`aria-hidden-focus` on the wordmark section.** The whole section was `aria-hidden`,
+   which also hid the legal links inside it while leaving them focusable. Now only the
+   decorative mark is hidden.
+
+What remains is Horizon's, and disappears with the header and homepage work listed above:
+
+| Finding | Where | Owner |
+|---|---|---|
+| axe `list` — non-`li` child in `<ul>` | Horizon header nav (`overflow-list`) | Horizon; goes with the header section rewrite |
+| axe `scrollable-region-focusable` | Horizon homepage slideshow (`slideshow-slides`) | Horizon; goes with `templates/index.json` |
+| 404 on `/favicon.ico` | no favicon set in theme settings | store setting — upload `site/assets/favicon.svg` (or a PNG of it) under Theme settings → Favicon |
+
+Console: nothing from the theme. Shopify's telemetry hosts (`monorail-edge`, `otlp-http`,
+`error-analytics-sessions`, `shop.app`) are refused by the session's egress policy and the
+harness now lists them separately as environment facts rather than page errors.
+
 `shopify theme check` over this directory: the only offenses that concern the source (rather
 than Horizon files that live in the store, not here) are two `<img>` tags in the product
 section without `width`/`height` attributes — the gallery thumbnail and the variant-tile

@@ -3,8 +3,8 @@
   the execution is ours — Newsreader at optical size, cropped at the baseline so the
   letterforms run off the page rather than sitting in a box.
 {%- endcomment -%}
-<section class="safaa-wordmark" aria-hidden="true">
-  <div class="safaa-wordmark__links" aria-hidden="false">
+<section class="safaa-wordmark">
+  <div class="safaa-wordmark__links">
     <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ section.settings.rights }}</p>
     <nav aria-label="Legal">
       {%- for link in linklists[section.settings.menu].links -%}
@@ -12,7 +12,11 @@
       {%- endfor -%}
     </nav>
   </div>
-  <div class="safaa-wordmark__mark">
+  {%- comment -%}
+    Decorative: the mark is the shop name again, so hide it from assistive tech. Only this
+    div — an aria-hidden ancestor would swallow the legal links, which must stay reachable.
+  {%- endcomment -%}
+  <div class="safaa-wordmark__mark" aria-hidden="true">
     <span>{{ section.settings.word | default: shop.name }}</span>
   </div>
 </section>

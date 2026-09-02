@@ -37,8 +37,14 @@ body,
 .addcart[disabled] { opacity: .45; cursor: not-allowed; }
 .safaa-form { display: contents; }
 
-/* Variant tiles: the ladder is real variants, so the label wraps a radio. */
-.qt { display: block; }
+/* Variant tiles: the ladder is real variants, so the label wraps a radio. Horizon's
+   base.css styles `label:has(input[type=radio])` as an inline flex row, and that selector
+   (0,1,1) outranks a lone class — so the tile collapsed into a row, the struck-through
+   price got its own shrink-wrapped column and pushed 1px past the viewport at 375. Two
+   classes outrank the pseudo-class regardless of load order. The plan card wraps a radio
+   the same way, so it gets the same guard before selling plans exist to expose it. */
+.qtiles .qt,
+.freq .plan { display: block; gap: 0; }
 .qt input:focus-visible + img { outline: 2px solid var(--accent); outline-offset: 3px; }
 .qt:has(input:disabled) { opacity: .4; cursor: not-allowed; }
 .qt .u s { color: var(--fg-muted); font-weight: 400; }

@@ -33,7 +33,7 @@
 
 ## Waiting On
 
-- [ ] **Hand Claude the storefront password** — protection is on (verified via the Admin API on 2026-09-02) and `collagen-coffee` is ACTIVE behind it, so the theme is previewable. The password is not readable through the API, so `shopify/scripts/verify-storefront.mjs` cannot get past the gate until `STOREFRONT_PASSWORD` is supplied. Everything else the harness needs (egress, proxy, Chromium, packages) now works in the cloud session
+- [ ] **Set a favicon in the theme** — the storefront 404s on `/favicon.ico`. Theme settings → Favicon, upload `site/assets/favicon.svg` (Shopify may want a PNG). Two minutes in the admin; not reachable from the API without hand-editing `settings_data.json`
 
 - [ ] **Supplier golden samples + COAs** - blocks final label data, batch pages, and honest pricing - since 2026-08-11 (outreach not yet sent)
 - [ ] **Halal certificate (body + № + expiry)** - blocks the word/seal on packaging and site
@@ -47,7 +47,8 @@
 
 ## Done
 
-- [x] ~~Storefront password protection turned on; verification harness proven through the cloud egress proxy up to the password gate; theme source diffed against the store (head snippet diverged, base stylesheet missing from the theme)~~ (2026-09-02)
+- [x] ~~Storefront verified in a real browser behind the password: all PDP modules render, no overflow, no broken images, zero axe findings in SAFAA markup. Fixed and uploaded: 375 px overflow from Horizon's radio-label rule, wordmark aria-hidden scope. Remaining findings are Horizon's header/homepage (see `shopify/theme/README.md`)~~ (2026-09-02)
+- [x] ~~Storefront password protection turned on; verification harness proven through the cloud egress proxy; theme source diffed against the store (head snippet diverged, base stylesheet missing from the theme)~~ (2026-09-02)
 - [x] ~~SAFAA Shopify theme: Horizon duplicated and re-skinned; PDP + wordmark sections, self-hosted type, 52 product images, structured `safa.spec` metafield on all 12 products~~ (2026-09-02)
 - [x] ~~Shopify catalogue seeded: 12 products / 36 variants / 4 smart collections, all DRAFT, generated from `build/data.mjs`; stale HELDER test product + 4 superseded drafts archived~~ (2026-09-02)
 - [x] ~~Supplier sample request for the three collagen drinks written, plus QC spec SKU 4 (flavoured blends) in `docs/03`~~ (2026-09-02)
