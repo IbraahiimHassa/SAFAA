@@ -33,6 +33,8 @@
 
 ## Waiting On
 
+- [ ] **Turn on storefront password protection** — `hjqqqb-at.myshopify.com` is currently **public** with no password. Admin → Online Store → Preferences → Restrict store access. Blocks previewing the new theme, because a draft product 404s and activating one on an open store would put it in public view
+
 - [ ] **Supplier golden samples + COAs** - blocks final label data, batch pages, and honest pricing - since 2026-08-11 (outreach not yet sent)
 - [ ] **Halal certificate (body + № + expiry)** - blocks the word/seal on packaging and site
 
@@ -45,6 +47,7 @@
 
 ## Done
 
+- [x] ~~SAFAA Shopify theme: Horizon duplicated and re-skinned; PDP + wordmark sections, self-hosted type, 52 product images, structured `safa.spec` metafield on all 12 products~~ (2026-09-02)
 - [x] ~~Shopify catalogue seeded: 12 products / 36 variants / 4 smart collections, all DRAFT, generated from `build/data.mjs`; stale HELDER test product + 4 superseded drafts archived~~ (2026-09-02)
 - [x] ~~Supplier sample request for the three collagen drinks written, plus QC spec SKU 4 (flavoured blends) in `docs/03`~~ (2026-09-02)
 - [x] ~~Competitor ad-intelligence system + Meta Business Manager setup path documented (`docs/08`, `docs/09`)~~ (2026-09-02)
