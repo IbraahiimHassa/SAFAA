@@ -146,15 +146,24 @@ stops him returning with the cheapest blender he can find.
 > — does the collagen stay clean in a hot cup at around 80 °C? A lot of marine collagen is fine
 >   in cold water and tastes fishy in hot coffee.
 >
-> I have a full written specification I'll send across once you have someone in mind. Where
-> should the samples go — [address]?
+> I have a full written specification I'll send across once you have someone in mind.
+>
+> Samples can go to: [your name], [street + number], [postcode] [city], Netherlands.
+> Phone [number]. Send me the invoice for the samples and the courier and I'll settle it.
 
 Phrase those two as questions **for the factory**, never as questions to the agent — he cannot
 answer them, and an agent put on the spot tends to bluff rather than go and check. Framed as a
 brief he carries, they still do the filtering: a factory that answers concretely ("we run 12 g
 on our own line, here is the dissolution data") is worth a conversation, and one that says "yes
-yes, no problem" without checking has told you just as much. Keep the address question last —
-it is the line that turns an enquiry into a live process.
+yes, no problem" without checking has told you just as much. Give your own address rather than
+asking for his — the samples ship **to you**, and that closing line is what turns an enquiry
+into a live process.
+
+**Ship to yourself, never via the agent.** You want the factory's own packaging with its own
+batch code on it. Anything routed through an intermediary can be repacked or topped up from
+another lot, and then the sample you approve is not the one the factory can reproduce — which
+defeats the whole point of demanding a production batch. Include a phone number: couriers into
+NL generally need one, and fish-derived powder often needs a commercial invoice.
 
 **If you would rather not send one long block,** split it: the brand link plus the three
 products first, then the numbered requirements once he replies.
