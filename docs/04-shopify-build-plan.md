@@ -78,3 +78,65 @@ theme at launch.
   from the label art later).
 - Rich snippets: `Product` + `Offer` structured data; `certification` property on batch
   pages once halal cert is live.
+
+---
+
+## Build log — 2026-09-02: catalogue seeded
+
+The store shell exists (`hjqqqb-at.myshopify.com`, Basic plan, EUR, NL, Europe/Amsterdam) and
+the **full catalogue is now in it**, generated from `build/data.mjs` so the store and the site
+can never drift apart.
+
+**What was created — 12 products, all DRAFT, 36 variants**
+
+| Handle | Type | Pack ladder | House |
+|---|---|---|---|
+| `sidr-honey` · `sidr-sticks` · `black-seed-honey` · `tasting-flight` | Honey | 1/2/3 | honey |
+| `marine-collagen` · `daily-sachets` · `collagen-coffee` · `collagen-matcha` · `qahwa-collagen` | Food supplement | 1/2/3 | collagen |
+| `black-seed-oil` · `black-seed-softgels` | Food supplement | 1/2/3 | black-seed |
+| `morning-ritual` | Gift set | 1/2/3 | kits |
+
+- **Variants** carry the real price ladder with `compareAtPrice` for the save badges, SKUs
+  `SAFA-<CODE>-<n>`, inventory untracked (nothing to count yet), `inventoryPolicy: CONTINUE`.
+- **Metafields** in the `safa` namespace: `format`, `per_serving`, `house`, `allergen`,
+  `batch_placeholder` (explicitly marked PLACEHOLDER so nobody mistakes it for a real batch).
+- **Tags** drive everything: `house:*`, `wave-1` / `wave-2`, `preorder`, `allergen:fish`,
+  `placeholder-assay`.
+- **Smart collections** (rule-driven, so a new product joins automatically by tag):
+  The Collagen Line · Raw Honey · Black Seed · Wave 1 — Launch.
+
+**Three compliance rules enforced in the seeded copy**
+
+1. **No invented lab values.** Every measured figure in `data.mjs` (HMF 4.2, TQ 2.1%, moisture
+   16.8%, "none detected", the SF-25-0xx batch codes) is replaced with *"published per batch"*.
+   Formulation figures — 10 g collagen, 80 mg vitamin C, caffeine, the 95/5 honey ratio — stay,
+   because those are contractual spec, not measurements.
+2. **No halal-certification claim.** Fixed at source too: `data.mjs` asserted a
+   "halal-certified shell" on the softgels, which the constitution forbids until a certificate
+   with body, number and expiry is on file. Now reads "fish gelatin — never bovine, never porcine".
+3. **Allergens and the supplement disclaimer** on every SKU that needs them. Note the softgels
+   carry the fish allergen from the **shell**, not from collagen — easy to miss.
+
+**Also cleaned up:** the old HELDER-branded Dutch test product (which was ACTIVE) and four
+superseded SAFA drafts including an off-strategy Shilajit SKU are now ARCHIVED, not deleted —
+unarchive from the admin if any of them is wanted back.
+
+### What is still to do on the store
+
+1. **Theme.** Nothing is styled yet — the catalogue is data on the default theme. Buy Prestige
+   (or the chosen base) and port `site/assets/style.css`; this is the biggest remaining piece
+   and it needs a theme purchase first.
+2. **Images.** Every product is imageless. The current visuals are AI-generated concepts; real
+   studio packshots of production packs replace them before launch.
+3. **Batch metaobjects + QR pages** per the section above — the differentiator, and it needs the
+   first real COA to be worth building.
+4. **Selling plans** (Subscribe & Save 15%) via Shopify Subscriptions.
+5. **Markets, VAT and legal pages** — NL/EU, EUR VAT-inclusive, the four policy pages plus the
+   supplement disclaimer page.
+6. **Publish.** Everything stays DRAFT until there is stock, a COA and a price confirmed against
+   real COGS. Do not flip status to ACTIVE to "preview" — use the theme preview.
+
+**To regenerate the catalogue after editing `build/data.mjs`:** the seed is deterministic from
+that file, so re-running it overwrites titles, copy, prices and metafields in place. Note that
+`productSet` does *not* upsert on handle — pass the product `id` (or `identifier`) or it errors
+with "handle already in use".

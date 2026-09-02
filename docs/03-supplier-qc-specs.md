@@ -205,3 +205,128 @@ refined/deodorised oil "boosted" with synthetic TQ, not blended with cheaper car
    pricing only after two consecutive clean batches.
 5. **Publishing clause.** We publish batch COAs on the storefront — the supplier is told this
    up front. It deters quiet spec drift better than any audit.
+
+---
+
+## SKU 4 — Flavoured Collagen Drink Blends (Coffee · Matcha · Qahwa)
+
+**What we are buying.** Three dry drink blends built on the *same* certified marine collagen
+as SKU 2, carrying a full **10 g Type I collagen dose per serving** — not a token 3–5 g
+"with added collagen". The base drink is the hero: it must taste like coffee, like matcha,
+like qahwa. The collagen must be invisible in the cup.
+
+| | Collagen Coffee | Collagen Matcha | Qahwa + Collagen |
+|---|---|---|---|
+| Net weight / servings | 414 g / 25 | 286 g / 25 | 380 g / 25 |
+| Serving | 16.5 g (2 scoops) | 11.4 g (1 scoop) | 15.2 g (2 scoops) |
+| Base | single-origin arabica, light roast, ground for hot brewing | first-harvest ceremonial matcha, stone-ground, Japan | arabica ground fine for the dallah + hail cardamom + negin saffron |
+| Marine collagen | 10 g Type I | 10 g Type I | 10 g Type I |
+| Other actives | MCT powder (body), vitamin C 80 mg | vitamin C 80 mg | — |
+| Target caffeine | ~78 mg/cup | per matcha grade, stated | ~62 mg/cup |
+| Free-from | added sugar, sweeteners, flavourings, colours, anti-caking agents, maltodextrin — **all three** |
+
+Everything in **SKU 2** (collagen identity, purity, MW, metals, micro, halal, allergen)
+applies to the collagen fraction of these blends unchanged. The clauses below are what the
+flavoured formats add. They exist because this is where a blend house hides cost.
+
+### The three failure modes we are actually screening for
+
+1. **The hot-cup fishy note.** Marine collagen that passes a cold-water panel can still
+   release a trimethylamine note at 80–95 °C. Cold testing is not sufficient for a product
+   that is *only ever* drunk hot. → hot panel below.
+2. **Matcha oxidation.** Ceremonial matcha browns from green in weeks with poor oxygen
+   barrier or warm storage. A "ceremonial grade" COA at production means nothing if the
+   pouch is olive by month four. → colour stability + packaging clauses.
+3. **Segregation.** Collagen peptide density differs from ground coffee and from matcha;
+   a blend that is homogeneous at the mixer separates in transit, so the first scoop and
+   the last scoop are different products. → blend uniformity testing.
+
+### Base-material specs
+
+**Coffee (Collagen Coffee + Qahwa)**
+- Species 100% Arabica, origin named (country + region/estate), single-origin per batch,
+  harvest/crop year stated. Robusta blending is a rejection.
+- Roast: light–medium; **roast date on every batch**; grind specified per SKU (hot-brew grind
+  for Collagen Coffee, fine dallah grind for Qahwa), particle-size distribution reported.
+- Ochratoxin A: compliant with the EU maximum for roasted/ground coffee under
+  Reg. (EU) 2023/915 — **state the measured value and the limit applied**.
+- No added flavourings, no chicory, no husk, no instant-coffee extension of the ground fraction.
+
+**Matcha**
+- *Camellia sinensis*, Japan, **prefecture named** (Uji/Nishio/Kagoshima etc.), first harvest
+  (ichibancha), stone-ground (state mill throughput — stone mills run ~40 g/hour; a supplier
+  quoting bulk tonnage of "stone-ground" is grinding by ball mill).
+- Colour: vivid green, measured **L\*a\*b\*** at production and reported; particle size D50 ≤ 15 µm.
+- Lead and heavy metals per supplement/food limits; **radioactivity (Cs-134/Cs-137)** certificate
+  as standard for Japanese tea imports; pesticide multi-residue to EU MRLs (matcha is consumed
+  whole-leaf — MRL exceedance is the common failure).
+- Catechin/EGCG and total caffeine reported per batch. No added colour (spirulina/chlorophyll
+  adulteration is the trade's standard trick), no sugar, no milk powder.
+
+**Cardamom (Qahwa)**
+- *Elettaria cardamomum*, whole green pods ground fresh at blending — not pre-ground bought-in
+  powder, not husk-extended. **Volatile oil content stated by ISO 882 method.**
+- No flavouring added to lift a weak grind.
+
+**Saffron (Qahwa)**
+- *Crocus sativus*, negin grade, **ISO 3632 Category I** with the measured colouring strength
+  (crocin, E1%1cm at 440 nm), picrocrocin and safranal values reported per lot.
+- Authenticity screen: no dyes, no safflower/marigold/turmeric extension, no glycerol weighting.
+  Saffron is the most adulterated spice on earth — a lot without its own ISO 3632 report is
+  refused, not negotiated.
+
+**MCT powder (Collagen Coffee)**
+- Coconut-derived, ≥70% oil load, **carrier declared**. Sodium-caseinate-carried MCT powder is
+  **rejected** — it is a milk allergen and breaks our dairy-free declaration. Acacia/tapioca
+  fibre carrier only.
+- Halal certificate covering the MCT line.
+
+**Vitamin C (Coffee + Matcha)**
+- Form stated (ascorbic acid unless agreed). **Overage declared**, and assay must hold
+  **90–125% of label claim at end of stated shelf life**, not only at production — supported by
+  stability data. Ascorbic acid degrades fastest in exactly these matrices.
+
+### Blend-level panel — reject if outside limits
+
+| Parameter | Specification | Why it's here |
+|---|---|---|
+| Collagen dose per serving | 10 g ± 5%, verified by hydroxyproline assay on the finished blend | The whole proposition. Label-claim arithmetic is not proof |
+| Blend uniformity | Sample top / middle / bottom of ≥3 pouches per batch: collagen and vitamin C assay within ±10% between positions | Segregation in transit |
+| Scoop calibration | Supplied scoop delivers the stated serving ± 5% on 10 draws, on settled powder | The consumer's actual dose |
+| Dissolution — coffee | 16.5 g into 200 ml water at 80 °C, ≤10 s stir: fully dissolved, no sediment ring after 5 min, no surface scum | The product promise |
+| Dissolution — matcha | 11.4 g into 150 ml at 80 °C, whisked 15 s: smooth, foams, no clumping, no grit | " |
+| Dissolution — qahwa | Behaves as ground qahwa in the dallah; collagen fully dissolved at the second simmer, no scum on pour | " |
+| **Hot sensory panel** | Prepared as above at 80 °C and assessed **hot and again at 20 min**: neutral to the base drink, **no fishy / marine / TMA note**, no chalk, no metallic finish | The single most common cheap-collagen failure, and invisible in a cold test |
+| Colour stability (matcha) | L\*a\*b\* at T0 and after 3 months accelerated (40 °C/75% RH): ΔE within agreed limit, no visible browning vs golden sample | Oxidation |
+| Moisture / water activity | Moisture ≤ 6%; a_w ≤ 0.4 | Caking, micro, matcha degradation |
+| Peroxide value (coffee/MCT fraction) | Report at T0 and end of shelf life | Rancidity in a fat-containing dry blend |
+| Micro | TVC ≤ 10⁴ cfu/g; yeast+mould ≤ 10² cfu/g; Enterobacteriaceae absent/g; *Salmonella* absent/25 g | Ground spices and matcha carry the risk |
+| Heavy metals (finished blend) | Pb / Cd / Hg / As within supplement limits | Cumulative across four raw materials |
+| Free-from verification | No maltodextrin, silica, anti-caking agent, flavouring, sweetener or colour — declared and confirmed on the finished spec sheet | We print "nothing added" |
+
+- **Reject if:** collagen assay below 9.5 g/serving; any fishy note in the hot panel; segregation
+  beyond ±10%; matcha browning within shelf life; caseinate carrier found; saffron without ISO 3632;
+  any undeclared excipient; robusta in an arabica declaration.
+
+### Packaging spec
+
+- Multilayer **aluminium-barrier** stand-up pouch (not clear PET, not metallised film alone),
+  OTR/WVTR values stated; **nitrogen flush**, residual O₂ ≤ 2% at seal — mandatory for matcha,
+  required for all three.
+- Resealable zip + tamper-evident seal; degassing valve on the coffee SKUs if filled fresh-roasted.
+- Fill weight ± 2%; scoop included, food-grade, calibrated as above.
+- Batch code + best-before printed on the pouch itself, not only on a label; batch code resolves
+  to our published batch page.
+
+### Documents required per batch
+
+1. Finished-blend COA covering the table above (ISO 17025 accredited lab)
+2. Raw-material COAs: collagen (full SKU 2 panel), matcha, coffee, cardamom, saffron, MCT, vitamin C
+3. Saffron ISO 3632 report; matcha radioactivity + pesticide reports; coffee OTA result
+4. Halal certificate — **blending and filling facility**, plus the collagen and MCT lines
+   (body, number, scope, expiry)
+5. Allergen statement: **contains fish**; cross-contact declaration for milk, gluten, soy, nuts
+   (a blend house running dairy protein on the same line is a material disclosure)
+6. Stability data supporting the stated shelf life, including vitamin C at end of life and
+   matcha colour
+7. Retained samples: 2× retail units per batch, 24 months

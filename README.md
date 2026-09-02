@@ -11,7 +11,10 @@ lab reports, halal certification shown with body + number or not claimed at all.
 | `docs/00-session-handover.md` | **Start here in a new session** — state of play, decisions, placeholders, next moves |
 | `docs/01-competitor-teardown.md` | Reformed / Balqees / Sunna teardown + where SAFA wins |
 | `docs/02-product-strategy.md` | Product ladders, new-format companions, pricing & AOV mechanics, launch waves |
-| `docs/03-supplier-qc-specs.md` | Procurement-grade QC specs per ingredient (send to suppliers) |
+| `docs/03-supplier-qc-specs.md` | Procurement-grade QC specs per ingredient (send to suppliers). SKU 4 covers the flavoured collagen blends |
+| `docs/07-supplier-sample-request.md` | **Ready to send** — the sample + quotation request for the three collagen drinks, and how to judge the samples when they land |
+| `docs/08-competitor-ad-intelligence.md` | How we watch the space: Meta Ad Library vs Foreplay/Atria, what to track, and what may and may not be taken from a competitor's ad |
+| `docs/09-meta-business-setup.md` | Meta Business Manager — build it clean, or repair a restricted one |
 | `docs/04-shopify-build-plan.md` | Mapping the design onto Shopify (theme, sections, metaobjects, apps) |
 | `docs/06-feed-universe.md` | **Lane B** — the TikTok/Instagram animated cast, and the claims-safe rule that governs it. Read with `docs/approved-claims.md` |
 | `docs/approved-claims.md` | What may and may not be said about the product (EU/NL). Load before writing any public copy |
