@@ -7,16 +7,15 @@
  * This is the same verification pattern the static site used (see docs/00-session-handover),
  * pointed at Shopify instead of local HTML.
  *
- * Requires network access to the storefront. In the sandboxed cloud environment that host
- * is blocked by the egress policy; run it locally, or allow the hosts listed in
- * shopify/theme/README.md.
- *
  * Usage:
- *   npm i -D playwright @axe-core/playwright
+ *   npm ci
  *   STORE=hjqqqb-at.myshopify.com \
  *   STOREFRONT_PASSWORD=xxxx \
  *   THEME_ID=199437222271 \
  *   node shopify/scripts/verify-storefront.mjs
+ *
+ * Behind an egress proxy (Claude Code on the web sets HTTPS_PROXY): the browser is pointed
+ * at it automatically. See shopify/theme/README.md for the hosts that must be allowed.
  */
 
 import { chromium } from 'playwright';
@@ -27,6 +26,7 @@ const STORE = process.env.STORE;
 const PASSWORD = process.env.STOREFRONT_PASSWORD || '';
 const THEME_ID = process.env.THEME_ID || '';
 const OUT = process.env.OUT_DIR || 'shopify/screenshots';
+const PROXY = process.env.HTTPS_PROXY || process.env.https_proxy || '';
 
 if (!STORE) {
   console.error('Set STORE, e.g. STORE=hjqqqb-at.myshopify.com');
@@ -64,23 +64,44 @@ const url = (path) => {
 
 mkdirSync(OUT, { recursive: true });
 
+/* Behind a TLS-re-terminating egress proxy, Chromium's TLS 1.3 ClientHello (with the
+   post-quantum key share, ~1.8 KB) is dropped mid-handshake while curl's smaller hello
+   passes. Capping the browser↔proxy leg at TLS 1.2 gets through; certificate verification
+   stays on — the proxy's CA is already in the browser trust store. Direct connections
+   (no proxy) are untouched. */
 const browser = await chromium.launch({
   executablePath: process.env.CHROME_PATH || undefined,
+  ...(PROXY ? { proxy: { server: PROXY }, args: ['--ssl-version-max=tls1.2'] } : {}),
 });
 const context = await browser.newContext({ locale: 'en-NL' });
 
-/* The storefront password gate sets a cookie for the whole context, so unlock once. */
-if (PASSWORD) {
+/* Is this response the storefront password gate rather than the page we asked for? */
+const isGate = async (tab) =>
+  (await tab.locator('[data-page-type="password"], form.storefront-password-form').count()) > 0;
+
+/* The password gate sets a cookie for the whole context, so unlock once. Post the form
+   directly instead of driving the theme's markup: on Horizon the field sits inside a closed
+   <dialog>, and any theme may move it — the form's action and field names do not change. */
+let gateLocked = false;
+{
   const gate = await context.newPage();
-  await gate.goto(`https://${STORE}/password`, { waitUntil: 'domcontentloaded' });
-  const field = gate.locator('input[type="password"]').first();
-  if (await field.count()) {
-    await field.fill(PASSWORD);
-    await gate.locator('form[action*="password"] button, form[action*="password"] input[type="submit"]')
-      .first().click();
-    await gate.waitForLoadState('networkidle').catch(() => {});
+  if (PASSWORD) {
+    await context.request.post(`https://${STORE}/password`, {
+      form: { form_type: 'storefront_password', utf8: '✓', password: PASSWORD },
+      maxRedirects: 0,
+    }).catch(() => {});
   }
+  await gate.goto(url('/'), { waitUntil: 'domcontentloaded' }).catch(() => {});
+  gateLocked = await isGate(gate);
   await gate.close();
+}
+
+if (gateLocked) {
+  console.error(PASSWORD
+    ? `Storefront password was not accepted for ${STORE}. Check STOREFRONT_PASSWORD.`
+    : `${STORE} is password-protected. Set STOREFRONT_PASSWORD to verify past the gate.`);
+  await browser.close();
+  process.exit(2);
 }
 
 let failures = 0;
@@ -92,11 +113,21 @@ for (const page of PAGES) {
   tab.on('console', (m) => { if (m.type() === 'error') consoleErrors.push(m.text()); });
   tab.on('pageerror', (e) => consoleErrors.push(String(e)));
 
-  const res = await tab.goto(url(page.path), { waitUntil: 'networkidle' });
-  const status = res ? res.status() : 0;
-  const entry = { page: page.name, status, missing: [], overflow: [], brokenImages: [], consoleErrors, axe: [] };
+  const entry = { page: page.name, status: 0, missing: [], overflow: [], brokenImages: [], consoleErrors, axe: [] };
+  let res = null;
+  try {
+    res = await tab.goto(url(page.path), { waitUntil: 'networkidle' });
+  } catch (e) {
+    entry.consoleErrors.push(`navigation failed: ${String(e).split('\n')[0]}`);
+  }
+  entry.status = res ? res.status() : 0;
 
-  if (status >= 400) failures++;
+  if (!res || entry.status >= 400) {
+    failures++;
+    report.push(entry);
+    await tab.close();
+    continue;
+  }
 
   // Signature modules: present and non-empty, not merely in the DOM.
   for (const check of page.expect) {

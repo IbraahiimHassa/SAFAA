@@ -68,19 +68,26 @@ why products, images and theme files can be written from a sandboxed session —
 **storefront** goes over ordinary HTTP egress, and in Claude Code on the web that is
 governed by the environment's network policy.
 
-`shopify/scripts/verify-storefront.mjs` closes that loop the moment access exists: it drives
-a real Chromium over the theme, unlocks the storefront password, and reports missing
-modules, horizontal overflow, broken images, console errors and axe violations, with
-screenshots at 1440 / 768 / 375.
+`shopify/scripts/verify-storefront.mjs` closes that loop: it drives a real Chromium over the
+theme, unlocks the storefront password, and reports missing modules, horizontal overflow,
+broken images, console errors and axe violations, with screenshots at 1440 / 768 / 375.
 
 ```bash
-npm i -D playwright @axe-core/playwright
+npm ci
 STORE=hjqqqb-at.myshopify.com \
 STOREFRONT_PASSWORD=... \
 THEME_ID=199437222271 \
 CHROME_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome \
 node shopify/scripts/verify-storefront.mjs
 ```
+
+Exit codes: `0` all checks passed · `1` problems found (listed) · `2` never got past the
+password gate (no `STOREFRONT_PASSWORD`, or the wrong one).
+
+**The store is password-protected** (Online Store → Preferences), and the password is not
+readable through the Admin API — only the fact that protection is on. So a session that
+should run this needs `STOREFRONT_PASSWORD` handed to it; nothing in the repo or the store
+can supply it. The `preview_theme_id` link is gated the same way.
 
 **Hosts that must be reachable** (allow these in the environment's network policy, or run
 locally where no policy applies):
@@ -91,6 +98,26 @@ locally where no policy applies):
 | `cdn.shopify.com` | theme assets and product images — without it every screenshot is unstyled and imageless |
 | `safaa-sigma.vercel.app` | the static site, and the interim stylesheet link above |
 
+**Behind the cloud session's egress proxy** the harness points Chromium at `HTTPS_PROXY`
+automatically and caps the browser→proxy leg at TLS 1.2 — the proxy drops Chromium's
+larger TLS 1.3 hello mid-handshake while curl's passes. Certificate verification stays on.
+Verified 2026-09-02: store and CDN both reach the browser through the proxy at HTTP 200.
+
 Chromium is already present in the cloud image at
-`/opt/pw-browsers/chromium-1194/chrome-linux/chrome`; only the npm packages and the egress
-allowance are missing.
+`/opt/pw-browsers/chromium-1194/chrome-linux/chrome`.
+
+## Source vs. store — checked 2026-09-02
+
+Compared the theme files in Shopify against this directory by MD5:
+
+| File | State |
+|---|---|
+| `sections/safaa-wordmark.liquid`, `snippets/safaa-icon.liquid`, `snippets/stylesheets.liquid`, `assets/safaa-store.css`, `templates/product.json` | identical |
+| the six `assets/*.woff2` fonts the head snippet references | all present in the theme |
+| `sections/safaa-product.liquid` | identical apart from four section-divider comments the store copy lacks |
+| `snippets/safaa-head.liquid` | **diverged.** The store copy carries a `settings.safaa_external_css` switch and, by default, the Vercel stylesheet link. This directory's copy loads `safaa-base.css` as a theme asset — **which does not exist in the theme**. Uploading this directory as-is would ship an unstyled storefront. Upload `assets/safaa-base.min.css` as `assets/safaa-base.css` first (text body, not URL body), then the head snippet. |
+
+`shopify theme check` over this directory: the only offenses that concern the source (rather
+than Horizon files that live in the store, not here) are two `<img>` tags in the product
+section without `width`/`height` attributes — the gallery thumbnail and the variant-tile
+thumbnail. Fix when the section is next touched.
